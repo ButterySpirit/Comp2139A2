@@ -10,9 +10,19 @@
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
   <ItemGroup>
     <None Remove="Data\" />
+    <None Remove="Views\Flight\" />
+    <None Remove="Views\Hotel\" />
+    <None Remove="Views\Rental\" />
+    <None Remove="Views\Booking\" />
+    <None Remove="Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
+    <Folder Include="Views\Flight\" />
+    <Folder Include="Views\Hotel\" />
+    <Folder Include="Views\Rental\" />
+    <Folder Include="Views\Booking\" />
+    <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.2" />

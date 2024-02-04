@@ -29,3 +29,14 @@
 /Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/obj/Debug/net7.0/Assign1.pdb
 /Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/obj/Debug/net7.0/Assign1.genruntimeconfig.cache
 /Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/obj/Debug/net7.0/ref/Assign1.dll
+/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/bin/Debug/net7.0/Humanizer.dll
+/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.dll
+/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.Design.dll
+/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.Relational.dll
+/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/bin/Debug/net7.0/Microsoft.Extensions.DependencyModel.dll
+/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/bin/Debug/net7.0/Mono.TextTemplating.dll
+/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/bin/Debug/net7.0/MySqlConnector.dll
+/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/bin/Debug/net7.0/Pomelo.EntityFrameworkCore.MySql.dll
+/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/bin/Debug/net7.0/System.CodeDom.dll
+/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/obj/Debug/net7.0/Assign1.csproj.CopyComplete
