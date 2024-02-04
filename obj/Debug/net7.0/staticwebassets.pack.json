@@ -17,6 +17,42 @@
       "PackagePath": "staticwebassets/favicon.ico"
     },
     {
+      "Id": "/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/wwwroot/img/Dunes.webp",
+      "PackagePath": "staticwebassets/img/Dunes.webp"
+    },
+    {
+      "Id": "/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/wwwroot/img/Hampton-NB.webp",
+      "PackagePath": "staticwebassets/img/Hampton-NB.webp"
+    },
+    {
+      "Id": "/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/wwwroot/img/Holtman.webp",
+      "PackagePath": "staticwebassets/img/Holtman.webp"
+    },
+    {
+      "Id": "/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/wwwroot/img/Marriot-Vanc.webp",
+      "PackagePath": "staticwebassets/img/Marriot-Vanc.webp"
+    },
+    {
+      "Id": "/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/wwwroot/img/Mount-Stephen.webp",
+      "PackagePath": "staticwebassets/img/Mount-Stephen.webp"
+    },
+    {
+      "Id": "/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/wwwroot/img/rimrock.webp",
+      "PackagePath": "staticwebassets/img/rimrock.webp"
+    },
+    {
+      "Id": "/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/wwwroot/img/ritz.webp",
+      "PackagePath": "staticwebassets/img/ritz.webp"
+    },
+    {
+      "Id": "/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/wwwroot/img/sheraton-nfld.webp",
+      "PackagePath": "staticwebassets/img/sheraton-nfld.webp"
+    },
+    {
+      "Id": "/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/wwwroot/img/sutton.webp",
+      "PackagePath": "staticwebassets/img/sutton.webp"
+    },
+    {
       "Id": "/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/wwwroot/js/site.js",
       "PackagePath": "staticwebassets/js/site.js"
     },
