@@ -30,3 +30,7 @@ body {
     .nav-item:hover {
         opacity: 0.5;
     }
+
+.card {
+    margin-bottom: 1rem;
+}

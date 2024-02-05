@@ -21,6 +21,26 @@
       "PackagePath": "staticwebassets/img/Dunes.webp"
     },
     {
+      "Id": "/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/wwwroot/img/Explorer.webp",
+      "PackagePath": "staticwebassets/img/Explorer.webp"
+    },
+    {
+      "Id": "/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/wwwroot/img/Fairmont-OT.webp",
+      "PackagePath": "staticwebassets/img/Fairmont-OT.webp"
+    },
+    {
+      "Id": "/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/wwwroot/img/Fork.webp",
+      "PackagePath": "staticwebassets/img/Fork.webp"
+    },
+    {
+      "Id": "/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/wwwroot/img/Frobisher.avif",
+      "PackagePath": "staticwebassets/img/Frobisher.avif"
+    },
+    {
+      "Id": "/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/wwwroot/img/Frobisher.webp",
+      "PackagePath": "staticwebassets/img/Frobisher.webp"
+    },
+    {
       "Id": "/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/wwwroot/img/Hampton-NB.webp",
       "PackagePath": "staticwebassets/img/Hampton-NB.webp"
     },
@@ -35,6 +55,14 @@
     {
       "Id": "/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/wwwroot/img/Mount-Stephen.webp",
       "PackagePath": "staticwebassets/img/Mount-Stephen.webp"
+    },
+    {
+      "Id": "/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/wwwroot/img/Raven.webp",
+      "PackagePath": "staticwebassets/img/Raven.webp"
+    },
+    {
+      "Id": "/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/wwwroot/img/Versante.webp",
+      "PackagePath": "staticwebassets/img/Versante.webp"
     },
     {
       "Id": "/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/wwwroot/img/rimrock.webp",
