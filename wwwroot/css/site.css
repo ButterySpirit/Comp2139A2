@@ -34,3 +34,14 @@ body {
 .card {
     margin-bottom: 1rem;
 }
+
+.home-img {
+    height: 250px;
+    width: 250px;
+    border: 3px solid black;
+    border-radius: 10%;
+}
+
+.home-search {
+    width: fit-content;
+}
