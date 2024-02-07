@@ -11,6 +11,9 @@ namespace Assign1.Models
         public string HotelName { get; set; }
 
         [Required]
+        public string Description { get; set; }
+
+        [Required]
         public string Address { get; set; }
 
         [Required]

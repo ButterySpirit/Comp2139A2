@@ -7,6 +7,7 @@ namespace Assign1.Models
     {
         [Required]
         public int RentalId { get; set; }
+
         [Required]
         public int RentalCost { get; set; }
 
@@ -42,6 +43,9 @@ namespace Assign1.Models
 
         [Required]
         public double Mileage { get; set; }
+
+        [Required]
+        public string Description { get; set; }
 
         [Required]
         [DataType(DataType.Date)]
