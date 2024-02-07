@@ -17,6 +17,7 @@ namespace Assign1.Models
         [Required, DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
+        [Required]
         public string ContactNumber { get; set; }
 
         public virtual ICollection<Booking> Bookings { get; set; }

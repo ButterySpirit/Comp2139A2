@@ -128,10 +128,6 @@ namespace Assign1.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime(6)");
 
@@ -171,10 +167,6 @@ namespace Assign1.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("Website")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
                     b.HasKey("HotelId");
 
                     b.HasIndex("BookingId");
@@ -200,7 +192,7 @@ namespace Assign1.Migrations
                     b.Property<bool>("CarInsurance")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<int>("CostPerNight")
+                    b.Property<int>("CostPerDay")
                         .HasColumnType("int");
 
                     b.Property<string>("Country")
@@ -221,9 +213,11 @@ namespace Assign1.Migrations
                         .HasColumnType("tinyint(1)");
 
                     b.Property<string>("LicensePlate")
+                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("MakeModel")
+                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<double>("Mileage")

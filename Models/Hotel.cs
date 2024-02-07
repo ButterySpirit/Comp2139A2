@@ -25,11 +25,14 @@ namespace Assign1.Models
         [Required]
         public string Country { get; set; }
 
+        [Required]
         public int CostPerNight { get; set; }
 
+        [Required]
         [DataType(DataType.Date)]
         public DateTime StartDate { get; set; }
 
+        [Required]
         [DataType(DataType.Date)]
         public DateTime EndDate { get; set; }
 
@@ -39,22 +42,24 @@ namespace Assign1.Models
         [Required]
         public int StarRating { get; set; }
 
+        [Required]
         public string RoomType { get; set; }
 
+        [Required]
         public int NumberOfRooms { get; set; }
 
+        [Required]
         public int MaxOccupancy { get; set; }
 
+        [Required]
         public string PhoneNumber { get; set; }
-
-        public string Email { get; set; }
-
-        public string Website { get; set; }
 
         public string CancellationPolicy { get; set; }
 
+        [Required]
         public string CheckInTime { get; set; }
 
+        [Required]
         public string CheckOutTime { get; set; }
     }
 

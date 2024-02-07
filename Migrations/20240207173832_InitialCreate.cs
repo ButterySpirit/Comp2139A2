@@ -100,7 +100,11 @@ namespace Assign1.Migrations
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     HotelName = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
+                    Address = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
                     City = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    PostalCode = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     State = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
@@ -117,10 +121,6 @@ namespace Assign1.Migrations
                     NumberOfRooms = table.Column<int>(type: "int", nullable: false),
                     MaxOccupancy = table.Column<int>(type: "int", nullable: false),
                     PhoneNumber = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    Email = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    Website = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     CancellationPolicy = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
@@ -156,12 +156,12 @@ namespace Assign1.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Country = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    CostPerNight = table.Column<int>(type: "int", nullable: false),
+                    CostPerDay = table.Column<int>(type: "int", nullable: false),
                     CarInsurance = table.Column<bool>(type: "tinyint(1)", nullable: false),
                     VehicleID = table.Column<int>(type: "int", nullable: false),
-                    LicensePlate = table.Column<string>(type: "longtext", nullable: true)
+                    LicensePlate = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    MakeModel = table.Column<string>(type: "longtext", nullable: true)
+                    MakeModel = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Year = table.Column<int>(type: "int", nullable: false),
                     Mileage = table.Column<double>(type: "double", nullable: false),

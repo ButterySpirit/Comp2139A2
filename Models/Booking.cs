@@ -6,16 +6,20 @@ namespace Assign1.Models
 {
     public class Booking
     {
+        [Required]
         public int BookingId { get; set; }
 
         [Required]
         public int UserId { get; set; } // Foreign key from User class
 
+        [Required]
         public decimal TotalCost { get; set; }
 
+        [Required]
         [DataType(DataType.Date)]
         public DateTime BookingDate { get; set; }
 
+        [Required]
         public string PaymentStatus { get; set; }
 
         // Relationships with Flight, Hotel, Rental
