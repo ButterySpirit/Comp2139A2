@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<Hotel>
+@{
     ViewData["Title"] = "Hotels";
 }
 
@@ -8,328 +9,30 @@
 
 <div class="container-fluid p-3 m-3 text-center">
     <div class="row">
-        <div class="col">
-            <div class="card" style="width: 18rem;">
-                <img src="../img/ritz.webp" class="card-img-top" alt="Ritz Carlton">
-                <div class="card-body">
-                    <h5 class="card-title">The Ritz-Carlton, Toronto</h5>
-                    <p class="card-text">
-                        At The Ritz-Carlton, Toronto, you will discover what it means when a luxury hotel.
-                        Located near the CN Tower and Rogers Centre, The Ritz Carlton is Toronto's most luxurious stay.
-                    </p>
-                    <address>
-                        181 Wellington St W, Toronto, ON, ON M5V 3G7
-                    </address>
-                    <span class="price text-success">
-                        $410.00 / Night
-                    </span>
-                    <br />
-                    <a href="#" class="btn btn-primary">Book Now!</a>
+        @foreach (var hotel in Model)
+        {
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="@hotel.image" class="card-img-top" alt="@hotel.HotelName">
+                    <div class="card-body">
+                        <h5 class="card-title">@hotel.HotelName</h5>
+                        <p class="card-text">
+                            @hotel.Description
+                        </p>
+                        <address>
+                            @hotel.Address, @hotel.City, @hotel.State, @hotel.Country
+                        </address>
+                        <p class="text-center">
+                            @hotel.StarRating Stars
+                        </p>
+                        <span class="price text-success">
+                            $@hotel.CostPerNight / Night
+                        </span>
+                        <br />
+                        <a href="#" class="btn btn-primary">Book Now!</a>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <div class="col">
-            <div class="card" style="width: 18rem;">
-                <img src="../img/sutton.webp" class="card-img-top" alt="The Sutton Place">
-                <div class="card-body">
-                    <h5 class="card-title">The Sutton Place, Halifax</h5>
-                    <p class="card-text">
-                        At The Sutton Place Hotel located in Halifax, guests will have an exceptional stay.
-                        Located only a few minutes away from the Scotiabank Centre, Casino Nova Scotia and The Boardwalk.
-                    </p>
-                    <address>
-                        1700 Grafton Street, Halifax, NS, B3J2C4
-                    </address>
-                    <span class="price text-success">
-                        $210.00 / Night
-                    </span>
-                    <br />
-                    <a href="#" class="btn btn-primary">Book Now!</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card" style="width: 18rem;">
-                <img src="../img/Mount-Stephen.webp" class="card-img-top" alt="Le Mount Stephen">
-                <div class="card-body">
-                    <h5 class="card-title">Le Mount Stephen, Montreal</h5>
-                    <p class="card-text">
-                        Le Mount Stephen is located in Downtown Montreal. Guests are located close by to The Underground City, YUL
-                        Airport, Bell Centre and The Museum of Fine Arts.
-                    </p>
-                    <address>
-                        1440 Drummond Street, Montreal, QC, H3G 1V9
-                    </address>
-                    <span class="price text-success">
-                        $260.00 / Night
-                    </span>
-                    <br />
-                    <a href="#" class="btn btn-primary">Book Now!</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card" style="width: 18rem;">
-                <img src="../img/rimrock.webp" class="card-img-top" alt="Rimrock Resort">
-                <div class="card-body">
-                    <h5 class="card-title">Rimrock Resort Hotel, Banff</h5>
-                    <p class="card-text">
-                        Rimrock Resort Hotel Banff is located in Sulphur Mountain District, in the mountains and in a national park.
-                        Local activites include the Banff Upper Hot Springs, Banff Gondola and the Lake Louise Tourism Bureau.
-                    </p>
-                    <address>
-                        300 Moutain Avenue, Banff, AB, T1L 1J2
-                    </address>
-                    <span class="price text-success">
-                        350.00 / Night
-                    </span>
-                    <br />
-                    <a href="#" class="btn btn-primary">Book Now!</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card" style="width: 18rem;">
-                <img src="../img/sheraton-nfld.webp" class="card-img-top" alt="Sheraton Hotel">
-                <div class="card-body">
-                    <h5 class="card-title">Sheraton Hotel, St. John's</h5>
-                    <p class="card-text">
-                        Located in St. John's, Sheraton Hotel Newfoundland is in the city center. Marine Drive Provincial Park and Avalon Peninsula reflect the area's natural beauty and area attractions include Johnson Geo Centre and Mile One Centre.
-                    </p>
-                    <address>
-                        115 Cavendish Square, St. John's, NL, A1C 3K2
-                    </address>
-                    <span class="price text-success">
-                        $120.00 / Night
-                    </span>
-                    <br />
-                    <a href="#" class="btn btn-primary">Book Now!</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card" style="width: 18rem;">
-                <img src="../img/Marriot-Vanc.webp" class="card-img-top" alt="Marriot Hotel">
-                <div class="card-body">
-                    <h5 class="card-title">JW Marriott Parq, Vancouver</h5>
-                    <p class="card-text">
-                        JW Marriott Parq Vancouver is located in Downtown Vancouver, and is in the entertainment district and on the waterfront.
-                        Local attractions include BC Place Stadium, Rogers Arena, Canada Place and Stanley Park.
-                    </p>
-                    <address>
-                        39 Smithe Street, Vancouver, BC, V6B 0R3
-                    </address>
-                    <span class="price text-success">
-                        $300.00 / Night
-                    </span>
-                    <br />
-                    <a href="#" class="btn btn-primary">Book Now!</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card" style="width: 18rem;">
-                <img src="../img/Dunes.webp" class="card-img-top" alt="Dokota Dunes Resort">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        Dakota Dunes Resort, Whitecap
-                    </h5>
-                    <p class="card-text">
-                        Dakota Dunes Resort is located in Whitecap. Dakota Dunes Casino and Golf Course and Midtown Plaza are two other places to visit that come recommended. Take an opportunity to explore the area for outdoor excitement like horse riding.
-                    </p>
-                    <address>
-                        Dakota Dunes Way, Whitecap, SK, S0K 1K0
-                    </address>
-                    <span class="price text-success">
-                        $140.00 / Night
-                    </span>
-                    <br />
-                    <a href="#" class="btn btn-primary">Book Now!</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card" style="width: 18rem;">
-                <img src="../img/Holtman.webp" class="card-img-top" alt="The Holtman Hotel">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        The Holman Grand Hotel, Charlottetown
-                    </h5>
-                    <p class="card-text">
-                        Located near a boardwalk/promenade, The Holman Grand Hotel is in Queens Square neighborhood and is connected to a shopping center. Confederation Centre of the Arts and The Mack are local cultural highlights located nearby.
-                    </p>
-                    <address>
-                        123 Grafton St, Charlottetown, PE, C1A 1K9
-                    </address>
-                    <span class="price text-success">
-                        $160.00 / Night
-                    </span>
-                    <br />
-                    <a href="#" class="btn btn-primary">Book Now!</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card" style="width: 18rem;">
-                <img src="../img/Hampton-NB.webp" class="card-img-top" alt="Chateau Fredericton">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        Chateau Fredericton by Wyndham, Fredericton
-                    </h5>
-                    <p class="card-text">
-                        Located in Fredericton, Chateau Fredericton by Wyndham is in an area with good shopping. Science East and The Playhouse Fredericton are cultural highlight located nearby. Also included is an indoor waterpark for family fun.
-                    </p>
-                    <address>
-                        470 Bishop Drive, Fredericton, NB, E3C 2M6
-                    </address>
-                    <span class="price text-success">
-                        $110.00 / Night
-                    </span>
-                    <br />
-                    <a href="#" class="btn btn-primary">Book Now!</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card" style="width: 18rem;">
-                <img src="../img/Fork.webp" class="card-img-top" alt="Inn At The Forks">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        Inn At The Forks, Winnipeg
-                    </h5>
-                    <p class="card-text">
-                        Inn At The Forks is located in Downtown Winnipeg, near the local train station for easy commuting. Some local attractions nearby include Forks Market, RBC Convention Centre, and the Canadian Centre.
-                    </p>
-                    <address>
-                        75 Forks Market Rd, Winnipeg, MB, R3C0A2
-                    </address>
-                    <span class="price text-success">
-                        $150.00 / Night
-                    </span>
-                    <br />
-                    <a href="#" class="btn btn-primary">Book Now!</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card" style="width: 18rem;">
-                <img src="../img/Raven.webp" class="card-img-top" alt="Raven Inn">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        Raven Inn, Whitehorse
-                    </h5>
-                    <p class="card-text">
-                        Raven Inn Whitehorse is located in Whitehorse. The area's natural beauty can be seen at Yukon Wildlife Preserve and Shipyards Park, while MacBride Museum of Yukon History and Old Log Church are some nearby cultural highlights.
-                    </p>
-                    <address>
-                        Box 31291 150 Keish Street, Whitehorse, YT, Y1A 5P7
-                    </address>
-                    <span class="price text-success">
-                        $200.00 / Night
-                    </span>
-                    <br />
-                    <a href="#" class="btn btn-primary">Book Now!</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card" style="width: 18rem;">
-                <img src="../img/Explorer.webp" class="card-img-top" alt="The Explorer Hotel">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        The Explorer Hotel, Yellowknife
-                    </h5>
-                    <p class="card-text">
-                        The Explorer Hotel Yellowknife is located in Yellowknife. Highlights of the region's cultural life include the Prince of Wales Northern Heritage Centre and the Northern Arts and Cultural Centre. Frame Lake Trail and Cameron River Falls Trail offer opportunities for outdoor recreation.
-                    </p>
-                    <address>
-                        4825 49 Avenue, Yellowknife, NT, X1A2R3
-                    </address>
-                    <span class="price text-success">
-                        $250.00 / Night
-                    </span>
-                    <br />
-                    <a href="#" class="btn btn-primary">Book Now!</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card" style="width: 23rem;">
-                <img src="../img/Frobisher.webp" class="card-img-top" alt="Frobisher Inn">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        Frobisher Inn, Iqaluit
-                    </h5>
-                    <p class="card-text">
-                        Frobisher Inn is located in Iqaluit. The Legislative Assembly, Waterfront, and Unikkaarvik Visitor Centre are a few of the local attractions. Take some time to explore the area's activities, such as sledding, snowshoeing, and snowmobiling.
-                    </p>
-                    <address>
-                        Astro Hill Complex, PO Box 4209, Iqaluit, NU, X0A0H0
-                    </address>
-                    <span class="price text-success">
-                        $330.00 / Night
-                    </span>
-                    <br />
-                    <a href="#" class="btn btn-primary">Book Now!</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card" style="width: 23rem;">
-                <img src="../img/Fairmont-OT.webp" class="card-img-top" alt="Fairmont Chateau Laurier">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        Fairmont Chateau Laurier Gold Experience, Ottawa
-                    </h5>
-                    <p class="card-text">
-                        Fairmont Chateau Laurier Gold Experience is situated in the heart of Ottawa. The Peace Tower and the Royal Canadian Mint are notable local attractions. Gatineau Water Aerodrome and Ottawa River Parkway offer some of the area's activities. Additionally worthwhile visits include Elgin Street and the Capital Information Kiosk.
-                    </p>
-                    <address>
-                        1 Rideau St-Building A, Ottawa, ON, K1N8S7
-                    </address>
-                    <span class="price text-success">
-                        $380.00 / Night
-                    </span>
-                    <br />
-                    <a href="#" class="btn btn-primary">Book Now!</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card" style="width: 23rem;">
-                <img src="../img/Versante.webp" class="card-img-top" alt="Versante Hotel">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        Versante Hotel, Richmond
-                    </h5>
-                    <p class="card-text">
-                        The Versante Hotel is located in Richmond City Centre, with easy access to the airport and close to a metro station. If sightseeing is on the schedule, it's worth checking out Canada Place Cruise Ship Terminal and Vancouver Waterfront. Those who want to take in the natural beauty of the area can visit Stanley Park.
-                    </p>
-                    <address>
-                        8499 Bridgeport Rd, Richmond, BC, V6X 1R7
-                    </address>
-                    <span class="price text-success">
-                        $200.00 / Night
-                    </span>
-                    <br />
-                    <a href="#" class="btn btn-primary">Book Now!</a>
-                </div>
-            </div>
-        </div>
+        }
     </div>
-
 </div>

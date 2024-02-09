@@ -18,7 +18,8 @@ INSERT INTO Hotels (
     CancellationPolicy,
     CheckInTime,
     CheckOutTime,
-    Description
+    Description,
+    image
 ) VALUES (
     1, -- HotelId
     'The Ritz Carlton', -- HotelName
@@ -39,7 +40,9 @@ INSERT INTO Hotels (
     '24H Before', -- CancellationPolicy (nullable)
     '15:00', -- CheckInTime
     '11:00', -- CheckOutTime
-    "At The Ritz-Carlton, Toronto, you will discover what it means when a luxury hotel. Located near the CN Tower and Rogers Centre, The Ritz Carlton is Toronto's most luxurious stay." -- Description
+    "At The Ritz-Carlton, Toronto, you will discover what it means when a luxury hotel. Located near the CN Tower and Rogers Centre, The Ritz Carlton is Toronto's most luxurious stay.", -- Description
+    "../img/ritz.webp" -- Image Path
+    
 );
 
 INSERT INTO Hotels (
@@ -62,7 +65,8 @@ INSERT INTO Hotels (
     CancellationPolicy,
     CheckInTime,
     CheckOutTime,
-    Description
+    Description,
+    image
 ) VALUES (
 	2, -- HotelId
     'The Sutton Place', -- HotelName
@@ -83,11 +87,12 @@ INSERT INTO Hotels (
     '24H Before', -- CancellationPolicy (nullable)
     '15:00', -- CheckInTime
     '11:00', -- CheckOutTime
-    "At The Sutton Place Hotel located in Halifax, guests will have an exceptional stay. Located only a few minutes away from the Scotiabank Centre, Casino Nova Scotia and The Boardwalk." -- Description
+    "At The Sutton Place Hotel located in Halifax, guests will have an exceptional stay. Located only a few minutes away from the Scotiabank Centre, Casino Nova Scotia and The Boardwalk.", -- Description
+    "../img/sutton.webp" -- Image
 );
 
 INSERT INTO Hotels (
-    HotelId,
+	HotelId,
     HotelName,
     Address,
     City,
@@ -106,7 +111,8 @@ INSERT INTO Hotels (
     CancellationPolicy,
     CheckInTime,
     CheckOutTime,
-    Description
+    Description,
+    image
 ) VALUES (
 	3, -- HotelId
     'Le Mount Stephen', -- HotelName
@@ -127,11 +133,12 @@ INSERT INTO Hotels (
     '24H Before', -- CancellationPolicy (nullable)
     '15:00', -- CheckInTime
     '11:00', -- CheckOutTime
-    "Le Mount Stephen is located in Downtown Montreal. Guests are located close by to The Underground City, YUL Airport, Bell Centre and The Museum of Fine Arts." -- Description
+    "Le Mount Stephen is located in Downtown Montreal. Guests are located close by to The Underground City, YUL Airport, Bell Centre and The Museum of Fine Arts.", -- Description
+    "./img/Mount-Stephen.webp" -- Image
 );
 
 INSERT INTO Hotels (
-    HotelId,
+	HotelId,
     HotelName,
     Address,
     City,
@@ -150,7 +157,8 @@ INSERT INTO Hotels (
     CancellationPolicy,
     CheckInTime,
     CheckOutTime,
-    Description
+    Description,
+    image
 ) VALUES (
 	4, -- HotelId
     'Rimrock Resort Hotel', -- HotelName
@@ -171,11 +179,12 @@ INSERT INTO Hotels (
     '24H Before', -- CancellationPolicy (nullable)
     '15:00', -- CheckInTime
     '11:00', -- CheckOutTime
-    "Rimrock Resort Hotel Banff is located in Sulphur Mountain District, in the mountains and in a national park. Local activites include the Banff Upper Hot Springs, Banff Gondola and the Lake Louise Tourism Bureau." -- Description
+    "Rimrock Resort Hotel Banff is located in Sulphur Mountain District, in the mountains and in a national park. Local activites include the Banff Upper Hot Springs, Banff Gondola and the Lake Louise Tourism Bureau.", -- Description
+    "../img/rimrock.webp" -- Image
 );
 
 INSERT INTO Hotels (
-    HotelId,
+	HotelId,
     HotelName,
     Address,
     City,
@@ -194,7 +203,8 @@ INSERT INTO Hotels (
     CancellationPolicy,
     CheckInTime,
     CheckOutTime,
-    Description
+    Description,
+    image
 ) VALUES (
 	5, -- HotelId
     'Sheraton Hotel', -- HotelName
@@ -215,11 +225,12 @@ INSERT INTO Hotels (
     '24H Before', -- CancellationPolicy (nullable)
     '15:00', -- CheckInTime
     '11:00', -- CheckOutTime
-    "Located in St. John's, Sheraton Hotel Newfoundland is in the city center. Marine Drive Provincial Park and Avalon Peninsula reflect the area's natural beauty and area attractions include Johnson Geo Centre and Mile One Centre." -- Description
+    "Located in St. John's, Sheraton Hotel Newfoundland is in the city center. Marine Drive Provincial Park and Avalon Peninsula reflect the area's natural beauty and area attractions include Johnson Geo Centre and Mile One Centre.", -- Description
+    "./img/sheraton-nfld.webp" -- Image
 );
 
 INSERT INTO Hotels (
-    HotelId,
+     HotelId,
     HotelName,
     Address,
     City,
@@ -238,7 +249,8 @@ INSERT INTO Hotels (
     CancellationPolicy,
     CheckInTime,
     CheckOutTime,
-    Description
+    Description,
+    image
 ) VALUES (
 	6, -- HotelId
     'JW Marriott Parq', -- HotelName
@@ -259,11 +271,12 @@ INSERT INTO Hotels (
     '24H Before', -- CancellationPolicy (nullable)
     '15:00', -- CheckInTime
     '11:00', -- CheckOutTime
-    "JW Marriott Parq Vancouver is located in Downtown Vancouver, and is in the entertainment district and on the waterfront. Local attractions include BC Place Stadium, Rogers Arena, Canada Place and Stanley Park." -- Description
+    "JW Marriott Parq Vancouver is located in Downtown Vancouver, and is in the entertainment district and on the waterfront. Local attractions include BC Place Stadium, Rogers Arena, Canada Place and Stanley Park.", -- Description
+    "../img/Marriot-Vanc.webp" -- Image
 );
 
 INSERT INTO Hotels (
-    HotelId,
+     HotelId,
     HotelName,
     Address,
     City,
@@ -282,7 +295,8 @@ INSERT INTO Hotels (
     CancellationPolicy,
     CheckInTime,
     CheckOutTime,
-    Description
+    Description,
+    image
 ) VALUES (
 	7, -- HotelId
     'Dakota Dunes Resort', -- HotelName
@@ -303,11 +317,12 @@ INSERT INTO Hotels (
     '24H Before', -- CancellationPolicy (nullable)
     '15:00', -- CheckInTime
     '11:00', -- CheckOutTime
-    "Dakota Dunes Resort is located in Whitecap. Dakota Dunes Casino and Golf Course and Midtown Plaza are two other places to visit that come recommended. Take an opportunity to explore the area for outdoor excitement like horse riding." -- Description
+    "Dakota Dunes Resort is located in Whitecap. Dakota Dunes Casino and Golf Course and Midtown Plaza are two other places to visit that come recommended. Take an opportunity to explore the area for outdoor excitement like horse riding.", -- Description
+    "../img/Dunes.webp" -- Image
 );
 
 INSERT INTO Hotels (
-    HotelId,
+     HotelId,
     HotelName,
     Address,
     City,
@@ -326,7 +341,8 @@ INSERT INTO Hotels (
     CancellationPolicy,
     CheckInTime,
     CheckOutTime,
-    Description
+    Description,
+    image
 ) VALUES (
 	8, -- HotelId
     'The Holman Grand Hotel', -- HotelName
@@ -347,11 +363,12 @@ INSERT INTO Hotels (
     '24H Before', -- CancellationPolicy (nullable)
     '15:00', -- CheckInTime
     '11:00', -- CheckOutTime
-    "Located near a boardwalk/promenade, The Holman Grand Hotel is in Queens Square neighborhood and is connected to a shopping center. Confederation Centre of the Arts and The Mack are local cultural highlights located nearby." -- Description
+    "Located near a boardwalk/promenade, The Holman Grand Hotel is in Queens Square neighborhood and is connected to a shopping center. Confederation Centre of the Arts and The Mack are local cultural highlights located nearby.", -- Description
+    "../img/Holtman.webp" -- Image
 );
 
 INSERT INTO Hotels (
-    HotelId,
+     HotelId,
     HotelName,
     Address,
     City,
@@ -370,7 +387,8 @@ INSERT INTO Hotels (
     CancellationPolicy,
     CheckInTime,
     CheckOutTime,
-    Description
+    Description,
+    image
 ) VALUES (
 	9, -- HotelId
     'Chateau Fredericton by Wyndham', -- HotelName
@@ -391,11 +409,12 @@ INSERT INTO Hotels (
     '24H Before', -- CancellationPolicy (nullable)
     '15:00', -- CheckInTime
     '11:00', -- CheckOutTime
-    "Located in Fredericton, Chateau Fredericton by Wyndham is in an area with good shopping. Science East and The Playhouse Fredericton are cultural highlight located nearby. Also included is an indoor waterpark for family fun." -- Description
+    "Located in Fredericton, Chateau Fredericton by Wyndham is in an area with good shopping. Science East and The Playhouse Fredericton are cultural highlight located nearby. Also included is an indoor waterpark for family fun.", -- Description
+    "../img/Hampton-NB.webp" -- Image
 );
 
 INSERT INTO Hotels (
-    HotelId,
+     HotelId,
     HotelName,
     Address,
     City,
@@ -414,7 +433,8 @@ INSERT INTO Hotels (
     CancellationPolicy,
     CheckInTime,
     CheckOutTime,
-    Description
+    Description,
+    image
 ) VALUES (
 	10, -- HotelId
     'Inn At The Forks', -- HotelName
@@ -435,11 +455,12 @@ INSERT INTO Hotels (
     '24H Before', -- CancellationPolicy (nullable)
     '15:00', -- CheckInTime
     '11:00', -- CheckOutTime
-    "Inn At The Forks is located in Downtown Winnipeg, near the local train station for easy commuting. Some local attractions nearby include Forks Market, RBC Convention Centre, and the Canadian Centre." -- Description
+    "Inn At The Forks is located in Downtown Winnipeg, near the local train station for easy commuting. Some local attractions nearby include Forks Market, RBC Convention Centre, and the Canadian Centre.", -- Description
+    "../img/Fork.webp" -- Image
 );
 
 INSERT INTO Hotels (
-    HotelId,
+     HotelId,
     HotelName,
     Address,
     City,
@@ -458,7 +479,8 @@ INSERT INTO Hotels (
     CancellationPolicy,
     CheckInTime,
     CheckOutTime,
-    Description
+    Description,
+    image
 ) VALUES (
 	11, -- HotelId
     'Raven Inn', -- HotelName
@@ -479,7 +501,8 @@ INSERT INTO Hotels (
     '24H Before', -- CancellationPolicy (nullable)
     '15:00', -- CheckInTime
     '11:00', -- CheckOutTime
-    "Raven Inn Whitehorse is located in Whitehorse. The area's natural beauty can be seen at Yukon Wildlife Preserve and Shipyards Park, while MacBride Museum of Yukon History and Old Log Church are some nearby cultural highlights." -- Description
+    "Raven Inn Whitehorse is located in Whitehorse. The area's natural beauty can be seen at Yukon Wildlife Preserve and Shipyards Park, while MacBride Museum of Yukon History and Old Log Church are some nearby cultural highlights.", -- Description
+    "../img/Raven.webp" -- Image
 );
 
 INSERT INTO Hotels (
@@ -502,7 +525,8 @@ INSERT INTO Hotels (
     CancellationPolicy,
     CheckInTime,
     CheckOutTime,
-    Description
+    Description,
+    image
 ) VALUES (
 	12, -- HotelId
     'The Explorer Hotel', -- HotelName
@@ -523,11 +547,12 @@ INSERT INTO Hotels (
     '24H Before', -- CancellationPolicy (nullable)
     '15:00', -- CheckInTime
     '11:00', -- CheckOutTime
-    "The Explorer Hotel Yellowknife is located in Yellowknife. Highlights of the region's cultural life include the Prince of Wales Northern Heritage Centre and the Northern Arts and Cultural Centre. Frame Lake Trail and Cameron River Falls Trail offer opportunities for outdoor recreation." -- Description
+    "The Explorer Hotel Yellowknife is located in Yellowknife. Highlights of the region's cultural life include the Prince of Wales Northern Heritage Centre and the Northern Arts and Cultural Centre. Frame Lake Trail and Cameron River Falls Trail offer opportunities for outdoor recreation.", -- Description
+    "../img/Explorer.webp" -- Image
 );
 
 INSERT INTO Hotels (
-    HotelId,
+     HotelId,
     HotelName,
     Address,
     City,
@@ -546,7 +571,8 @@ INSERT INTO Hotels (
     CancellationPolicy,
     CheckInTime,
     CheckOutTime,
-    Description
+    Description,
+    image
 ) VALUES (
 	13, -- HotelId
     'Frobisher Inn', -- HotelName
@@ -567,7 +593,8 @@ INSERT INTO Hotels (
     '24H Before', -- CancellationPolicy (nullable)
     '15:00', -- CheckInTime
     '11:00', -- CheckOutTime
-    "Frobisher Inn is located in Iqaluit. The Legislative Assembly, Waterfront, and Unikkaarvik Visitor Centre are a few of the local attractions. Take some time to explore the area's activities, such as sledding, snowshoeing, and snowmobiling." -- Description
+    "Frobisher Inn is located in Iqaluit. The Legislative Assembly, Waterfront, and Unikkaarvik Visitor Centre are a few of the local attractions. Take some time to explore the area's activities, such as sledding, snowshoeing, and snowmobiling.", -- Description
+    "../img/Frobisher.webp" -- Image
 );
 
 INSERT INTO Hotels (
@@ -590,7 +617,8 @@ INSERT INTO Hotels (
     CancellationPolicy,
     CheckInTime,
     CheckOutTime,
-    Description
+    Description,
+    image
 ) VALUES (
 	14, -- HotelId
     'Fairmont Chateau Laurier Gold Experience', -- HotelName
@@ -611,7 +639,8 @@ INSERT INTO Hotels (
     '24H Before', -- CancellationPolicy (nullable)
     '15:00', -- CheckInTime
     '11:00', -- CheckOutTime
-    "Fairmont Chateau Laurier Gold Experience is situated in the heart of Ottawa. The Peace Tower and the Royal Canadian Mint are notable local attractions. Gatineau Water Aerodrome and Ottawa River Parkway offer some of the area's activities. Additionally worthwhile visits include Elgin Street and the Capital Information Kiosk." -- Description
+    "Fairmont Chateau Laurier Gold Experience is situated in the heart of Ottawa. The Peace Tower and the Royal Canadian Mint are notable local attractions. Gatineau Water Aerodrome and Ottawa River Parkway offer some of the area's activities. Additionally worthwhile visits include Elgin Street and the Capital Information Kiosk.", -- Description
+    "../img/Fairmont-OT.webp" -- Image
 );
 
 INSERT INTO Hotels (
@@ -634,7 +663,8 @@ INSERT INTO Hotels (
     CancellationPolicy,
     CheckInTime,
     CheckOutTime,
-    Description
+    Description,
+    image
 ) VALUES (
 	15, -- HotelId
     'Versante Hotel', -- HotelName
@@ -655,7 +685,6 @@ INSERT INTO Hotels (
     '24H Before', -- CancellationPolicy (nullable)
     '15:00', -- CheckInTime
     '11:00', -- CheckOutTime
-    "he Versante Hotel is located in Richmond City Centre, with easy access to the airport and close to a metro station. If sightseeing is on the schedule, it's worth checking out Canada Place Cruise Ship Terminal and Vancouver Waterfront. Those who want to take in the natural beauty of the area can visit Stanley Park." -- Description
+    "The Versante Hotel is located in Richmond City Centre, with easy access to the airport and close to a metro station. If sightseeing is on the schedule, it's worth checking out Canada Place Cruise Ship Terminal and Vancouver Waterfront. Those who want to take in the natural beauty of the area can visit Stanley Park.", -- Description
+    "../img/Versante.webp" -- Image
 );
-
-

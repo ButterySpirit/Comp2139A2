@@ -64,6 +64,9 @@ namespace Assign1.Models
 
         [Required]
         public string CheckOutTime { get; set; }
+
+        [Required]
+        public string image { get; set; }
     }
 
 }

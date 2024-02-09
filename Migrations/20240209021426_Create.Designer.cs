@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Assign1.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240207174750_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20240209021426_Create")]
+    partial class Create
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -171,6 +171,10 @@ namespace Assign1.Migrations
                         .HasColumnType("longtext");
 
                     b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("image")
                         .IsRequired()
                         .HasColumnType("longtext");
 
