@@ -15,6 +15,7 @@
     <None Remove="Views\Rental\" />
     <None Remove="Views\Booking\" />
     <None Remove="Views\User\" />
+    <None Remove="SQL-Scripts\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
@@ -23,6 +24,7 @@
     <Folder Include="Views\Rental\" />
     <Folder Include="Views\Booking\" />
     <Folder Include="Views\User\" />
+    <Folder Include="SQL-Scripts\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.2" />
