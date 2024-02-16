@@ -29,7 +29,7 @@
                             $@hotel.CostPerNight / Night
                         </span>
                         <br />
-                        <a href="#" class="btn btn-primary">Book Now!</a>
+                        <a asp-controller="Booking" asp-action="Create" asp-route-id="@hotel.HotelId" asp-route-costPerNight="@hotel.CostPerNight" class="btn btn-primary">Book Now!</a>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,67 @@
+﻿@model Assign1.Models.Booking
+
+@{
+    ViewData["Title"] = "Create Booking";
+    // Attempt to cast ViewBag.CostPerNight to decimal? for null-check and safe usage
+    decimal? costPerNight = ViewBag.CostPerNight as decimal?;
+    int numberOfNights = 1;
+    decimal totalCost = costPerNight.HasValue ? costPerNight.Value * numberOfNights : 0m;
+}
+
+<h2 class="display-2 text-center">Create Booking</h2>
+
+<form asp-action="Create" class="border border-2 rounded rounded-2 p-4 m-2">
+    <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+    <div class="form-group mb-3">
+        <label class="form-label">Cost Per Night:</label>
+        <p class="form-control-static text-success">@((costPerNight.HasValue) ? $"${costPerNight.Value}" : "N/A")</p>
+    </div>
+
+    <div class="form-group mb-3">
+        <label for="numberOfNights" class="form-label">Number of Nights:</label>
+        <input type="number" id="numberOfNights" name="numberOfNights" value="@numberOfNights" class="form-control" />
+    </div>
+
+    <div class="form-group mb-3">
+        <label for="totalCost" class="form-label">Total Cost:</label>
+        <input asp-for="TotalCost" id="totalCost" class="form-control text-success" value="@totalCost" readonly />
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="BookingDate" class="form-label">Booking Date:</label>
+        <input asp-for="BookingDate" type="date" class="form-control" />
+        <span asp-validation-for="BookingDate" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="PaymentStatus" class="form-label">Payment Status:</label>
+        <select asp-for="PaymentStatus" class="form-select">
+            <option value="Pending">Pending</option>
+            <option value="Confirmed">Confirmed</option>
+            <option value="Cancelled">Cancelled</option>
+        </select>
+        <span asp-validation-for="PaymentStatus" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3 d-flex justify-content-between">
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a asp-controller="Hotel" asp-action="Index" class="btn btn-secondary">Back to Hotels</a>
+    </div>
+</form>
+
+
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function() {
+        var costPerNight = @costPerNight;
+
+        var numberOfNightsField = document.getElementById("numberOfNights");
+        var totalCostField = document.getElementById("totalCost");
+
+        numberOfNightsField.addEventListener("input", function() {
+            var numberOfNights = this.value;
+            var totalCost = numberOfNights * costPerNight;
+            totalCostField.value = totalCost.toFixed(2);
+        });
+    });
+</script>
