@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Assign1.Data;
+using Assign1.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -33,6 +34,25 @@ namespace Assign1.Controllers
             }
             return View(flight);
         }
+
+        public IActionResult Search(string departure, string destination)
+        {
+            var flightQuery = _context.Flights.AsQueryable();
+
+            if (!String.IsNullOrEmpty(departure))
+            {
+                flightQuery = flightQuery.Where(f => f.DeparturePort == departure);
+            }
+
+            if (!String.IsNullOrEmpty(destination))
+            {
+                flightQuery = flightQuery.Where(f => f.ArrivalPort == destination);
+            }
+
+            var flights = flightQuery.ToList();
+            return View("Index", flights);
+        }
+
     }
 }
 

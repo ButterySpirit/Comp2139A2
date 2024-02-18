@@ -1,4 +1,5 @@
-﻿using Assign1.Data;
+﻿using System.Linq;
+using Assign1.Data;
 using Assign1.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -27,5 +28,32 @@ public class HotelController : Controller
         }
         return View(hotel);
     }
+
+    public IActionResult Search(string destination, DateTime? checkIn, DateTime? checkOut)
+    {
+        var hotelQuery = _context.Hotels.AsQueryable();
+
+        if (!String.IsNullOrEmpty(destination))
+        {
+            hotelQuery = hotelQuery.Where(h => h.State.Contains(destination));
+        }
+
+        if (checkIn.HasValue)
+        {
+            hotelQuery = hotelQuery.Where(h => h.StartDate <= checkIn.Value);
+        }
+
+        if (checkOut.HasValue)
+        {
+            hotelQuery = hotelQuery.Where(h => h.EndDate >= checkOut.Value);
+        }
+
+        var hotels = hotelQuery.ToList();
+        ViewData["SearchPerformed"] = !String.IsNullOrEmpty(destination) || checkIn.HasValue || checkOut.HasValue;
+        ViewData["SearchString"] = destination;
+
+        return View("Index", hotels);
+    }
+
 }
 

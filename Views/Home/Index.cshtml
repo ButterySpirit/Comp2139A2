@@ -9,11 +9,78 @@
         <img class="img-fluid home-img mb-4" src="../Logo.jpg" alt="JourneyNest Logo" />
     </div>
 
-    <form asp-controller="Search" asp-action="Index" method="get" class="search-form border border-2 p-3 rounded-2 home-search m-auto">
-        <input type="text" name="destination" placeholder="Where are you going?" class="m-1">
+    <h5 class="display-3 text-center">Hotel & Rental Search</h5>
+    <form asp-controller="Search" asp-action="GeneralSearch" method="get" class="search-form border border-2 p-3 rounded-2 home-search m-auto">
+
+        <select name="destination" class="m-1">
+            <option>Alberta</option>
+            <option>British Columbia</option>
+            <option>Manitoba</option>
+            <option>New Brunswick</option>
+            <option>Newfoundland</option>
+            <option>Nova Scotia</option>
+            <option>Ontario</option>
+            <option>Prince Edward Island</option>
+            <option>Quebec</option>
+            <option>Saskatchewan</option>
+            <option>Northwest Territories</option>
+            <option>Nunavut</option>
+            <option>Yukon</option>
+        </select>
+
+        <select name="tripType" class="m-1">
+            <option>Hotels</option>
+            <option>Rentals</option>
+        </select>
+
         <input type="date" name="checkIn" class="m-1">
         <input type="date" name="checkOut" class="m-1">
-        <button type="submit" class="btn btn-primary m-1">Search</button>
+        <button type="submit" class="btn btn-success m-1">Search</button>
+    </form>
+
+    <h5 class="display-4 text-center">Flight Search</h5>
+    <form asp-controller="Flight" asp-action="Search" method="get" class="search-form border border-2 p-3 rounded-2 home-search m-auto">
+
+        <label class="form-label">Departure</label>
+        <select name="departure" class="m-1">
+            <option>YYC</option>
+            <option>YVR</option>
+            <option>YWG</option>
+            <option>YQM</option>
+            <option>YYT</option>
+            <option>YHZ</option>
+            <option>YYZ</option>
+            <option>YYG</option>
+            <option>YUL</option>
+            <option>YXE</option>
+            <option>YZF</option>
+            <option>YFB</option>
+            <option>YXY</option>
+        </select>
+
+        <label class="form-label">Destination</label>
+        <select name="destination" class="m-1">
+            <option>YYC</option>
+            <option>YVR</option>
+            <option>YWG</option>
+            <option>YQM</option>
+            <option>YYT</option>
+            <option>YHZ</option>
+            <option>YYZ</option>
+            <option>YYG</option>
+            <option>YUL</option>
+            <option>YXE</option>
+            <option>YZF</option>
+            <option>YFB</option>
+            <option>YXY</option>
+        </select>
+
+        <label class="form-label">Start Date</label>
+        <input type="date" name="startDate" class="m-1">
+
+        <label class="form-label">End Date</label>
+        <input type="date" name="endDate" class="m-1">
+        <button type="submit" class="btn btn-success m-1">Search</button>
     </form>
 
 
