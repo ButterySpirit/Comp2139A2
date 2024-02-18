@@ -16,7 +16,7 @@ namespace Assign1.Controllers
             _context = context;
         }
 
-        // GET: Booking/Create
+        // GET: Booking/Create (Hotel)
         public IActionResult Create(int? hotelId, decimal? costPerNight)
         {
             if (hotelId.HasValue)
@@ -32,7 +32,7 @@ namespace Assign1.Controllers
         }
 
 
-        // POST: Booking/Create
+        // POST: Booking/Create (Hotel)
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("UserId,TotalCost,BookingDate,PaymentStatus")] Booking booking)
@@ -46,8 +46,54 @@ namespace Assign1.Controllers
             return View(booking);
         }
 
-        // GET: Booking/Confirmation/{id}
+        // GET: Booking/Confirmation/{id} (Hotel)
         public async Task<IActionResult> Confirmation(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var booking = await _context.Bookings.FirstOrDefaultAsync(m => m.BookingId == id);
+            if (booking == null)
+            {
+                return NotFound();
+            }
+
+            return View(booking);
+        }
+
+
+        /*          Booking For Flights             */
+        // GET: Booking/Create (Flight)
+        public IActionResult CreateFlight(int flightId, int ticketCost, string status)
+        {
+
+            ViewBag.FlightId = flightId;
+            ViewBag.TicketCost = ticketCost;
+            ViewBag.Status = status;
+
+            return View();
+        }
+
+
+
+        // POST: Booking/Create (Flight)
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateFlight([Bind("UserId,TotalCost,BookingDate,PaymentStatus")] Booking booking)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(booking);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(ConfirmFlight), new { id = booking.BookingId });
+            }
+            return View(booking);
+        }
+
+        // GET: Booking/Confirmation/{id} (Flight)
+        public async Task<IActionResult> ConfirmFlight(int? id)
         {
             if (id == null)
             {

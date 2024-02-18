@@ -1,7 +1,44 @@
-﻿@{
+﻿@model List<Flight>
+
+@{
     ViewData["Title"] = "Flights";
 }
 
 <div class="text-center">
     <h1 class="display-4">Flights</h1>
+</div>
+
+<div class="container p-2 m-2">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Flight #</th>
+                <th scope="col">Departure</th>
+                <th scope="col">Arrival</th>
+                <th scope="col">Airline</th>
+                <th scope="col">Seats</th>
+                <th scope="col">Status</th>
+                <th scope="col">Ticket Price</th>
+                <th scope="col">Book Now!</th>
+            </tr>
+        </thead>
+        @foreach (var flight in Model)
+        {
+            <tbody>
+                <tr>
+                    <th scope="row">@flight.FlightId</th>
+                    <td>@flight.DeparturePort</td>
+                    <td>@flight.ArrivalPort</td>
+                    <td>@flight.AirlineName</td>
+                    <td>@flight.AvailSeats</td>
+                    <td>@flight.Status</td>
+                    <td class="text-success">$@flight.TicketCost CAD</td>
+                    <td>
+                        <a asp-controller="Booking" asp-action="CreateFlight" asp-route-id="@flight.FlightId" asp-route-ticketCost="@flight.TicketCost" asp-route-status="@flight.Status" class="btn btn-primary">Book Now!</a>
+                    </td>
+
+                </tr>
+            </tbody>
+        }
+    </table>
 </div>
