@@ -9,16 +9,11 @@ namespace Assign1.Controllers
     public class SearchController : Controller
     {
         // GET: /<controller>/
-        public IActionResult GeneralSearch(string destination, string tripType, DateTime? checkIn, DateTime? checkOut)
+        public IActionResult HotelSearch(string destination, int rating, DateTime? checkIn, DateTime? checkOut)
         {
-            if (tripType == "Hotels")
+            if (!String.IsNullOrEmpty(destination))
             {
-                return RedirectToAction("Search", "Hotel", new { destination });
-            }
-
-            if (tripType == "Rentals")
-            {
-
+                return RedirectToAction("Search", "Hotel", new { destination, rating, checkIn, checkOut });
             }
 
             return NotFound();

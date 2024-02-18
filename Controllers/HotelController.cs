@@ -29,13 +29,18 @@ public class HotelController : Controller
         return View(hotel);
     }
 
-    public IActionResult Search(string destination, DateTime? checkIn, DateTime? checkOut)
+    public IActionResult Search(string destination, int rating, DateTime? checkIn, DateTime? checkOut)
     {
         var hotelQuery = _context.Hotels.AsQueryable();
 
         if (!String.IsNullOrEmpty(destination))
         {
             hotelQuery = hotelQuery.Where(h => h.State.Contains(destination));
+        }
+
+        if (rating > 0)
+        {
+            hotelQuery = hotelQuery.Where(h => h.StarRating >= rating);
         }
 
         if (checkIn.HasValue)
