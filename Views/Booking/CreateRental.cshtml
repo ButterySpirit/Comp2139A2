@@ -1,0 +1,85 @@
+﻿@model Assign1.Models.Booking
+
+@{
+    ViewData["Title"] = "Create Rental Booking";
+    int rentalCost = ViewBag.RentalCost;
+    string status = ViewBag.Status;
+    int numberOfDays = 1;
+    int totalCost = rentalCost * numberOfDays;
+}
+
+<h2 class="display-2 text-center">Create Rental Booking</h2>
+
+@if (status == "Rented")
+{
+    <div class="alert alert-warning text-center" role="alert">
+        <strong>Sorry, this vehicle has been @status.</strong>
+    </div>
+
+    <a asp-controller="Rental" asp-action="Index" class="btn btn-secondary">Back to Rentals</a>
+}
+else if (status == "Maintenance")
+{
+    <div class="alert alert-warning text-center" role="alert">
+        <strong>Sorry, this vehicle is under @status.</strong>
+    </div>
+
+    <a asp-controller="Rental" asp-action="Index" class="btn btn-secondary">Back to Rentals</a>
+}
+else
+{
+    <form asp-action="Create" class="border border-2 rounded rounded-2 p-4 m-2">
+        <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+        <div class="form-group mb-3">
+            <label class="form-label">Rental Cost:</label>
+            <p class="form-control-static text-success">$@rentalCost CAD</p>
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="numberOfDays" class="form-label">Number of Days:</label>
+            <input type="number" id="numberOfDays" name="numberOfDays" value="@numberOfDays" class="form-control" />
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="totalCost" class="form-label">Total Cost:</label>
+            <input asp-for="TotalCost" id="totalCost" class="form-control text-success" value="@totalCost" readonly />
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="BookingDate" class="form-label">Booking Date:</label>
+            <input asp-for="BookingDate" type="date" class="form-control" />
+            <span asp-validation-for="BookingDate" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="PaymentStatus" class="form-label">Payment Status:</label>
+            <select asp-for="PaymentStatus" class="form-select">
+                <option value="Pending">Pending</option>
+                <option value="Confirmed">Confirmed</option>
+                <option value="Cancelled">Cancelled</option>
+            </select>
+            <span asp-validation-for="PaymentStatus" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-3 d-flex justify-content-between">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <a asp-controller="Rental" asp-action="Index" class="btn btn-secondary">Back to Rentals</a>
+        </div>
+    </form>
+}
+
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function() {
+        var costPerDay = @rentalCost;
+
+        var numberOfDaysField = document.getElementById("numberOfDays");
+        var totalCostField = document.getElementById("totalCost");
+
+        numberOfDaysField.addEventListener("input", function () {
+            var numberOfDays = this.value;
+            var totalCost = numberOfDays * costPerDay;
+            totalCostField.value = totalCost.toFixed(2);
+        });
+    });
+</script>

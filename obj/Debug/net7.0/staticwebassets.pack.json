@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets/Assign1.bundle.scp.css"
     },
     {
+      "Id": "/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/wwwroot/.DS_Store",
+      "PackagePath": "staticwebassets/.DS_Store"
+    },
+    {
       "Id": "/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/wwwroot/Logo.jpg",
       "PackagePath": "staticwebassets/Logo.jpg"
     },
@@ -29,6 +33,10 @@
       "PackagePath": "staticwebassets/img/Fairmont-OT.webp"
     },
     {
+      "Id": "/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/wwwroot/img/FordFusion.webp",
+      "PackagePath": "staticwebassets/img/FordFusion.webp"
+    },
+    {
       "Id": "/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/wwwroot/img/Fork.webp",
       "PackagePath": "staticwebassets/img/Fork.webp"
     },
@@ -49,6 +57,14 @@
       "PackagePath": "staticwebassets/img/Holtman.webp"
     },
     {
+      "Id": "/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/wwwroot/img/HondaCivic.webp",
+      "PackagePath": "staticwebassets/img/HondaCivic.webp"
+    },
+    {
+      "Id": "/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/wwwroot/img/HyundaiElantra.webp",
+      "PackagePath": "staticwebassets/img/HyundaiElantra.webp"
+    },
+    {
       "Id": "/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/wwwroot/img/Marriot-Vanc.webp",
       "PackagePath": "staticwebassets/img/Marriot-Vanc.webp"
     },
@@ -59,6 +75,10 @@
     {
       "Id": "/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/wwwroot/img/Raven.webp",
       "PackagePath": "staticwebassets/img/Raven.webp"
+    },
+    {
+      "Id": "/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/wwwroot/img/ToyotaCorolla.webp",
+      "PackagePath": "staticwebassets/img/ToyotaCorolla.webp"
     },
     {
       "Id": "/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/wwwroot/img/Versante.webp",

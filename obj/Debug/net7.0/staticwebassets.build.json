@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "e0r2bavWVD4vrTs9u9Gl1uvYdoV4bJiGOYr6bVT3oY0=",
+  "Hash": "lsA6mtU/lem6OSuKwFiPtjy88P4PWEyFuL2/fC6WVt4=",
   "Source": "Assign1",
   "BasePath": "_content/Assign1",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/obj/Debug/net7.0/scopedcss/projectbundle/Assign1.bundle.scp.css"
+    },
+    {
+      "Identity": "/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/wwwroot/.DS_Store",
+      "SourceId": "Assign1",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/wwwroot/",
+      "BasePath": "_content/Assign1",
+      "RelativePath": ".DS_Store",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/.DS_Store"
     },
     {
       "Identity": "/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/wwwroot/css/site.css",
@@ -136,6 +153,23 @@
       "OriginalItemSpec": "wwwroot/img/Fairmont-OT.webp"
     },
     {
+      "Identity": "/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/wwwroot/img/FordFusion.webp",
+      "SourceId": "Assign1",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/wwwroot/",
+      "BasePath": "_content/Assign1",
+      "RelativePath": "img/FordFusion.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/img/FordFusion.webp"
+    },
+    {
       "Identity": "/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/wwwroot/img/Fork.webp",
       "SourceId": "Assign1",
       "SourceType": "Discovered",
@@ -219,6 +253,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/img/Holtman.webp"
+    },
+    {
+      "Identity": "/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/wwwroot/img/HondaCivic.webp",
+      "SourceId": "Assign1",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/wwwroot/",
+      "BasePath": "_content/Assign1",
+      "RelativePath": "img/HondaCivic.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/img/HondaCivic.webp"
+    },
+    {
+      "Identity": "/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/wwwroot/img/HyundaiElantra.webp",
+      "SourceId": "Assign1",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/wwwroot/",
+      "BasePath": "_content/Assign1",
+      "RelativePath": "img/HyundaiElantra.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/img/HyundaiElantra.webp"
     },
     {
       "Identity": "/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/wwwroot/img/Marriot-Vanc.webp",
@@ -338,6 +406,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/img/sutton.webp"
+    },
+    {
+      "Identity": "/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/wwwroot/img/ToyotaCorolla.webp",
+      "SourceId": "Assign1",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/wwwroot/",
+      "BasePath": "_content/Assign1",
+      "RelativePath": "img/ToyotaCorolla.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/img/ToyotaCorolla.webp"
     },
     {
       "Identity": "/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/wwwroot/img/Versante.webp",

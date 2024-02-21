@@ -77,7 +77,6 @@ namespace Assign1.Controllers
         }
 
 
-
         // POST: Booking/Create (Flight)
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -108,5 +107,31 @@ namespace Assign1.Controllers
 
             return View(booking);
         }
+
+        //GET: Create Booking (Rental)
+        public IActionResult CreateRental(int rentalId, int rentalCost, string status)
+        {
+            ViewBag.RentalId = rentalId;
+            ViewBag.RentalCost = rentalCost;
+            ViewBag.Status = status;
+
+            return View();
+        }
+
+        //POST: Create Booking (Rental)
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateRental([Bind("UserId,TotalCost,BookingDate,PaymentStatus")] Booking booking)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(booking);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(ConfirmFlight), new { id = booking.BookingId });
+            }
+            return View(booking);
+        }
+
+
     }
 }
