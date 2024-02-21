@@ -33,7 +33,7 @@ namespace Assign1.Controllers
 
             if (!String.IsNullOrEmpty(vehicleName))
             {
-                rentalQuery = rentalQuery.Where(r => r.VehicleName == vehicleName);
+                rentalQuery = rentalQuery.Where(r => r.VehicleName.ToLower().Contains(vehicleName.ToLower()));
             }
 
             if (!String.IsNullOrEmpty(vehicleType))
