@@ -113,3 +113,60 @@
         </form>
     </div>
 </div>
+<div class="row">
+    <div class="col">
+        <h5 class="display-3 text-center">Rental Search</h5>
+        <form asp-controller="Rental" asp-action="Search" method="get" class="search-form p-3 home-search m-auto  border border-2 rounded-2">
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                    <label for="vehicleName" class="col-form-label">Vehicle Name</label>
+                </div>
+                <div class="col-md-3">
+                    <input type="text" name="vehicleName" class="form-control" placeholder="">
+                </div>
+
+                <div class="col-auto">
+                    <label for="vehicleType" class="col-form-label">Vehicle Type</label>
+                </div>
+                <div class="col-sm">
+                    <select id="vehicleType" name="vehicleType" class="form-select">
+                        <option>SUV</option>
+                        <option>Sedan</option>
+                        <option>Coupe</option>
+                        <option>Hatchback</option>
+                        <option>Convertible</option>
+                    </select>
+                </div>
+
+                <div class="col-auto">
+                    <label for="state" class="col-form-label">Province</label>
+                </div>
+                <div class="col-md-4">
+                    <select name="state" class="form-select">
+                        <option value="">Province</option>
+                        <option>Alberta</option>
+                        <option>British Columbia</option>
+                        <option>Manitoba</option>
+                        <option>New Brunswick</option>
+                        <option>Newfoundland</option>
+                        <option>Nova Scotia</option>
+                        <option>Ontario</option>
+                        <option>Prince Edward Island</option>
+                        <option>Quebec</option>
+                        <option>Saskatchewan</option>
+                        <option>Northwest Territories</option>
+                        <option>Nunavut</option>
+                        <option>Yukon</option>
+                    </select>
+                </div>
+
+                <div class="row">
+                    <div class="col text-center">
+                        <button type="submit" class="btn btn-success mt-3">Search</button>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>

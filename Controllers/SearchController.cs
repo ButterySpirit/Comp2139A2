@@ -29,8 +29,14 @@ namespace Assign1.Controllers
             return NotFound();
         }
 
-
-
+        public IActionResult Rental(string? vehicleName, string? vehicleType, string? state)
+        {
+            if (!String.IsNullOrEmpty(vehicleType) || !String.IsNullOrEmpty(vehicleName) || !String.IsNullOrEmpty(state))
+            {
+                return RedirectToAction("Search", "Rental", new { vehicleName, vehicleType, state });
+            }
+            return NotFound();
+        }
     }
 }
 

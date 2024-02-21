@@ -25,5 +25,29 @@ namespace Assign1.Controllers
 
             return View(availableRentals);
         }
+
+        // Search for rentals
+        public IActionResult Search(string vehicleName, string vehicleType, string state)
+        {
+            var rentalQuery = _context.Rentals.AsQueryable();
+
+            if (!String.IsNullOrEmpty(vehicleName))
+            {
+                rentalQuery = rentalQuery.Where(r => r.VehicleName == vehicleName);
+            }
+
+            if (!String.IsNullOrEmpty(vehicleType))
+            {
+                rentalQuery = rentalQuery.Where(r => r.VehicleType == vehicleType);
+            }
+
+            if (!String.IsNullOrEmpty(state))
+            {
+                rentalQuery = rentalQuery.Where(r => r.State == state);
+            }
+
+            var rentals = rentalQuery.ToList();
+            return View("Index", rentals);
+        }
     }
 }
