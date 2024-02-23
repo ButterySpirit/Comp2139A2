@@ -17,11 +17,11 @@ namespace Assign1.Controllers
         }
 
         // GET: Booking/Create (Hotel)
-        public IActionResult Create(int? hotelId, decimal? costPerNight)
+        public IActionResult Create(int? id, decimal? costPerNight)
         {
-            if (hotelId.HasValue)
+            if (id.HasValue)
             {
-                ViewBag.HotelId = hotelId.Value;
+                ViewBag.HotelId = id.Value;
             }
             if (costPerNight.HasValue)
             {
@@ -35,10 +35,15 @@ namespace Assign1.Controllers
         // POST: Booking/Create (Hotel)
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("UserId,TotalCost,BookingDate,PaymentStatus")] Booking booking)
+        public async Task<IActionResult> Create([Bind("TotalCost,BookingDate,PaymentStatus,ServiceType")] Booking booking, int id)
         {
             if (ModelState.IsValid)
             {
+                booking.UserId = null; // Set UserId to null for guest users
+                booking.ServiceType = "Hotel"; // Set ServiceType to "Hotel"
+                ModelState.Remove("ServiceType"); // This will clear the error related to ServiceType
+                booking.ServiceID = id; // Assign the HotelId
+
                 _context.Add(booking);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Confirmation), new { id = booking.BookingId });

@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{9A4A51FB-04FC-4B87-863C-4396192699BB}|https" GitUserInfo="UsingGIT">
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Assign1 PreferredExecutionTarget="/Applications/Brave Browser.app" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Migrations/20240222221941_UpdateBookingWithServiceFields.cs">
     <Files>
       <File FileName="Migrations/20240222221941_UpdateBookingWithServiceFields.cs" Line="79" Column="15" />
@@ -9,20 +9,17 @@
         <State name="__root__">
           <Node name="Assign1">
             <Node name="Assign1">
-              <Node name="Controllers" expanded="True" />
-              <Node name="Migrations" expanded="True">
-                <Node name="20240222221941_UpdateBookingWithServiceFields.cs" expanded="True" selected="True" />
-              </Node>
+              <Node name="Migrations" expanded="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.Assign1 PreferredExecutionTarget="/Applications/Brave Browser.app" />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>

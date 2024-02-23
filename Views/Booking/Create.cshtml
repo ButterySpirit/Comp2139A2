@@ -6,12 +6,26 @@
     decimal? costPerNight = ViewBag.CostPerNight as decimal?;
     int numberOfNights = 1;
     decimal totalCost = costPerNight.HasValue ? costPerNight.Value * numberOfNights : 0m;
+    int? hotelId = ViewBag.HotelId as int?;
 }
 
 <h2 class="display-2 text-center">Create Booking</h2>
 
 <form asp-action="Create" class="border border-2 rounded rounded-2 p-4 m-2">
     <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+    <!-- Hidden fields for ServiceType and ServiceID -->
+    <input type="hidden" name="ServiceType" value="Hotel" />
+
+    @if (hotelId.HasValue)
+    {
+        <input type="hidden" name="ServiceID" value="@hotelId.Value" />
+    }
+
+    <div class="form-group mb-3">
+        <label class="form-label">Hotel ID:</label>
+        <p class="form-control-static text-success">@((hotelId.HasValue) ? $"{hotelId.Value}" : "N/A")</p>
+    </div>
 
     <div class="form-group mb-3">
         <label class="form-label">Cost Per Night:</label>

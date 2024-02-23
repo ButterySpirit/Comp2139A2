@@ -1,0 +1,40 @@
+﻿@model Assign1.Models.Booking
+
+@{
+    ViewData["Title"] = "Booking Confirmation";
+}
+
+<h2>Booking Confirmation</h2>
+<hr />
+<div class="text-center">
+    <h3>Thank you for your booking!</h3>
+    <p>Your booking details are as follows:</p>
+    <dl class="row">
+        <dt class="col-sm-4">
+            Booking ID
+        </dt>
+        <dd class="col-sm-8">
+            @Model.BookingId
+        </dd>
+        <dt class="col-sm-4">
+            Booking Date
+        </dt>
+        <dd class="col-sm-8">
+            @Model.BookingDate.ToShortDateString()
+        </dd>
+        <dt class="col-sm-4">
+            Total Cost
+        </dt>
+        <dd class="col-sm-8">
+            @Model.TotalCost
+        </dd>
+        <dt class="col-sm-4">
+            Payment Status
+        </dt>
+        <dd class="col-sm-8">
+            @Model.PaymentStatus
+        </dd>
+        <!-- Add more details as necessary -->
+    </dl>
+    <a asp-action="Index" asp-controller="Home" class="btn btn-primary">Return Home</a>
+</div>

@@ -10,11 +10,17 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Assign1
 build_property.RootNamespace = Assign1
 build_property.ProjectDir = /Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = /Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1
 build_property._RazorSourceGeneratorDebug = 
+
+[/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/Views/Booking/Confirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQm9va2luZy9Db25maXJtYXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/Views/Booking/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQm9va2luZy9DcmVhdGUuY3NodG1s
