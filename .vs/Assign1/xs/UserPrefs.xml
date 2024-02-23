@@ -1,9 +1,8 @@
-﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{9A4A51FB-04FC-4B87-863C-4396192699BB}|https">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Views/Booking/CreateRental.cshtml">
+﻿<Properties StartupConfiguration="{9A4A51FB-04FC-4B87-863C-4396192699BB}|https" GitUserInfo="UsingGIT">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Migrations/20240222221941_UpdateBookingWithServiceFields.cs">
     <Files>
-      <File FileName="Controllers/BookingController.cs" Line="120" Column="1" />
-      <File FileName="Views/Booking/CreateRental.cshtml" Line="81" Column="55" />
-      <File FileName="Views/Booking/Create.cshtml" Line="66" Column="10" />
+      <File FileName="Migrations/20240222221941_UpdateBookingWithServiceFields.cs" Line="79" Column="15" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -11,10 +10,8 @@
           <Node name="Assign1">
             <Node name="Assign1">
               <Node name="Controllers" expanded="True" />
-              <Node name="Views" expanded="True">
-                <Node name="Booking" expanded="True" />
-                <Node name="Hotel" expanded="True" />
-                <Node name="Rental" expanded="True" />
+              <Node name="Migrations" expanded="True">
+                <Node name="20240222221941_UpdateBookingWithServiceFields.cs" expanded="True" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -22,11 +19,10 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.Assign1 PreferredExecutionTarget="/Applications/Brave Browser.app" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>
