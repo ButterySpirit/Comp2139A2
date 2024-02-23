@@ -40,4 +40,3 @@
 /Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/bin/Debug/net7.0/Pomelo.EntityFrameworkCore.MySql.dll
 /Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/bin/Debug/net7.0/System.CodeDom.dll
 /Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/obj/Debug/net7.0/Assign1.csproj.CopyComplete
-/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/obj/Debug/net7.0/Assign1.sourcelink.json

@@ -9,7 +9,7 @@ namespace Assign1.Models
         public int? UserId { get; set; } // Keep nullable for guest users
 
         [Required]
-        public int TotalCost { get; set; }
+        public decimal TotalCost { get; set; }
 
         [Required]
         [DataType(DataType.Date)]
