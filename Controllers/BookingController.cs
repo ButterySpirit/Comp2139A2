@@ -71,13 +71,21 @@ namespace Assign1.Controllers
 
         /*          Booking For Flights             */
         // GET: Booking/Create (Flight)
-        public IActionResult CreateFlight(int flightId, int ticketCost, string status)
+        [HttpGet("Booking/CreateFlight/{flightId}")]
+        public IActionResult CreateFlight(int? flightId, decimal? ticketCost, string status)
         {
-
-            ViewBag.FlightId = flightId;
-            ViewBag.TicketCost = ticketCost;
-            ViewBag.Status = status;
-
+            if (flightId.HasValue)
+            {
+                ViewBag.FlightId = flightId;
+            }
+            if (ticketCost.HasValue)
+            {
+                ViewBag.TotalCost = ticketCost;
+            }
+            if (!String.IsNullOrEmpty(status))
+            {
+                ViewBag.Status = status;
+            }
             return View();
         }
 
@@ -85,10 +93,15 @@ namespace Assign1.Controllers
         // POST: Booking/Create (Flight)
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CreateFlight([Bind("UserId,TotalCost,BookingDate,PaymentStatus")] Booking booking)
+        public async Task<IActionResult> CreateFlight([Bind("TotalCost,BookingDate,PaymentStatus,ServiceType")] Booking booking, int flightId)
         {
             if (ModelState.IsValid)
             {
+                booking.UserId = null; // Set UserId to null for guest users
+                booking.ServiceType = "Flight"; // Set ServiceType to "Flight"
+                ModelState.Remove("ServiceType");
+                booking.ServiceID = flightId; // Assign the FlightID
+
                 _context.Add(booking);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(ConfirmFlight), new { id = booking.BookingId });
