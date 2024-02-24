@@ -93,15 +93,14 @@ namespace Assign1.Controllers
         // POST: Booking/Create (Flight)
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CreateFlight([Bind("TotalCost,BookingDate,PaymentStatus,ServiceType")] Booking booking, int flightId, decimal ticketCost)
+        public async Task<IActionResult> CreateFlight([Bind("TotalCost,BookingDate,PaymentStatus,ServiceType")] Booking booking, int flightId)
         {
             if (ModelState.IsValid)
             {
                 booking.UserId = null; // Set UserId to null for guest users
                 booking.ServiceType = "Flight"; // Set ServiceType to "Flight"
-                ModelState.Remove("ServiceType");
-                booking.ServiceID = flightId; // Assign the FlightID
-                booking.TotalCost = ticketCost; // Assign TicketCost
+                ModelState.Remove("ServiceType"); // This will clear the error related to ServiceType
+                booking.ServiceID = flightId; // Assign the Flight
 
                 _context.Add(booking);
                 await _context.SaveChangesAsync();
