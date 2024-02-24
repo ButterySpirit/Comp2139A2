@@ -1,5 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Assign1.Models
 {
@@ -21,7 +23,8 @@ namespace Assign1.Models
         public int AvailSeats { get; set; }
 
         [Required]
-        public int TicketCost { get; set; }
+        [Column(TypeName = "decimal(10, 2)")]
+        public decimal TicketCost { get; set; }
 
         [Required]
         [DataType(DataType.Date)]

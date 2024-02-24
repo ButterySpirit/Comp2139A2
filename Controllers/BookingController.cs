@@ -93,7 +93,7 @@ namespace Assign1.Controllers
         // POST: Booking/Create (Flight)
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CreateFlight([Bind("TotalCost,BookingDate,PaymentStatus,ServiceType")] Booking booking, int flightId)
+        public async Task<IActionResult> CreateFlight([Bind("TotalCost,BookingDate,PaymentStatus,ServiceType")] Booking booking, int flightId, decimal ticketCost)
         {
             if (ModelState.IsValid)
             {
@@ -101,6 +101,7 @@ namespace Assign1.Controllers
                 booking.ServiceType = "Flight"; // Set ServiceType to "Flight"
                 ModelState.Remove("ServiceType");
                 booking.ServiceID = flightId; // Assign the FlightID
+                booking.TotalCost = ticketCost; // Assign TicketCost
 
                 _context.Add(booking);
                 await _context.SaveChangesAsync();
