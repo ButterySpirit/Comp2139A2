@@ -51,24 +51,6 @@ namespace Assign1.Controllers
             return View(booking);
         }
 
-        // GET: Booking/Confirmation/{id} (Hotel)
-        public async Task<IActionResult> Confirmation(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var booking = await _context.Bookings.FirstOrDefaultAsync(m => m.BookingId == id);
-            if (booking == null)
-            {
-                return NotFound();
-            }
-
-            return View(booking);
-        }
-
-
         /*          Booking For Flights             */
         // GET: Booking/Create (Flight)
         [HttpGet("Booking/CreateFlight/{flightId}")]
@@ -104,13 +86,51 @@ namespace Assign1.Controllers
 
                 _context.Add(booking);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(ConfirmFlight), new { id = booking.BookingId });
+                return RedirectToAction(nameof(Confirmation), new { id = booking.BookingId });
             }
             return View(booking);
         }
 
-        // GET: Booking/Confirmation/{id} (Flight)
-        public async Task<IActionResult> ConfirmFlight(int? id)
+        //GET: Create Booking (Rental)
+        [HttpGet("Booking/CreateRental/{rentalId}")]
+        public IActionResult CreateRental(int? rentalId, decimal? rentalCost, string status)
+        {
+            if (rentalId.HasValue)
+            {
+                ViewBag.RentalId = rentalId;
+            }
+            if (rentalCost.HasValue)
+            {
+                ViewBag.TotalCost = rentalCost;
+            }
+            if (!String.IsNullOrEmpty(status))
+            {
+                ViewBag.Status = status;
+            }
+            return View();
+        }
+
+        //POST: Create Booking (Rental)
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateRental([Bind("TotalCost,BookingDate,PaymentStatus,ServiceType")] Booking booking, int rentalId)
+        {
+            if (ModelState.IsValid)
+            {
+                booking.UserId = null; // Set UserId to null for guest users
+                booking.ServiceType = "Rental"; // Set ServiceType to "Rental"
+                ModelState.Remove("ServiceType"); // This will clear the error related to ServiceType
+                booking.ServiceID = rentalId; // Assign the Rental
+
+                _context.Add(booking);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Confirmation), new { id = booking.BookingId });
+            }
+            return View(booking);
+        }
+
+        // GET: Booking/Confirmation/{id} (Hotel)
+        public async Task<IActionResult> Confirmation(int? id)
         {
             if (id == null)
             {
@@ -125,31 +145,5 @@ namespace Assign1.Controllers
 
             return View(booking);
         }
-
-        //GET: Create Booking (Rental)
-        public IActionResult CreateRental(int rentalId, int rentalCost, string status)
-        {
-            ViewBag.RentalId = rentalId;
-            ViewBag.RentalCost = rentalCost;
-            ViewBag.Status = status;
-
-            return View();
-        }
-
-        //POST: Create Booking (Rental)
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CreateRental([Bind("UserId,TotalCost,BookingDate,PaymentStatus")] Booking booking)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(booking);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(ConfirmFlight), new { id = booking.BookingId });
-            }
-            return View(booking);
-        }
-
-
     }
 }

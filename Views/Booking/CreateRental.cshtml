@@ -2,10 +2,11 @@
 
 @{
     ViewData["Title"] = "Create Rental Booking";
-    int rentalCost = ViewBag.RentalCost;
+    decimal? rentalCost = ViewBag.TotalCost as decimal?;
     string status = ViewBag.Status;
     int numberOfDays = 1;
-    int totalCost = rentalCost * numberOfDays;
+    decimal totalCost = rentalCost.HasValue ? rentalCost.Value * numberOfDays : 0m;
+    int? rentalId = ViewBag.RentalId as int?;
 }
 
 <h2 class="display-2 text-center">Create Rental Booking</h2>
@@ -28,8 +29,25 @@ else if (status == "Maintenance")
 }
 else
 {
-    <form asp-action="Create" class="border border-2 rounded rounded-2 p-4 m-2">
+    <form asp-action="CreateRental" class="border border-2 rounded rounded-2 p-4 m-2">
         <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+        <!-- Hidden fields for ServiceType and ServiceID -->
+        <input type="hidden" name="ServiceType" value="Rental" />
+        <input type="hidden" name="rentalId" value="@ViewBag.RentalId" />
+
+        <input asp-for="TotalCost" type="hidden" value="@totalCost" />
+
+        @if (rentalId.HasValue)
+        {
+            <input type="hidden" name="ServiceID" value="@rentalId.Value" />
+        }
+
+        <div class="form-group mb-3">
+            <label class="form-label">Rental ID:</label>
+            <p class="form-control-static text-success">@((rentalId.HasValue) ? $"{rentalId.Value}" : "N/A")</p>
+        </div>
+
 
         <div class="form-group mb-3">
             <label class="form-label">Rental Cost:</label>
