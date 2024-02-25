@@ -16,6 +16,86 @@ namespace Assign1.Controllers
             _context = context;
         }
 
+        public IActionResult Index()
+        {
+            var booking = _context.Bookings.ToList();
+            return View(booking);
+        }
+
+        private bool BookingExists(int id)
+        {
+            return _context.Bookings.Any(e => e.BookingId == id);
+        }
+
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            var booking = _context.Bookings.Find(id);
+            if (booking == null)
+            {
+                return NotFound();
+            }
+            return View(booking);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(int id, [Bind("BookingId, TotalCost, BookingDate, PaymentStatus, ServiceType, ServiceID")] Booking booking)
+        {
+            if (id != booking.BookingId)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(booking);
+                    _context.SaveChanges();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!BookingExists(booking.BookingId))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction("Index");
+            }
+            return View(booking);
+        }
+
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            var booking = _context.Bookings.FirstOrDefault(b => b.BookingId == id);
+            if (booking == null)
+            {
+                return NotFound();
+            }
+            return View(booking);
+        }
+
+        [HttpPost, ActionName("DeleteConfirmed")]
+        [ValidateAntiForgeryToken]
+        public IActionResult DeleteConfirmed(int bookingId)
+        {
+            var booking = _context.Bookings.Find(bookingId);
+            if (booking != null)
+            {
+                _context.Bookings.Remove(booking);
+                _context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return NotFound();
+        }
+
         // GET: Booking/Create (Hotel)
         public IActionResult Create(int? id, decimal? costPerNight)
         {

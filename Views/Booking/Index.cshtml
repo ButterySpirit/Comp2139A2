@@ -1,40 +1,40 @@
-﻿@model Assign1.Models.Booking
+﻿@model List<Booking>
 
 @{
-    ViewData["Title"] = "Create Booking";
+    ViewData["Title"] = "View Bookings";
 }
 
-<h2>@ViewData["Title"]</h2>
+<h2 class="text-center">@ViewData["Title"]</h2>
 
-<form asp-action="CreateBooking" method="post">
-    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<div class="container p-2 m-2">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Booking ID</th>
+                <th scope="col">Total Cost</th>
+                <th scope="col">Booking Date</th>
+                <th scope="col">Payment Status</th>
+                <th scope="col">Booking Type</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        @foreach (var booking in Model)
+        {
+            <tbody>
+                <tr>
+                    <th scope="row">@booking.BookingId</th>
+                    <td class="text-success">$@booking.TotalCost CAD</td>
+                    <td>@booking.BookingDate</td>
+                    <td>@booking.PaymentStatus</td>
+                    <td>@booking.ServiceType</td>
+                    <td>
+                        <a asp-action="Edit" class="btn btn-warning" asp-route-id="@booking.BookingId">Edit</a>
+                        <a asp-action="Delete" class="btn btn-danger" asp-route-id="@booking.BookingId">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        }
+    </table>
+</div>
 
-    <div class="form-group">
-        <label asp-for="TotalCost" class="control-label"></label>
-        <input asp-for="TotalCost" class="form-control" />
-        <span asp-validation-for="TotalCost" class="text-danger"></span>
-    </div>
-
-    <div class="form-group">
-        <label asp-for="BookingDate" class="control-label"></label>
-        <input asp-for="BookingDate" class="form-control" type="date" />
-        <span asp-validation-for="BookingDate" class="text-danger"></span>
-    </div>
-
-    <div class="form-group">
-        <label asp-for="PaymentStatus" class="control-label"></label>
-        <select asp-for="PaymentStatus" class="form-control">
-            <option value="">Please select</option>
-            <option value="Pending">Pending</option>
-            <option value="Confirmed">Confirmed</option>
-            <option value="Cancelled">Cancelled</option>
-        </select>
-        <span asp-validation-for="PaymentStatus" class="text-danger"></span>
-    </div>
-
-    <div class="form-group">
-        <input type="submit" value="Create Booking" class="btn btn-primary" />
-    </div>
-</form>
-
-<a asp-action="Index">Back to List</a>
+<a asp-action="Index" class="btn btn-secondary">Back to List</a>

@@ -1,0 +1,34 @@
+﻿@model Booking
+
+@{
+    ViewData["Title"] = "Delete Booking";
+}
+
+<h2>Delete Booking</h2>
+
+<h3>Are you sure you want to delete this Booking?</h3>
+<div>
+    <h4>Booking ID: @Model.BookingId</h4>
+    <div>
+        <label>Booking Type:</label> @Model.ServiceType
+        <br />
+        <label>Total Cost:</label> @Model.TotalCost
+    </div>
+    <br />
+
+    <form asp-controller="Booking" asp-action="DeleteConfirmed" method="post">
+        @Html.HiddenFor(model => model.BookingId)
+
+        <input type="hidden" asp-for="BookingId" />
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        <a asp-action="Index" class="btn btn-secondary">Back To Bookings</a>
+    </form>
+
+</div>
+
+@section Scripts {
+    @{
+
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
