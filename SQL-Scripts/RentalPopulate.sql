@@ -1,6 +1,3 @@
-ALTER TABLE rentals DROP FOREIGN KEY FK_Rentals_Bookings_BookingID;
-ALTER TABLE rentals DROP COLUMN BookingID;
-
 ALTER TABLE rentals ADD COLUMN BookingID INT NULL;
 ALTER TABLE rentals ADD CONSTRAINT FK_Rentals_Bookings_BookingID FOREIGN KEY (BookingID) REFERENCES bookings(BookingId) ON DELETE SET NULL ON UPDATE CASCADE;
 

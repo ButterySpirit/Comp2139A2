@@ -1,23 +1,30 @@
 ﻿<Properties StartupConfiguration="{9A4A51FB-04FC-4B87-863C-4396192699BB}|https" GitUserInfo="UsingGIT">
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/BookingController.cs">
+  <MonoDevelop.Ide.ItemProperties.Assign1 PreferredExecutionTarget="/Applications/Brave Browser.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Migrations/20240222221941_UpdateBookingWithServiceFields.Designer.cs">
     <Files>
-      <File FileName="Controllers/BookingController.cs" Line="124" Column="1" />
+      <File FileName="Controllers/BookingController.cs" Line="83" Column="1" />
+      <File FileName="Controllers/FlightController.cs" Line="1" Column="1" />
+      <File FileName="Models/Flight.cs" Line="1" Column="1" />
+      <File FileName="Migrations/20240224182014_rentalCostDecimal.Designer.cs" Line="1" Column="1" />
+      <File FileName="Migrations/20240224175440_ticketCostDecimal2.Designer.cs" Line="1" Column="1" />
+      <File FileName="Migrations/20240224174923_ticketCostDecimal.Designer.cs" Line="1" Column="1" />
+      <File FileName="Migrations/20240222221941_UpdateBookingWithServiceFields.Designer.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Assign1">
             <Node name="Assign1">
-              <Node name="Controllers" expanded="True" />
+              <Node name="Migrations" expanded="True">
+                <Node name="20240222221941_UpdateBookingWithServiceFields.cs" expanded="True">
+                  <Node name="20240222221941_UpdateBookingWithServiceFields.Designer.cs" selected="True" />
+                </Node>
+                <Node name="20240224174923_ticketCostDecimal.cs" expanded="True" />
+                <Node name="20240224182014_rentalCostDecimal.cs" expanded="True" />
+              </Node>
               <Node name="Models" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Booking" expanded="True" />
+                <Node name="Rental" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -25,5 +32,10 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.Assign1 PreferredExecutionTarget="/Applications/Brave Browser.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
 </Properties>
