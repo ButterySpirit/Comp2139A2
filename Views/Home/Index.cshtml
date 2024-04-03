@@ -3,9 +3,50 @@
 }
 
 <div class="container text-center mb-4">
-    <div class="jumbotron">
+    <div class="jumbotron" id="brand-fp-text">
         <h1>Welcome to JourneyNest!</h1>
         <p>Find the best deals on flights, hotels, and car rentals Canada wide!</p>
         <img class="img-fluid home-img mb-4" src="../Logo.jpg" alt="JourneyNest Logo" />
+    </div>
+</div>
+
+<div class="container-fluid text-center mb-4">
+    <div class="row">
+        <div class="col" id="hotel-card-fp">
+            <div class="card" style="max-width: 400px; box-shadow: 0 4px 8px rgba(0,0,0,0.3);">
+                <img src="https://images.unsplash.com/photo-1578681041175-9717c16b0d66?q=80&w=2920&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Book Hotel" style="height: 250px;">
+                <div class="card-body">
+                    <h5 class="card-title" style="color: #204473; font-weight: bold;">Find Your Perfect Stay in Canada</h5>
+                    <p class="card-text" style="color: #555555;">Explore the finest hotels in Canada and book your dream stay.</p>
+                    <a class="btn btn-primary" style="padding: .5em 1em; font-size: 1rem;"
+                       asp-area="" asp-controller="Hotel" asp-action="Index">Discover Hotels</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col" id="flight-card-fp">
+            <div class="card" style="max-width: 400px; box-shadow: 0 6px 12px rgba(0,0,0,0.3);">
+                <img src="https://images.unsplash.com/photo-1421789497144-f50500b5fcf0?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Book Flight" style="height: 250px;">
+                <div class="card-body">
+                    <h5 class="card-title" style="color: #204473; font-weight: bold;">Soar to New Heights</h5>
+                    <p class="card-text" style="color: #555555;">Find great deals on flights to destinations worldwide.</p>
+                    <a class="btn btn-primary" style="padding: .5em 1em; font-size: 1rem;"
+                       asp-area="" asp-controller="Flight" asp-action="Index">Reserve Now</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col" id="rental-card-fp">
+            <div class="card" style="max-width: 400px; box-shadow: 0 4px 8px rgba(0,0,0,0.3);">
+                <img src="https://etimg.etb2bimg.com/photo/69822571.cms" class="card-img-top" alt="Book Rental"
+                     style="height: 250px;">
+                <div class="card-body">
+                    <h5 class="card-title" style="color: #345995; font-weight: bold;">Hit the Road with the Best Rentals</h5>
+                    <p class="card-text" style="color: #555555;">Choose from a wide range of vehicles for your perfect trip.</p>
+                    <a class="btn btn-primary" style="padding: .5em 1em; font-size: 1rem;"
+                       asp-area="" asp-controller="Rental" asp-action="Index">Book Rentals</a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

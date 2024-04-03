@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets/Logo.jpg"
     },
     {
+      "Id": "/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/wwwroot/car-rental.webp",
+      "PackagePath": "staticwebassets/car-rental.webp"
+    },
+    {
       "Id": "/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/wwwroot/css/site.css",
       "PackagePath": "staticwebassets/css/site.css"
     },

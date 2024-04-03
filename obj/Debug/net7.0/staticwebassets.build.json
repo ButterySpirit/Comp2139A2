@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "lsA6mtU/lem6OSuKwFiPtjy88P4PWEyFuL2/fC6WVt4=",
+  "Hash": "UVqbKxT/sigqNcL5ArjZ15yU9u4+rpj2NrB4swbm9qY=",
   "Source": "Assign1",
   "BasePath": "_content/Assign1",
   "Mode": "Default",
@@ -66,6 +66,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/.DS_Store"
+    },
+    {
+      "Identity": "/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/wwwroot/car-rental.webp",
+      "SourceId": "Assign1",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/wwwroot/",
+      "BasePath": "_content/Assign1",
+      "RelativePath": "car-rental.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/car-rental.webp"
     },
     {
       "Identity": "/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/Assign1/wwwroot/css/site.css",

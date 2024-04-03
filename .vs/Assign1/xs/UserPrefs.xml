@@ -1,27 +1,26 @@
 ﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{9A4A51FB-04FC-4B87-863C-4396192699BB}|https">
   <MonoDevelop.Ide.ItemProperties.Assign1 PreferredExecutionTarget="/Applications/Brave Browser.app" />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workbench ActiveDocument="appsettings.Development.json">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Views/Hotel/Index.cshtml">
     <Files>
-      <File FileName="Controllers/BookingController.cs" />
-      <File FileName="Controllers/FlightController.cs" />
-      <File FileName="Models/Flight.cs" />
-      <File FileName="Migrations/20240224182014_rentalCostDecimal.Designer.cs" />
-      <File FileName="Migrations/20240224175440_ticketCostDecimal2.Designer.cs" />
-      <File FileName="Migrations/20240224174923_ticketCostDecimal.Designer.cs" />
-      <File FileName="Migrations/20240222221941_UpdateBookingWithServiceFields.Designer.cs" Line="1" Column="1" />
-      <File FileName="Data/ApplicationDbContext.cs" Line="1" Column="1" />
-      <File FileName="appsettings.Development.json" Line="11" Column="91" />
+      <File FileName="Controllers/SearchController.cs" Line="22" Column="56" />
+      <File FileName="Views/Hotel/Index.cshtml" Line="102" Column="106" />
+      <File FileName="Controllers/HotelController.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Assign1">
             <Node name="Assign1">
-              <Node name="appsettings.json" expanded="True">
-                <Node name="appsettings.Development.json" selected="True" />
+              <Node name="Controllers" expanded="True" />
+              <Node name="Views">
+                <Node name="Hotel">
+                  <Node name="Index.cshtml" selected="True" />
+                </Node>
               </Node>
             </Node>
           </Node>
@@ -29,7 +28,5 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
