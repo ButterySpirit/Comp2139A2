@@ -35,6 +35,7 @@ namespace Assign1.Controllers
             return View(flight);
         }
 
+        /*
         public IActionResult Search(string departure, string destination)
         {
             var flightQuery = _context.Flights.AsQueryable();
@@ -52,6 +53,7 @@ namespace Assign1.Controllers
             var flights = flightQuery.ToList();
             return View("Index", flights);
         }
+        */
 
     }
 }

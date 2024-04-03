@@ -7,6 +7,56 @@
     <h1 class="display-4">Hotels</h1>
 </div>
 
+<div class="row">
+    <div class="col">
+        <form method="get" class="search-form p-3 home-search m-auto border border-2 rounded-2">
+            <div class="row g-3 align-items-center justify-content-center">
+                <div class="col-md-4">
+                    <select name="destination" id="destination" class="form-select">
+                        <option value="">Province</option>
+                        <option>Alberta</option>
+                        <option>British Columbia</option>
+                        <option>Manitoba</option>
+                        <option>New Brunswick</option>
+                        <option>Newfoundland</option>
+                        <option>Nova Scotia</option>
+                        <option>Ontario</option>
+                        <option>Prince Edward Island</option>
+                        <option>Quebec</option>
+                        <option>Saskatchewan</option>
+                        <option>Northwest Territories</option>
+                        <option>Nunavut</option>
+                        <option>Yukon</option>
+                    </select>
+                </div>
+
+                <div class="col-sm-3">
+                    <select name="rating" id="rating" class="form-select">
+                        <option value="">Stars</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+
+                <div class="col-md-3">
+                    <input type="date" name="checkIn" id="checkIn" class="form-control" placeholder="Check-In">
+                </div>
+
+                <div class="col-md-3">
+                    <input type="date" name="checkOut" id="checkOut" class="form-control" placeholder="Check-Out">
+                </div>
+
+                <div class="col-md-2">
+                    <button type="submit" id="searchButton" class="btn btn-success mt-3">Search</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="searchResults"></div>
+
 <div class="container-fluid p-3 m-3 text-center">
     <div class="row">
         @foreach (var hotel in Model)
@@ -36,3 +86,36 @@
         }
     </div>
 </div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+
+    <script>$(document).ready(function () {
+            $('.search-form').on('submit', function (event) {
+                event.preventDefault(); // Stop the form from causing a page refresh
+
+                var destination = $('#destination').val();
+                var rating = $('#rating').val();
+                var checkIn = $('#checkIn').val();
+                var checkOut = $('#checkOut').val();
+
+                console.log("Submitted", destination + ", " + rating + ", " + checkIn + ", " + checkOut);
+
+                $.ajax({
+                    url: '/Search/HotelSearch', // Make sure this URL is correct
+                    data: { destination: destination, rating: rating, checkIn: checkIn, checkOut: checkOut },
+                    type: 'GET',
+                    success: function (result) {
+                        console.log(result);
+                        $('#searchResults').html(result);
+
+                    },
+                    error: function (xhr, status, error) {
+
+                        console.error(error);
+
+                    }
+                });
+            });
+        });</script>
+}

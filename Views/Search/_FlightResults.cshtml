@@ -1,0 +1,42 @@
+﻿@model List<Flight>
+
+@if (Model != null && Model.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Flight #</th>
+                <th>Departure</th>
+                <th>Arrival</th>
+                <th>Airline</th>
+                <th>Seats Available</th>
+                <th>Status</th>
+                <th>Ticket Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var flight in Model)
+            {
+                <tr>
+                    <td>@flight.FlightId</td>
+                    <td>@flight.DeparturePort</td>
+                    <td>@flight.ArrivalPort</td>
+                    <td>@flight.AirlineName</td>
+                    <td>@flight.AvailSeats</td>
+                    <td>@flight.Status</td>
+                    <td class="text-success">$@flight.TicketCost CAD</td>
+                    <td>
+                        <a asp-controller="Booking" asp-action="CreateFlight" asp-route-id="@flight.FlightId" class="btn btn-primary">Book Now</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-info" role="alert">
+        No flights found matching your criteria.
+    </div>
+}

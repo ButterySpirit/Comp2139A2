@@ -26,7 +26,7 @@ namespace Assign1.Controllers
             return View(availableRentals);
         }
 
-        // Search for rentals
+        /* Search for rentals
         public IActionResult Search(string vehicleName, string vehicleType, string state)
         {
             var rentalQuery = _context.Rentals.AsQueryable();
@@ -49,5 +49,6 @@ namespace Assign1.Controllers
             var rentals = rentalQuery.ToList();
             return View("Index", rentals);
         }
+        */
     }
 }

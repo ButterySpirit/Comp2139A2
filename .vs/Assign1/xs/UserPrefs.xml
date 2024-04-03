@@ -1,30 +1,27 @@
-﻿<Properties StartupConfiguration="{9A4A51FB-04FC-4B87-863C-4396192699BB}|https" GitUserInfo="UsingGIT">
+﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{9A4A51FB-04FC-4B87-863C-4396192699BB}|https">
   <MonoDevelop.Ide.ItemProperties.Assign1 PreferredExecutionTarget="/Applications/Brave Browser.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Migrations/20240222221941_UpdateBookingWithServiceFields.Designer.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="appsettings.Development.json">
     <Files>
-      <File FileName="Controllers/BookingController.cs" Line="83" Column="1" />
-      <File FileName="Controllers/FlightController.cs" Line="1" Column="1" />
-      <File FileName="Models/Flight.cs" Line="1" Column="1" />
-      <File FileName="Migrations/20240224182014_rentalCostDecimal.Designer.cs" Line="1" Column="1" />
-      <File FileName="Migrations/20240224175440_ticketCostDecimal2.Designer.cs" Line="1" Column="1" />
-      <File FileName="Migrations/20240224174923_ticketCostDecimal.Designer.cs" Line="1" Column="1" />
+      <File FileName="Controllers/BookingController.cs" />
+      <File FileName="Controllers/FlightController.cs" />
+      <File FileName="Models/Flight.cs" />
+      <File FileName="Migrations/20240224182014_rentalCostDecimal.Designer.cs" />
+      <File FileName="Migrations/20240224175440_ticketCostDecimal2.Designer.cs" />
+      <File FileName="Migrations/20240224174923_ticketCostDecimal.Designer.cs" />
       <File FileName="Migrations/20240222221941_UpdateBookingWithServiceFields.Designer.cs" Line="1" Column="1" />
+      <File FileName="Data/ApplicationDbContext.cs" Line="1" Column="1" />
+      <File FileName="appsettings.Development.json" Line="11" Column="91" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Assign1">
             <Node name="Assign1">
-              <Node name="Migrations" expanded="True">
-                <Node name="20240222221941_UpdateBookingWithServiceFields.cs" expanded="True">
-                  <Node name="20240222221941_UpdateBookingWithServiceFields.Designer.cs" selected="True" />
-                </Node>
-                <Node name="20240224174923_ticketCostDecimal.cs" expanded="True" />
-                <Node name="20240224182014_rentalCostDecimal.cs" expanded="True" />
-              </Node>
-              <Node name="Models" expanded="True" />
-              <Node name="Views" expanded="True">
-                <Node name="Rental" expanded="True" />
+              <Node name="appsettings.json" expanded="True">
+                <Node name="appsettings.Development.json" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -32,10 +29,7 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MultiItemStartupConfigurations />
 </Properties>

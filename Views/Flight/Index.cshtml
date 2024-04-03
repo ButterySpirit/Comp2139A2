@@ -8,6 +8,64 @@
     <h1 class="display-4">Flights</h1>
 </div>
 
+<div class="row">
+    <div class="col">
+        <form method="get" class="search-form p-3 m-auto  border border-2 rounded-2">
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                    <label for="departure" class="col-form-label">Departure</label>
+                </div>
+                <div class="col-sm">
+                    <select id="departure" name="departure" class="form-select">
+                        <option>YYC</option>
+                        <option>YVR</option>
+                        <option>YWG</option>
+                        <option>YQM</option>
+                        <option>YYT</option>
+                        <option>YHZ</option>
+                        <option>YYZ</option>
+                        <option>YYG</option>
+                        <option>YUL</option>
+                        <option>YXE</option>
+                        <option>YZF</option>
+                        <option>YFB</option>
+                        <option>YXY</option>
+                    </select>
+                </div>
+
+                <div class="col-auto">
+                    <label for="destination" class="col-form-label">Destination</label>
+                </div>
+                <div class="col-sm">
+                    <select id="destination" name="destination" class="form-select">
+                        <option>YYC</option>
+                        <option>YVR</option>
+                        <option>YWG</option>
+                        <option>YQM</option>
+                        <option>YYT</option>
+                        <option>YHZ</option>
+                        <option>YYZ</option>
+                        <option>YYG</option>
+                        <option>YUL</option>
+                        <option>YXE</option>
+                        <option>YZF</option>
+                        <option>YFB</option>
+                        <option>YXY</option>
+                    </select>
+                </div>
+
+                <div class="row">
+                    <div class="col text-center">
+                        <button type="submit" id="searchButton" class="btn btn-success mt-3">Search</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="searchResults"></div>
+
 <div class="container p-2 m-2">
     <table class="table table-hover">
         <thead>
@@ -42,3 +100,36 @@
         }
     </table>
 </div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+
+    <script>$(document).ready(function () {
+            $('.search-form').on('submit', function (event) {
+                event.preventDefault(); // Stop the form from causing a page refresh
+
+                var departure = $('#departure').val();
+                var arrival = $('#destination').val();
+
+                console.log("Submitted", departure + " -> " + arrival);
+
+                $.ajax({
+                    url: '/Search/Flight', // Make sure this URL is correct
+                    data: { departure: departure, arrival: arrival },
+                    type: 'GET',
+                    success: function (result) {
+                        console.log(result);
+                        $('#searchResults').html(result); // Update the #searchResults div
+                        $('#loader').hide();
+                    },
+                    error: function (xhr, status, error) {
+                        $('#loader').hide();
+                        console.error(error);
+                        // Optionally alert the user or display the error on the page
+                    }
+                });
+            });
+        });</script>
+}
+
+

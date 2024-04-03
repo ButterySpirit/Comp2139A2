@@ -29,6 +29,7 @@ public class HotelController : Controller
         return View(hotel);
     }
 
+    /*
     public IActionResult Search(string destination, int rating, DateTime? checkIn, DateTime? checkOut)
     {
         var hotelQuery = _context.Hotels.AsQueryable();
@@ -59,6 +60,7 @@ public class HotelController : Controller
 
         return View("Index", hotels);
     }
+    */
 
 }
 
