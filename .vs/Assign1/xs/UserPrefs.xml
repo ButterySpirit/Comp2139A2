@@ -1,32 +1,20 @@
-﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{9A4A51FB-04FC-4B87-863C-4396192699BB}|https">
-  <MonoDevelop.Ide.ItemProperties.Assign1 PreferredExecutionTarget="/Applications/Brave Browser.app" />
+﻿<Properties StartupConfiguration="{9A4A51FB-04FC-4B87-863C-4396192699BB}|https" GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Assign1 PreferredExecutionTarget="/Applications/Brave Browser.app" />
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Views/Hotel/Index.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Models/ApplicationUser.cs">
     <Files>
-      <File FileName="Controllers/SearchController.cs" Line="22" Column="56" />
-      <File FileName="Views/Hotel/Index.cshtml" Line="102" Column="106" />
-      <File FileName="Controllers/HotelController.cs" Line="1" Column="1" />
+      <File FileName="Program.cs" Line="26" Column="51" />
+      <File FileName="Models/ApplicationUser.cs" Line="17" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="Assign1">
-            <Node name="Assign1">
-              <Node name="Controllers" expanded="True" />
-              <Node name="Views">
-                <Node name="Hotel">
-                  <Node name="Index.cshtml" selected="True" />
-                </Node>
-              </Node>
-            </Node>
-          </Node>
-        </State>
+        <State name="__root__" />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

@@ -1,0 +1,142 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|c:\\users\\987264\\source\\repos\\comp2139a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|c:\\users\\987264\\source\\repos\\comp2139a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|c:\\users\\987264\\source\\repos\\comp2139a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\controllers\\rentalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|solutionrelative:controllers\\rentalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|c:\\users\\987264\\source\\repos\\comp2139a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|solutionrelative:data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|c:\\users\\987264\\source\\repos\\comp2139a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|c:\\users\\987264\\source\\repos\\comp2139a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\services\\emailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|solutionrelative:services\\emailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 10,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EmailSender.cs",
+              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Services\\EmailSender.cs",
+              "RelativeDocumentMoniker": "Services\\EmailSender.cs",
+              "ToolTip": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Services\\EmailSender.cs",
+              "RelativeToolTip": "Services\\EmailSender.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-07T15:44:42.725Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAABIAAAAAAAAAAAAwwDMAAABMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-05T20:39:17.421Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Data\\ApplicationDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-05T19:15:32.144Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RentalController.cs",
+              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Controllers\\RentalController.cs",
+              "RelativeDocumentMoniker": "Controllers\\RentalController.cs",
+              "ToolTip": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Controllers\\RentalController.cs",
+              "RelativeToolTip": "Controllers\\RentalController.cs",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAYwAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-05T04:51:10.93Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-04T22:06:00.107Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAACMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-04-04T21:51:08.815Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
