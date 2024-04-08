@@ -9,7 +9,7 @@
     int? rentalId = ViewBag.RentalId as int?;
 }
 
-<h2 class="display-2 text-center">Create Rental Booking</h2>
+<h2 class="display-2 text-center" id="createTitle">Create Rental Booking</h2>
 
 @if (status == "Rented")
 {
@@ -29,7 +29,7 @@ else if (status == "Maintenance")
 }
 else
 {
-    <form asp-action="CreateRental" class="border border-2 rounded rounded-2 p-4 m-2">
+    <form id="bookingForm" asp-action="CreateRental" class="border border-2 rounded rounded-2 p-4 m-2">
         <div asp-validation-summary="All" class="text-danger mb-3"></div>
 
         <!-- Hidden fields for ServiceType and ServiceID -->
@@ -101,3 +101,73 @@ else
         });
     });
 </script>
+
+<div id="confirmationMessage" style="display:none;"></div>
+
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function () {
+            var costPerDay = @rentalCost;
+
+            var numberOfDaysField = document.getElementById("numberOfDays");
+            var totalCostField = document.getElementById("totalCost");
+
+            numberOfDaysField.addEventListener("input", function () {
+                var numberOfDays = this.value;
+                var totalCost = numberOfDays * costPerDay;
+                totalCostField.value = totalCost.toFixed(2);
+            });
+
+            var bookingForm = document.getElementById('bookingForm');
+
+            bookingForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                var formData = new FormData(bookingForm);
+                var submitButton = bookingForm.querySelector('button[type="submit"]');
+                var originalButtonText = submitButton.textContent;
+                submitButton.textContent = 'Submitting...'; // Update button text during submission
+                submitButton.disabled = true; // Disable button to prevent multiple submissions
+
+                fetch(bookingForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest',
+                        'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]').value
+                    }
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text(); // Get HTML content
+                })
+                .then(html => {
+                    // Inject the HTML content into the confirmationMessage div
+                    var confirmationDiv = document.getElementById('confirmationMessage');
+                    confirmationDiv.innerHTML = html;
+                    confirmationDiv.style.display = 'block';
+
+                    // hide the booking form & title
+                    document.getElementById('bookingForm').style.display = 'none';
+                    document.getElementById('createTitle').style.display = 'none';
+
+                    fire();
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred while submitting the form');
+                })
+                .finally(() => {
+                    submitButton.textContent = originalButtonText;
+                    submitButton.disabled = false;
+                });
+            });
+        });
+    </script>
+}
+

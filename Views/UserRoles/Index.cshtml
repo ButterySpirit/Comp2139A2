@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Assign1.Models.UserRolesViewModel>
+
+@{
+    ViewData["Title"] = "User Roles Management";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>User ID</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Roles</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var userRoleViewModel in Model)
+        {
+            <tr>
+                <td>@userRoleViewModel.UserId</td>
+                <td>@userRoleViewModel.UserName</td>
+                <td>@userRoleViewModel.Email</td>
+                <td>
+                    @foreach (var role in userRoleViewModel.Roles)
+                    {
+                        <span class="badge bg-secondary">@role</span>
+                    }
+                </td>
+                <td>
+                    <!-- Example actions -->
+                    <a asp-action="Edit" asp-route-id="@userRoleViewModel.UserId" class="btn btn-primary">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@userRoleViewModel.UserId" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -9,9 +9,9 @@
     int? hotelId = ViewBag.HotelId as int?;
 }
 
-<h2 class="display-2 text-center">Create Booking</h2>
+<h2 class="display-2 text-center" id="createTitle">Create Booking</h2>
 
-<form asp-action="Create" class="border border-2 rounded rounded-2 p-4 m-2">
+<form id="bookingForm" asp-action="Create" class="border border-2 rounded rounded-2 p-4 m-2">
     <div asp-validation-summary="All" class="text-danger mb-3"></div>
 
     <!-- Hidden fields for ServiceType and ServiceID -->
@@ -64,17 +64,72 @@
     </div>
 </form>
 
-<script type="text/javascript">
-    document.addEventListener("DOMContentLoaded", function() {
-        var costPerNight = @costPerNight;
+<div id="confirmationMessage" style="display:none;"></div>
 
-        var numberOfNightsField = document.getElementById("numberOfNights");
-        var totalCostField = document.getElementById("totalCost");
 
-        numberOfNightsField.addEventListener("input", function() {
-            var numberOfNights = this.value;
-            var totalCost = numberOfNights * costPerNight;
-            totalCostField.value = totalCost.toFixed(2);
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+
+
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function() {
+            var costPerNight = @costPerNight;
+
+            var numberOfNightsField = document.getElementById("numberOfNights");
+            var totalCostField = document.getElementById("totalCost");
+
+            numberOfNightsField.addEventListener("input", function () {
+                var numberOfNights = this.value;
+                var totalCost = numberOfNights * costPerNight;
+                totalCostField.value = totalCost.toFixed(2);
+            });
+
+            var bookingForm = document.getElementById('bookingForm');
+
+            bookingForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            var formData = new FormData(bookingForm);
+            var submitButton = bookingForm.querySelector('button[type="submit"]');
+            var originalButtonText = submitButton.textContent;
+            submitButton.textContent = 'Submitting...'; // Update button text during submission
+            submitButton.disabled = true; // Disable button to prevent multiple submissions
+
+            fetch(bookingForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest',
+                    'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]').value
+                }
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text(); // Get HTML content
+            })
+            .then(html => {
+                // Inject the HTML content into the confirmationMessage div
+                var confirmationDiv = document.getElementById('confirmationMessage');
+                confirmationDiv.innerHTML = html;
+                confirmationDiv.style.display = 'block';
+
+                // hide the booking form & title
+                document.getElementById('bookingForm').style.display = 'none';
+                document.getElementById('createTitle').style.display = 'none';
+
+                fire();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred while submitting the form');
+            })
+            .finally(() => {
+                submitButton.textContent = originalButtonText;
+                submitButton.disabled = false;
+            });
         });
     });
-</script>
+    </script>
+}

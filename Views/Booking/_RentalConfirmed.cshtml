@@ -1,0 +1,40 @@
+﻿@model Assign1.Models.BookingViewModel
+
+@{
+    ViewData["Title"] = "Booking Confirmation";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Booking Confirmation</h2>
+    <div class="text-center">
+        <h3>Thank you for your booking with JourneyNest!</h3>
+        <p>Your booking details are as follows:</p>
+    </div>
+
+    <div class="card mx-auto" style="max-width: 800px;" id="details">
+        <img src="@Url.Content($"~/img/{Model.Rental.MakeModel.Replace(" ", "")}.webp")" class="card-img-top"
+             style="height: auto; width: 100%; object-fit: cover;">
+        <div class="card-body">
+            <h5 class="card-title text-center">@Model.Rental.VehicleName</h5>
+            <dl class="row">
+                <dt class="col-sm-5">Booking ID</dt>
+                <dd class="col-sm-7 text-end">@Model.Booking.BookingId</dd>
+
+                <dt class="col-sm-5">Booking Date</dt>
+                <dd class="col-sm-7 text-end">@Model.Booking.BookingDate.ToShortDateString()</dd>
+
+                <dt class="col-sm-5">Total Cost</dt>
+                <dd class="col-sm-7 text-end text-success">$@Model.Booking.TotalCost.ToString("N2")</dd>
+
+
+
+                <dt class="col-sm-5">Payment Status</dt>
+                <dd class="col-sm-7 text-end">@Model.Booking.PaymentStatus</dd>
+            </dl>
+        </div>
+    </div>
+
+    <div class="text-center mt-4">
+        <a asp-action="Index" asp-controller="Home" class="btn btn-primary">Return Home</a>
+    </div>
+</div>

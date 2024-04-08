@@ -19,7 +19,6 @@
     <None Remove="Views\Search\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Data\" />
     <Folder Include="Views\Flight\" />
     <Folder Include="Views\Hotel\" />
     <Folder Include="Views\Rental\" />

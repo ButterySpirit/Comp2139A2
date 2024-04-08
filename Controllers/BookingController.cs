@@ -119,6 +119,13 @@ namespace Assign1.Controllers
         {
             if (ModelState.IsValid)
             {
+                var hotel = await _context.Hotels.FirstOrDefaultAsync(h => h.HotelId == id);
+                var viewModel = new BookingViewModel
+                {
+                    Booking = booking,
+                    Hotel = hotel
+                };
+
                 booking.UserId = null; // Set UserId to null for guest users
                 booking.ServiceType = "Hotel"; // Set ServiceType to "Hotel"
                 ModelState.Remove("ServiceType"); // This will clear the error related to ServiceType
@@ -126,8 +133,11 @@ namespace Assign1.Controllers
 
                 _context.Add(booking);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Confirmation), new { id = booking.BookingId });
+
+                // Return a JSON response for AJAX request
+                return PartialView("_HotelConfirmed", viewModel);
             }
+
             return View(booking);
         }
 
@@ -159,6 +169,13 @@ namespace Assign1.Controllers
         {
             if (ModelState.IsValid)
             {
+                var flight = await _context.Flights.FirstOrDefaultAsync(f => f.FlightId == flightId);
+                var viewModel = new BookingViewModel
+                {
+                    Booking = booking,
+                    Flight = flight
+                };
+
                 booking.UserId = null; // Set UserId to null for guest users
                 booking.ServiceType = "Flight"; // Set ServiceType to "Flight"
                 ModelState.Remove("ServiceType"); // This will clear the error related to ServiceType
@@ -166,7 +183,7 @@ namespace Assign1.Controllers
 
                 _context.Add(booking);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Confirmation), new { id = booking.BookingId });
+                return PartialView("_FlightConfirmed", viewModel);
             }
             return View(booking);
         }
@@ -197,6 +214,14 @@ namespace Assign1.Controllers
         {
             if (ModelState.IsValid)
             {
+
+                var rental = await _context.Rentals.FirstOrDefaultAsync(r => r.RentalId == rentalId);
+                var viewModel = new BookingViewModel
+                {
+                    Booking = booking,
+                    Rental = rental
+                };
+
                 booking.UserId = null; // Set UserId to null for guest users
                 booking.ServiceType = "Rental"; // Set ServiceType to "Rental"
                 ModelState.Remove("ServiceType"); // This will clear the error related to ServiceType
@@ -204,7 +229,7 @@ namespace Assign1.Controllers
 
                 _context.Add(booking);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Confirmation), new { id = booking.BookingId });
+                return PartialView("_RentalConfirmed", viewModel);
             }
             return View(booking);
         }

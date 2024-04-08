@@ -12169,24 +12169,26 @@
     ]
   },
   "packageFolders": {
-    "/Users/ianmcdonald/.nuget/packages/": {}
+    "C:\\Users\\987264\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/ianmcdonald/Desktop/COMP2139-A1/Assign1.csproj",
+      "projectUniqueName": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Assign1.csproj",
       "projectName": "Assign1",
-      "projectPath": "/Users/ianmcdonald/Desktop/COMP2139-A1/Assign1.csproj",
-      "packagesPath": "/Users/ianmcdonald/.nuget/packages/",
-      "outputPath": "/Users/ianmcdonald/Desktop/COMP2139-A1/obj/",
+      "projectPath": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Assign1.csproj",
+      "packagesPath": "C:\\Users\\987264\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/ianmcdonald/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\987264\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -12260,6 +12262,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[7.0.16, 7.0.16]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[7.0.16, 7.0.16]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[7.0.16, 7.0.16]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[7.0.16, 7.0.16]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -12268,7 +12288,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.203/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }

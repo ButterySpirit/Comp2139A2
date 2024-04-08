@@ -39,37 +39,28 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Booking" asp-action="Index">Bookings</a>
                         </li>
+                        <!-- Injected UserRoleViewComponent will go here -->
                         @if (SignInManager.IsSignedIn(User))
                         {
-                            // Profile Update
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="Identity"
-                                   asp-page="/Account/Manage/Index" title="Manage Profile">
-                                    <i class="fa-solid fa-circle-user"></i> Profile
-                                </a>
+                                @await Component.InvokeAsync("UserRole")
                             </li>
-
-                            // Logout
                             <li class="nav-item">
-                                <form asp-area="Identity" asp-page="/Account/Logout" method="post">
-                                    <button type="submit" class="nav-link text-dark btn btn-link">Logout</button>
+                                <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage Profile">Profile</a>
+                            </li>
+                            <li class="nav-item">
+                                <form asp-area="Identity" asp-page="/Account/Logout" method="post" id="logoutForm">
+                                    <a class="nav-link text-dark" href="javascript:document.getElementById('logoutForm').submit()">Logout</a>
                                 </form>
                             </li>
                         }
                         else
                         {
-                            // Login
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="Identity"
-                                   asp-page="/Account/Login">
-                                    <i class="fa-solid fa-right-to-bracket"></i> Login
-                                </a>
+                                <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
                             </li>
-
-                            // Register
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="Identity"
-                                   asp-page="/Account/Register"><i class="fa fa-user-plus"></i> Register</a>
+                                <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
                             </li>
                         }
                     </ul>
@@ -77,6 +68,7 @@
             </div>
         </nav>
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
@@ -85,13 +77,51 @@
 
     <footer class="border-top footer text-muted">
         <div class="container text-center">
-            &copy; 2024 - JourneyNest  - Ian McDonald | Nikola Varicak | Sebastian Varon
+            &copy; 2024 - JourneyNest - Ian McDonald | Nikola Varicak | Sebastian Varon
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
+
+    <script>
+        function fire() {
+            var count = 200;
+            var defaults = {
+                origin: { y: 0.7 }
+            };
+
+            function fire(particleRatio, opts) {
+                confetti({
+                    ...defaults,
+                    ...opts,
+                    particleCount: Math.floor(count * particleRatio)
+                });
+            }
+
+            fire(0.25, {
+                spread: 26,
+                startVelocity: 55,
+            });
+            fire(0.2, {
+                spread: 60,
+            });
+            fire(0.35, {
+                spread: 100,
+                decay: 0.91,
+                scalar: 0.8
+            });
+            fire(0.1, {
+                spread: 120,
+                startVelocity: 25,
+                decay: 0.92,
+                scalar: 1.2
+            });
+            fire(0.1, {
+                spread: 120,
+                startVelocity: 45,
+            });
+        }</script>
 </body>
 </html>
-

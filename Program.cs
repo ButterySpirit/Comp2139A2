@@ -43,6 +43,26 @@ if (!app.Environment.IsDevelopment())
     app.UseExceptionHandler("/Home/Error");
 }
 
+using  var scope = app.Services.CreateScope();
+var loggerFactory = scope.ServiceProvider.GetRequiredService<ILoggerFactory>();
+
+try
+{
+    var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+
+    await ContextSeed.SeedRolesAsync(userManager, roleManager);
+    await ContextSeed.SuperSeedRoleAsync(userManager, roleManager);
+
+
+}
+catch (Exception e){
+
+    var logger = loggerFactory.CreateLogger<Program>();
+    logger.LogError(e, "An error occured while attempting to seed the roles for the system");
+
+}
 app.UseStaticFiles();
 
 app.UseRouting();

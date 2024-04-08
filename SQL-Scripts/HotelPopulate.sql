@@ -134,7 +134,7 @@ INSERT INTO Hotels (
     '15:00', -- CheckInTime
     '11:00', -- CheckOutTime
     "Le Mount Stephen is located in Downtown Montreal. Guests are located close by to The Underground City, YUL Airport, Bell Centre and The Museum of Fine Arts.", -- Description
-    "./img/Mount-Stephen.webp" -- Image
+    "../img/Mount-Stephen.webp" -- Image
 );
 
 INSERT INTO Hotels (
@@ -226,7 +226,7 @@ INSERT INTO Hotels (
     '15:00', -- CheckInTime
     '11:00', -- CheckOutTime
     "Located in St. John's, Sheraton Hotel Newfoundland is in the city center. Marine Drive Provincial Park and Avalon Peninsula reflect the area's natural beauty and area attractions include Johnson Geo Centre and Mile One Centre.", -- Description
-    "./img/sheraton-nfld.webp" -- Image
+    "../img/sheraton-nfld.webp" -- Image
 );
 
 INSERT INTO Hotels (
