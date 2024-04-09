@@ -4,51 +4,125 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
-namespace Assign1.Controllers
+
+public class RentalController : Controller
 {
-    public class RentalController : Controller
+    private readonly ApplicationDbContext _context;
+
+    public RentalController(ApplicationDbContext context)
     {
-        private readonly ApplicationDbContext _context;
+        _context = context;
+    }
 
-        public RentalController(ApplicationDbContext context)
+    // GET: Rental/Index
+    public async Task<IActionResult> Index()
+    {
+        var rentals = await _context.Rentals.ToListAsync();
+        return View(rentals);
+    }
+
+    // GET: Rental/Create
+    public IActionResult Create()
+    {
+        return View();
+    }
+
+    // POST: Rental/Create
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Create(Rental rental)
+    {
+        if (ModelState.IsValid)
         {
-            _context = context;
+            _context.Add(rental);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+        return View(rental);
+    }
+
+    // GET: Rental/Edit/5
+    public async Task<IActionResult> Edit(int? id)
+    {
+        if (id == null)
+        {
+            return NotFound();
         }
 
-        public async Task<IActionResult> Index()
+        var rental = await _context.Rentals.FindAsync(id);
+        if (rental == null)
         {
-            // Fetching available rentals directly using the Rental model
-            var availableRentals = await _context.Rentals
-                .Where(r => r.Availability) // Assumes there's an 'Availability' property in your Rental model
-                .ToListAsync();
+            return NotFound();
+        }
+        return View(rental);
+    }
 
-            return View(availableRentals);
+    // POST: Rental/Edit/5
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Edit(int id, Rental rental)
+    {
+        if (id != rental.RentalId)
+        {
+            return NotFound();
         }
 
-        /* Search for rentals
-        public IActionResult Search(string vehicleName, string vehicleType, string state)
+        if (ModelState.IsValid)
         {
-            var rentalQuery = _context.Rentals.AsQueryable();
-
-            if (!String.IsNullOrEmpty(vehicleName))
+            try
             {
-                rentalQuery = rentalQuery.Where(r => r.VehicleName.ToLower().Contains(vehicleName.ToLower()));
+                _context.Update(rental);
+                await _context.SaveChangesAsync();
             }
-
-            if (!String.IsNullOrEmpty(vehicleType))
+            catch (DbUpdateConcurrencyException)
             {
-                rentalQuery = rentalQuery.Where(r => r.VehicleType == vehicleType);
+                if (!RentalExists(rental.RentalId))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
             }
-
-            if (!String.IsNullOrEmpty(state))
-            {
-                rentalQuery = rentalQuery.Where(r => r.State == state);
-            }
-
-            var rentals = rentalQuery.ToList();
-            return View("Index", rentals);
+            return RedirectToAction(nameof(Index));
         }
-        */
+        return View(rental);
+    }
+
+    // GET: Rental/Delete/5
+    public async Task<IActionResult> Delete(int? id)
+    {
+        if (id == null)
+        {
+            return NotFound();
+        }
+
+        var rental = await _context.Rentals
+            .FirstOrDefaultAsync(m => m.RentalId == id);
+        if (rental == null)
+        {
+            return NotFound();
+        }
+
+        return View(rental);
+    }
+
+    // POST: Rental/Delete/5
+    [HttpPost, ActionName("Delete")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> DeleteConfirmed(int id)
+    {
+        var rental = await _context.Rentals.FindAsync(id);
+        _context.Rentals.Remove(rental);
+        await _context.SaveChangesAsync();
+        return RedirectToAction(nameof(Index));
+    }
+
+    private bool RentalExists(int id)
+    {
+        return _context.Rentals.Any(e => e.RentalId == id);
     }
 }

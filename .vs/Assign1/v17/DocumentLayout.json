@@ -3,56 +3,88 @@
   "WorkspaceRootPath": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|c:\\users\\987264\\source\\repos\\comp2139a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|c:\\users\\987264\\source\\repos\\comp2139a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\controllers\\userrolescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|solutionrelative:controllers\\userrolescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|c:\\users\\987264\\source\\repos\\comp2139a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\views\\shared\\components\\userrole\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|solutionrelative:views\\shared\\components\\userrole\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|c:\\users\\987264\\source\\repos\\comp2139a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\models\\userrolesviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|solutionrelative:models\\userrolesviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|c:\\users\\987264\\source\\repos\\comp2139a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\components\\userroleviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|solutionrelative:components\\userroleviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|c:\\users\\987264\\source\\repos\\comp2139a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\controllers\\rolemanagercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|solutionrelative:controllers\\rolemanagercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|c:\\users\\987264\\source\\repos\\comp2139a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\views\\rolemanager\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|solutionrelative:views\\rolemanager\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|c:\\users\\987264\\source\\repos\\comp2139a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\views\\userroles\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|solutionrelative:views\\userroles\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|c:\\users\\987264\\source\\repos\\comp2139a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\data\\contextseed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|solutionrelative:data\\contextseed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|c:\\users\\987264\\source\\repos\\comp2139a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|solutionrelative:areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|c:\\users\\987264\\source\\repos\\comp2139a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|solutionrelative:areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|c:\\users\\987264\\source\\repos\\comp2139a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|c:\\users\\987264\\source\\repos\\comp2139a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\views\\rental\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|solutionrelative:views\\rental\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|c:\\users\\987264\\source\\repos\\comp2139a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\controllers\\hotelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|solutionrelative:controllers\\hotelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|c:\\users\\987264\\source\\repos\\comp2139a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\views\\hotel\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|solutionrelative:views\\hotel\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|c:\\users\\987264\\source\\repos\\comp2139a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\views\\shared\\components\\userrole\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|solutionrelative:views\\shared\\components\\userrole\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|c:\\users\\987264\\source\\repos\\comp2139a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\controllers\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|solutionrelative:controllers\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|c:\\users\\987264\\source\\repos\\comp2139a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\controllers\\flightcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|solutionrelative:controllers\\flightcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|c:\\users\\987264\\source\\repos\\comp2139a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\views\\flight\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|solutionrelative:views\\flight\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|c:\\users\\987264\\source\\repos\\comp2139a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\views\\rental\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|solutionrelative:views\\rental\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|c:\\users\\987264\\source\\repos\\comp2139a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\views\\hotel\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|solutionrelative:views\\hotel\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|c:\\users\\987264\\source\\repos\\comp2139a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\controllers\\rentalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|solutionrelative:controllers\\rentalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|c:\\users\\987264\\source\\repos\\comp2139a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\views\\admin\\adminflight.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|solutionrelative:views\\admin\\adminflight.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|c:\\users\\987264\\source\\repos\\comp2139a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\views\\admin\\adminhotel.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|solutionrelative:views\\admin\\adminhotel.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|c:\\users\\987264\\source\\repos\\comp2139a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|c:\\users\\987264\\source\\repos\\comp2139a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\components\\userroleviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|solutionrelative:components\\userroleviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|c:\\users\\987264\\source\\repos\\comp2139a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\models\\userrolesviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|solutionrelative:models\\userrolesviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|c:\\users\\987264\\source\\repos\\comp2139a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\enum\\roles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|solutionrelative:enum\\roles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|c:\\users\\987264\\source\\repos\\comp2139a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|solutionrelative:areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|c:\\users\\987264\\source\\repos\\comp2139a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\controllers\\userrolescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|solutionrelative:controllers\\userrolescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|c:\\users\\987264\\source\\repos\\comp2139a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\data\\contextseed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|solutionrelative:data\\contextseed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|c:\\users\\987264\\source\\repos\\comp2139a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|c:\\users\\987264\\source\\repos\\comp2139a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -61,10 +93,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|c:\\users\\987264\\source\\repos\\comp2139a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|c:\\users\\987264\\source\\repos\\comp2139a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\controllers\\rentalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|solutionrelative:controllers\\rentalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|c:\\users\\987264\\source\\repos\\comp2139a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\comp2139-a1\\services\\emailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -102,124 +130,241 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
+              "Title": "HotelController.cs",
+              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Controllers\\HotelController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HotelController.cs",
+              "ToolTip": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Controllers\\HotelController.cs",
+              "RelativeToolTip": "Controllers\\HotelController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEwAAABxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-09T20:07:30.613Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Views\\Hotel\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Views\\Hotel\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Views\\Hotel\\Edit.cshtml",
+              "RelativeToolTip": "Views\\Hotel\\Edit.cshtml",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAFMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-09T21:38:17.382Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AdminHotel.cshtml",
+              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Views\\Admin\\AdminHotel.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\AdminHotel.cshtml",
+              "ToolTip": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Views\\Admin\\AdminHotel.cshtml",
+              "RelativeToolTip": "Views\\Admin\\AdminHotel.cshtml",
+              "ViewState": "AQIAAC4AAAAAAAAAAAAwwFQAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-09T19:21:51.506Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "RentalController.cs",
+              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Controllers\\RentalController.cs",
+              "RelativeDocumentMoniker": "Controllers\\RentalController.cs",
+              "ToolTip": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Controllers\\RentalController.cs",
+              "RelativeToolTip": "Controllers\\RentalController.cs",
+              "ViewState": "AQIAADMAAAAAAAAAAAAowAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-05T04:51:10.93Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Default.cshtml",
               "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Views\\Shared\\Components\\UserRole\\Default.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\Components\\UserRole\\Default.cshtml",
               "ToolTip": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Views\\Shared\\Components\\UserRole\\Default.cshtml",
               "RelativeToolTip": "Views\\Shared\\Components\\UserRole\\Default.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-04-08T00:09:38.788Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UserRoleViewComponent.cs",
-              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Components\\UserRoleViewComponent.cs",
-              "RelativeDocumentMoniker": "Components\\UserRoleViewComponent.cs",
-              "ToolTip": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Components\\UserRoleViewComponent.cs",
-              "RelativeToolTip": "Components\\UserRoleViewComponent.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-08T00:01:49.029Z",
+              "DocumentIndex": 0,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "ToolTip": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "RelativeToolTip": "Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "ViewState": "AQIAABsAAAAAAAAAAAAIwCwAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-07T20:56:26.931Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "UserRolesController.cs",
-              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Controllers\\UserRolesController.cs",
-              "RelativeDocumentMoniker": "Controllers\\UserRolesController.cs",
-              "ToolTip": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Controllers\\UserRolesController.cs",
-              "RelativeToolTip": "Controllers\\UserRolesController.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAQwBsAAAAnAAAA",
+              "Title": "Register.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "ToolTip": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "RelativeToolTip": "Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "ViewState": "AQIAAFgAAAAAAAAAAAAIwJAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-07T22:45:13.542Z",
+              "WhenOpened": "2024-04-07T20:52:12.227Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UserRolesViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Models\\UserRolesViewModel.cs",
-              "RelativeDocumentMoniker": "Models\\UserRolesViewModel.cs",
-              "ToolTip": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Models\\UserRolesViewModel.cs",
-              "RelativeToolTip": "Models\\UserRolesViewModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-07T22:44:49.091Z",
+              "DocumentIndex": 2,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Views\\Rental\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Views\\Rental\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Views\\Rental\\Edit.cshtml",
+              "RelativeToolTip": "Views\\Rental\\Edit.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-09T21:36:23.48Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "RoleManagerController.cs",
-              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Controllers\\RoleManagerController.cs",
-              "RelativeDocumentMoniker": "Controllers\\RoleManagerController.cs",
-              "ToolTip": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Controllers\\RoleManagerController.cs",
-              "RelativeToolTip": "Controllers\\RoleManagerController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAArAAAA",
+              "DocumentIndex": 7,
+              "Title": "FlightController.cs",
+              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Controllers\\FlightController.cs",
+              "RelativeDocumentMoniker": "Controllers\\FlightController.cs",
+              "ToolTip": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Controllers\\FlightController.cs",
+              "RelativeToolTip": "Controllers\\FlightController.cs",
+              "ViewState": "AQIAAEcAAAAAAAAAAAAswJAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-07T22:36:24.539Z",
+              "WhenOpened": "2024-04-09T19:30:35.345Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
+              "Title": "Admin.cs",
+              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Controllers\\Admin.cs",
+              "RelativeDocumentMoniker": "Controllers\\Admin.cs",
+              "ToolTip": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Controllers\\Admin.cs",
+              "RelativeToolTip": "Controllers\\Admin.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAADYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-09T19:43:32.705Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Views\\Flight\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Flight\\Create.cshtml",
+              "ToolTip": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Views\\Flight\\Create.cshtml",
+              "RelativeToolTip": "Views\\Flight\\Create.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-09T21:29:55.018Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Views\\Hotel\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Hotel\\Create.cshtml",
+              "ToolTip": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Views\\Hotel\\Create.cshtml",
+              "RelativeToolTip": "Views\\Hotel\\Create.cshtml",
+              "ViewState": "AQIAACEAAAAAAAAAAAAAAFQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-09T21:30:58.446Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Views\\Rental\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Rental\\Create.cshtml",
+              "ToolTip": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Views\\Rental\\Create.cshtml",
+              "RelativeToolTip": "Views\\Rental\\Create.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC8AAABLAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-09T21:33:22.228Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACoAAAA8AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC0AAABIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-04-05T20:39:17.421Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Views\\RoleManager\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\RoleManager\\Index.cshtml",
-              "ToolTip": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Views\\RoleManager\\Index.cshtml",
-              "RelativeToolTip": "Views\\RoleManager\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAAIAAAA",
+              "DocumentIndex": 12,
+              "Title": "AdminFlight.cshtml",
+              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Views\\Admin\\AdminFlight.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\AdminFlight.cshtml",
+              "ToolTip": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Views\\Admin\\AdminFlight.cshtml",
+              "RelativeToolTip": "Views\\Admin\\AdminFlight.cshtml",
+              "ViewState": "AQIAAEAAAAAAAAAAAAAQwGYAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-07T22:39:39.401Z",
+              "WhenOpened": "2024-04-09T19:21:13.975Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ContextSeed.cs",
-              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Data\\ContextSeed.cs",
-              "RelativeDocumentMoniker": "Data\\ContextSeed.cs",
-              "ToolTip": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Data\\ContextSeed.cs",
-              "RelativeToolTip": "Data\\ContextSeed.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAABfAAAA",
+              "DocumentIndex": 15,
+              "Title": "UserRoleViewComponent.cs",
+              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Components\\UserRoleViewComponent.cs",
+              "RelativeDocumentMoniker": "Components\\UserRoleViewComponent.cs",
+              "ToolTip": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Components\\UserRoleViewComponent.cs",
+              "RelativeToolTip": "Components\\UserRoleViewComponent.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAABhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-07T21:26:15.486Z",
+              "WhenOpened": "2024-04-08T00:01:49.029Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Views\\UserRoles\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\UserRoles\\Index.cshtml",
-              "ToolTip": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Views\\UserRoles\\Index.cshtml",
-              "RelativeToolTip": "Views\\UserRoles\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-07T22:51:04.051Z",
+              "DocumentIndex": 16,
+              "Title": "UserRolesViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Models\\UserRolesViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\UserRolesViewModel.cs",
+              "ToolTip": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Models\\UserRolesViewModel.cs",
+              "RelativeToolTip": "Models\\UserRolesViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAUAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-07T22:44:49.091Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 18,
+              "Title": "UserRolesController.cs",
+              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Controllers\\UserRolesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserRolesController.cs",
+              "ToolTip": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Controllers\\UserRolesController.cs",
+              "RelativeToolTip": "Controllers\\UserRolesController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-07T22:45:13.542Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
               "Title": "Roles.cs",
               "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Enum\\Roles.cs",
               "RelativeDocumentMoniker": "Enum\\Roles.cs",
@@ -232,20 +377,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Register.cshtml.cs",
-              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
-              "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
-              "ToolTip": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
-              "RelativeToolTip": "Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
-              "ViewState": "AQIAAIEAAAAAAAAAAAAiwJUAAAAaAAAA",
+              "DocumentIndex": 19,
+              "Title": "ContextSeed.cs",
+              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Data\\ContextSeed.cs",
+              "RelativeDocumentMoniker": "Data\\ContextSeed.cs",
+              "ToolTip": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Data\\ContextSeed.cs",
+              "RelativeToolTip": "Data\\ContextSeed.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAuwCAAAABfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-07T20:52:12.227Z",
+              "WhenOpened": "2024-04-07T21:26:15.486Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 23,
               "Title": "EmailSender.cs",
               "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Services\\EmailSender.cs",
               "RelativeDocumentMoniker": "Services\\EmailSender.cs",
@@ -253,11 +398,12 @@
               "RelativeToolTip": "Services\\EmailSender.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-07T15:44:42.725Z"
+              "WhenOpened": "2024-04-07T15:44:42.725Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 21,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "Data\\ApplicationDbContext.cs",
@@ -270,45 +416,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "RentalController.cs",
-              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Controllers\\RentalController.cs",
-              "RelativeDocumentMoniker": "Controllers\\RentalController.cs",
-              "ToolTip": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Controllers\\RentalController.cs",
-              "RelativeToolTip": "Controllers\\RentalController.cs",
-              "ViewState": "AQIAAB4AAAAAAAAAAAAYwAwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-05T04:51:10.93Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 20,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAABwAAAAAAAAAAAAAAEAAAAAAAAAA",
+              "ViewState": "AQIAABkAAAAAAAAAAIBJwEAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-04T22:06:00.107Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Register.cshtml",
-              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
-              "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\Register.cshtml",
-              "ToolTip": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
-              "RelativeToolTip": "Areas\\Identity\\Pages\\Account\\Register.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAwwC8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-07T20:56:26.931Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 22,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\COMP2139-A1\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",

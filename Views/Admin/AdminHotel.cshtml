@@ -1,0 +1,102 @@
+﻿@model List<Hotel>
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<ApplicationUser> UserManager
+@inject SignInManager<ApplicationUser> SignInManager
+@{
+    ViewData["Title"] = "Hotels";
+    var isAdmin = User.IsInRole("Admin");
+}
+
+<div class="text-center">
+    <h1 class="display-4">Hotels</h1>
+    @if (isAdmin)
+    {
+        <a asp-controller="Hotels" asp-action="Create" class="btn btn-success mb-3">Add New Hotel</a>
+    }
+</div>
+
+<div class="col">
+    <form method="get" class="search-form p-3 home-search m-auto border border-2 rounded-2">
+        <div class="row g-3 align-items-center justify-content-center">
+            <div class="col-md-4">
+                <select name="destination" id="destination" class="form-select">
+                    <option value="">Province</option>
+                    <option>Alberta</option>
+                    <option>British Columbia</option>
+                    <option>Manitoba</option>
+                    <option>New Brunswick</option>
+                    <option>Newfoundland</option>
+                    <option>Nova Scotia</option>
+                    <option>Ontario</option>
+                    <option>Prince Edward Island</option>
+                    <option>Quebec</option>
+                    <option>Saskatchewan</option>
+                    <option>Northwest Territories</option>
+                    <option>Nunavut</option>
+                    <option>Yukon</option>
+                </select>
+            </div>
+
+            <div class="col-sm-3">
+                <select name="rating" id="rating" class="form-select">
+                    <option value="">Stars</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+
+            <div class="col-md-3">
+                <input type="date" name="checkIn" id="checkIn" class="form-control" placeholder="Check-In">
+            </div>
+
+            <div class="col-md-3">
+                <input type="date" name="checkOut" id="checkOut" class="form-control" placeholder="Check-Out">
+            </div>
+
+            <div class="col-md-2">
+                <button type="submit" id="searchButton" class="btn btn-success mt-3">Search</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<div id="searchResults"></div>
+
+<div class="container-fluid p-3 m-3 text-center">
+    <div class="row">
+        @foreach (var hotel in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="@hotel.image" class="card-img-top" alt="@hotel.HotelName">
+                    <div class="card-body">
+                        <h5 class="card-title">@hotel.HotelName</h5>
+                        <p class="card-text">@hotel.Description</p>
+                        <address>@hotel.Address, @hotel.City, @hotel.State, @hotel.Country</address>
+                        <p class="text-center">@hotel.StarRating Stars</p>
+                        <span class="price text-success">$@hotel.CostPerNight / Night</span>
+                        <br />
+                        <a asp-controller="Booking" asp-action="Create" asp-route-id="@hotel.HotelId" asp-route-costPerNight="@hotel.CostPerNight" class="btn btn-primary mt-2">Book Now!</a>
+                        @if (isAdmin)
+                        {
+                            <a asp-controller="Hotel" asp-action="Edit" asp-route-id="@hotel.HotelId" class="btn btn-secondary mt-2">Edit</a>
+                            <a asp-controller="Hotel" asp-action="Delete" asp-route-id="@hotel.HotelId" class="btn btn-danger mt-2">Delete</a>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        // Your existing AJAX search script
+    </script>
+}

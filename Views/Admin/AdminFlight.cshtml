@@ -1,0 +1,122 @@
+﻿@model List<Flight>
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<ApplicationUser> UserManager
+@inject SignInManager<ApplicationUser> SignInManager
+@{
+    ViewData["Title"] = "Flights";
+    var isAdmin = User.IsInRole("Admin");
+}
+
+<div class="text-center">
+    <h1 class="display-4">Flights</h1>
+    @if (isAdmin)
+    {
+        <a asp-controller="Flights" asp-action="Create" class="btn btn-success">Add New Flight</a>
+    }
+</div>
+
+<div class="col">
+    <form method="get" class="search-form p-3 m-auto  border border-2 rounded-2">
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
+                <label for="departure" class="col-form-label">Departure</label>
+            </div>
+            <div class="col-sm">
+                <select id="departure" name="departure" class="form-select">
+                    <option>YYC</option>
+                    <option>YVR</option>
+                    <option>YWG</option>
+                    <option>YQM</option>
+                    <option>YYT</option>
+                    <option>YHZ</option>
+                    <option>YYZ</option>
+                    <option>YYG</option>
+                    <option>YUL</option>
+                    <option>YXE</option>
+                    <option>YZF</option>
+                    <option>YFB</option>
+                    <option>YXY</option>
+                </select>
+            </div>
+
+            <div class="col-auto">
+                <label for="destination" class="col-form-label">Destination</label>
+            </div>
+            <div class="col-sm">
+                <select id="destination" name="destination" class="form-select">
+                    <option>YYC</option>
+                    <option>YVR</option>
+                    <option>YWG</option>
+                    <option>YQM</option>
+                    <option>YYT</option>
+                    <option>YHZ</option>
+                    <option>YYZ</option>
+                    <option>YYG</option>
+                    <option>YUL</option>
+                    <option>YXE</option>
+                    <option>YZF</option>
+                    <option>YFB</option>
+                    <option>YXY</option>
+                </select>
+            </div>
+
+            <div class="row">
+                <div class="col text-center">
+                    <button type="submit" id="searchButton" class="btn btn-success mt-3">Search</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<div class="container p-2 m-2">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Flight #</th>
+                <th scope="col">Departure</th>
+                <th scope="col">Arrival</th>
+                <th scope="col">Airline</th>
+                <th scope="col">Seats</th>
+                <th scope="col">Status</th>
+                <th scope="col">Ticket Price</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        @foreach (var flight in Model)
+        {
+            <tbody>
+                <tr>
+                    <th scope="row">@flight.FlightId</th>
+                    <td>@flight.DeparturePort</td>
+                    <td>@flight.ArrivalPort</td>
+                    <td>@flight.AirlineName</td>
+                    <td>@flight.AvailSeats</td>
+                    <td>@flight.Status</td>
+                    <td class="text-success">$@flight.TicketCost CAD</td>
+                    <td>
+                        <a asp-controller="Booking" asp-action="CreateFlight" asp-route-id="@flight.FlightId" asp-route-ticketCost="@flight.TicketCost" asp-route-status="@flight.Status" class="btn btn-primary">Book Now!</a>
+                        @if (isAdmin)
+                        {
+                            <a asp-controller="Flight" asp-action="Edit" asp-route-id="@flight.FlightId" class="btn btn-secondary">Edit</a>
+                            <a asp-controller="Flight" asp-action="Delete" asp-route-id="@flight.FlightId" class="btn btn-danger">Delete</a>
+                        }
+                    </td>
+                </tr>
+            </tbody>
+        }
+    </table>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        $(document).ready(function () {
+            // Existing AJAX search script
+        });
+    </script>
+}

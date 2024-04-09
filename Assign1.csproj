@@ -19,9 +19,6 @@
     <None Remove="Views\Search\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Views\Flight\" />
-    <Folder Include="Views\Hotel\" />
-    <Folder Include="Views\Rental\" />
     <Folder Include="Views\Booking\" />
     <Folder Include="SQL-Scripts\" />
     <Folder Include="Views\Search\" />

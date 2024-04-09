@@ -90,6 +90,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/987264/source/repos/Comp2139A1/COMP2139-A1/COMP2139-A1/COMP2139-A1/COMP2139-A1/Views/Admin/AdminFlight.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRtaW5GbGlnaHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/987264/source/repos/Comp2139A1/COMP2139-A1/COMP2139-A1/COMP2139-A1/COMP2139-A1/Views/Admin/AdminHotel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRtaW5Ib3RlbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/987264/source/repos/Comp2139A1/COMP2139-A1/COMP2139-A1/COMP2139-A1/COMP2139-A1/Views/Admin/AdminRental.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRtaW5SZW50YWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/987264/source/repos/Comp2139A1/COMP2139-A1/COMP2139-A1/COMP2139-A1/COMP2139-A1/Views/Booking/Confirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xDb25maXJtYXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -134,6 +146,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xfUmVudGFsQ29uZmlybWVkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/987264/source/repos/Comp2139A1/COMP2139-A1/COMP2139-A1/COMP2139-A1/COMP2139-A1/Views/Flight/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmxpZ2h0XENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/987264/source/repos/Comp2139A1/COMP2139-A1/COMP2139-A1/COMP2139-A1/COMP2139-A1/Views/Flight/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmxpZ2h0XERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/987264/source/repos/Comp2139A1/COMP2139-A1/COMP2139-A1/COMP2139-A1/COMP2139-A1/Views/Flight/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmxpZ2h0XEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/987264/source/repos/Comp2139A1/COMP2139-A1/COMP2139-A1/COMP2139-A1/COMP2139-A1/Views/Flight/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmxpZ2h0XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -142,8 +166,32 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/987264/source/repos/Comp2139A1/COMP2139-A1/COMP2139-A1/COMP2139-A1/COMP2139-A1/Views/Hotel/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG90ZWxcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/987264/source/repos/Comp2139A1/COMP2139-A1/COMP2139-A1/COMP2139-A1/COMP2139-A1/Views/Hotel/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG90ZWxcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/987264/source/repos/Comp2139A1/COMP2139-A1/COMP2139-A1/COMP2139-A1/COMP2139-A1/Views/Hotel/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG90ZWxcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/987264/source/repos/Comp2139A1/COMP2139-A1/COMP2139-A1/COMP2139-A1/COMP2139-A1/Views/Hotel/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG90ZWxcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/987264/source/repos/Comp2139A1/COMP2139-A1/COMP2139-A1/COMP2139-A1/COMP2139-A1/Views/Rental/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVudGFsXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/987264/source/repos/Comp2139A1/COMP2139-A1/COMP2139-A1/COMP2139-A1/COMP2139-A1/Views/Rental/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVudGFsXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/987264/source/repos/Comp2139A1/COMP2139-A1/COMP2139-A1/COMP2139-A1/COMP2139-A1/Views/Rental/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVudGFsXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/987264/source/repos/Comp2139A1/COMP2139-A1/COMP2139-A1/COMP2139-A1/COMP2139-A1/Views/Rental/Index.cshtml]

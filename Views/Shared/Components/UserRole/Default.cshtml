@@ -1,20 +1,24 @@
-﻿@model dynamic
-
-@if (Model.IsSuperAdmin || Model.IsAdmin)
+﻿@if (Model.IsSuperAdmin || Model.IsAdmin)
 {
     <li class="nav-item dropdown">
         <a id="adminDropdown" class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <i class="fa-solid fa-lock"></i> Admin
         </a>
         <ul class="dropdown-menu" aria-labelledby="adminDropdown">
+            
             <li>
-                <a class="dropdown-item" asp-area="" asp-controller="RoleManager" asp-action="Index">
-                    <i class="fa-solid fa-users-gear"></i> Role Manager
+                <a class="dropdown-item" asp-area="" asp-controller="Admin" asp-action="AdminFlight">
+                    <i class="fa-solid fa-plane"></i> Flights Management
                 </a>
             </li>
             <li>
-                <a class="dropdown-item" asp-area="" asp-controller="UserRoles" asp-action="Index">
-                    <i class="fa-solid fa-circle-user"></i> User Roles
+                <a class="dropdown-item" asp-area="" asp-controller="Admin" asp-action="AdminHotel">
+                    <i class="fa-solid fa-hotel"></i> Hotels Management
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" asp-area="" asp-controller="Admin" asp-action="AdminRental">
+                    <i class="fa-solid fa-car"></i> Rentals Management
                 </a>
             </li>
             <!-- More dropdown items can be added here -->
