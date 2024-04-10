@@ -41,7 +41,7 @@ public class HotelController : Controller
     }
 
     // POST: Hotel/Create
-    
+
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create([Bind("HotelName,Address,City,State,Country,StarRating,Description,CostPerNight,image")] Hotel hotel)
@@ -71,51 +71,79 @@ public class HotelController : Controller
         return View(hotel);
     }
 
-    // POST: Hotel/Edit/5
+    // POST: Hotel/Edit/
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(int id, [Bind("HotelId,HotelName,Address,City,State,Country,PostalCode,StarRating,Description,CostPerNight,image")] Hotel hotel)
+    public async Task<IActionResult> Edit(int id, [Bind("HotelId, HotelName, Description, Address, City, PostalCode, State, Country, CostPerNight, StartDate, EndDate, Status, StarRating, RoomType, NumberOfRooms, MaxOccupancy, PhoneNumber, CancellationPolicy, CheckInTime, CheckOutTime, image")] Hotel hotel)
     {
         if (id != hotel.HotelId)
         {
             return NotFound();
         }
 
+        if (!ModelState.IsValid)
+        {
+            var errors = ModelState.Values.SelectMany(v => v.Errors);
+            foreach (var error in errors)
+            {
+                // Log or inspect the error message
+                Console.WriteLine(error.ErrorMessage);
+            }
+        }
+
         if (ModelState.IsValid)
         {
-            _context.Update(hotel);
-            await _context.SaveChangesAsync();
+            try
+            {
+                _context.Update(hotel);
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!HotelExists(hotel.HotelId))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
             return RedirectToAction(nameof(Index));
         }
         return View(hotel);
     }
 
-    // GET: Hotel/Delete/5
-    public async Task<IActionResult> Delete(int? id)
-    {
-        if (id == null)
-        {
-            return NotFound();
-        }
 
-        var hotel = await _context.Hotels
-            .FirstOrDefaultAsync(h => h.HotelId == id);
+    // GET: Hotel/Delete/5
+    public async Task<IActionResult> Delete(int id)
+    {
+        var hotel = await _context.Hotels.FirstOrDefaultAsync(h => h.HotelId == id);
         if (hotel == null)
         {
             return NotFound();
         }
-
         return View(hotel);
     }
 
-    // POST: Hotel/Delete/5
-    [HttpPost, ActionName("Delete")]
+    // POST: Hotel/Delete/
+    [HttpPost, ActionName("DeleteConfirmed")]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> DeleteConfirmed(int id)
+    public async Task<IActionResult> DeleteConfirmed(int HotelId)
     {
-        var hotel = await _context.Hotels.FindAsync(id);
-        _context.Hotels.Remove(hotel);
-        await _context.SaveChangesAsync();
-        return RedirectToAction(nameof(Index));
+        var hotel = await _context.Hotels.FindAsync(HotelId);
+        if (hotel != null)
+        {
+            _context.Hotels.Remove(hotel);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
+
+        return NotFound();
+    }
+
+    private bool HotelExists(int id)
+    {
+        return _context.Hotels.Any(e => e.HotelId == id);
     }
 }

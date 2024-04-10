@@ -56,3 +56,8 @@ button.accept-policy[b-279pb4ba8t] {
         background: rgba(255, 255, 255, 0.8);
         box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
     }
+
+.navbar[b-279pb4ba8t] {
+    position: relative;
+    z-index: 100;
+}

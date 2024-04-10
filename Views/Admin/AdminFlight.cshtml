@@ -79,6 +79,7 @@
                 <th scope="col">Arrival</th>
                 <th scope="col">Airline</th>
                 <th scope="col">Seats</th>
+                <th scope="col">Duration</th>
                 <th scope="col">Status</th>
                 <th scope="col">Ticket Price</th>
                 <th scope="col">Actions</th>
@@ -93,6 +94,7 @@
                     <td>@flight.ArrivalPort</td>
                     <td>@flight.AirlineName</td>
                     <td>@flight.AvailSeats</td>
+                    <td>@flight.FlightDuration Hour(s)</td>
                     <td>@flight.Status</td>
                     <td class="text-success">$@flight.TicketCost CAD</td>
                     <td>
@@ -114,9 +116,30 @@
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 
-    <script>
-        $(document).ready(function () {
-            // Existing AJAX search script
-        });
-    </script>
+    <script>$(document).ready(function () {
+            $('.search-form').on('submit', function (event) {
+                event.preventDefault(); // Stop the form from causing a page refresh
+
+                var departure = $('#departure').val();
+                var arrival = $('#destination').val();
+
+                console.log("Submitted", departure + " -> " + arrival);
+
+                $.ajax({
+                    url: '/Search/Flight', // Make sure this URL is correct
+                    data: { departure: departure, arrival: arrival },
+                    type: 'GET',
+                    success: function (result) {
+                        console.log(result);
+                        $('#searchResults').html(result); // Update the #searchResults div
+                        $('#loader').hide();
+                    },
+                    error: function (xhr, status, error) {
+                        $('#loader').hide();
+                        console.error(error);
+                        // Optionally alert the user or display the error on the page
+                    }
+                });
+            });
+        });</script>
 }

@@ -58,7 +58,7 @@ namespace Assign1.Controllers
             return View(flight);
         }
 
-        // GET: Flight/Edit/5
+        // GET: Flight/Edit/
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -74,7 +74,7 @@ namespace Assign1.Controllers
             return View(flight);
         }
 
-        // POST: Flight/Edit/5
+        // POST: Flight/Edit/
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("FlightId,AirlineName,DeparturePort,ArrivalPort,AvailSeats,TicketCost,StartDate,EndDate,Status,FlightDuration")] Flight flight)
@@ -107,33 +107,31 @@ namespace Assign1.Controllers
             return View(flight);
         }
 
-        // GET: Flight/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        // GET: Flight/Delete/
+        public async Task<IActionResult> Delete(int id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var flight = await _context.Flights
-                .FirstOrDefaultAsync(m => m.FlightId == id);
+            var flight = await _context.Flights.FirstOrDefaultAsync(f => f.FlightId == id);
             if (flight == null)
             {
                 return NotFound();
             }
-
             return View(flight);
         }
 
-        // POST: Flight/Delete/5
-        [HttpPost, ActionName("Delete")]
+        // POST: Flight/Delete/
+        [HttpPost, ActionName("DeleteConfirmed")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed(int FlightId)
         {
-            var flight = await _context.Flights.FindAsync(id);
-            _context.Flights.Remove(flight);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            var flight = await _context.Flights.FindAsync(FlightId);
+            if (flight != null)
+            {
+                _context.Flights.Remove(flight);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }
+
+            return NotFound();
         }
 
         private bool FlightExists(int id)
