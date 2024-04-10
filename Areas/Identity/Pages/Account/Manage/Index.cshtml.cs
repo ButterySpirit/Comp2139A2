@@ -67,6 +67,15 @@ namespace Assign1.Areas.Identity.Pages.Account.Manage
             [Phone]
             [Display(Name = "Phone number")]
             public string PhoneNumber { get; set; }
+
+            [Display(Name = "Preferences")]
+            public string Preferences { get; set; }
+
+            [Display(Name = "Frequent Flyer Number")]
+            public string FrequentFlyerNumber { get; set; }
+
+            [Display(Name = "Hotel Loyalty ID")]
+            public string HotelLoyaltyProgramId { get; set; }
         }
 
         private async Task LoadAsync(ApplicationUser user)
@@ -77,6 +86,9 @@ namespace Assign1.Areas.Identity.Pages.Account.Manage
             var firstName = user.FirstName;
             var lastName = user.LastName;
             var profilePicture = user.ProfilePicture;
+            var preferences = user.Preferences;
+            var frequentFlyerNum = user.FrequentFlyerNumber;
+            var hotelLoyaltyID = user.HotelLoyaltyProgramId;
 
             Username = userName;
 
@@ -86,7 +98,11 @@ namespace Assign1.Areas.Identity.Pages.Account.Manage
                 FirstName = firstName,
                 LastName = lastName,
                 ProfilePicture = profilePicture,
-                PhoneNumber = phoneNumber
+                PhoneNumber = phoneNumber,
+                Preferences = preferences,
+                FrequentFlyerNumber = frequentFlyerNum,
+                HotelLoyaltyProgramId = hotelLoyaltyID
+
             };
         }
 
@@ -127,31 +143,69 @@ namespace Assign1.Areas.Identity.Pages.Account.Manage
                 }
             }
 
-            var firstName = user.FirstName;
-            if (Input.FirstName != firstName)
+            bool updateRequired = false;
+            if (Input.FirstName != user.FirstName)
             {
-                user.FirstName = firstName;
-                await _userManager.UpdateAsync(user);
+                user.FirstName = Input.FirstName;
+                updateRequired = true;
             }
 
-            var lastName = user.LastName;
-            if (Input.LastName != lastName)
+            if (Input.LastName != user.LastName)
             {
-                user.LastName = lastName;
-                await _userManager.UpdateAsync(user);
+                user.LastName = Input.LastName;
+                updateRequired = true;
+            }
+
+            if (Input.Preferences != user.Preferences)
+            {
+                user.Preferences = Input.Preferences;
+                updateRequired = true;
+            }
+
+
+            if (Input.FrequentFlyerNumber != user.FrequentFlyerNumber)
+            {
+                user.FrequentFlyerNumber = Input.FrequentFlyerNumber;
+                updateRequired = true;
+            }
+
+
+            if (Input.HotelLoyaltyProgramId != user.HotelLoyaltyProgramId)
+            {
+                user.HotelLoyaltyProgramId = Input.HotelLoyaltyProgramId;
+                updateRequired = true;
             }
 
             if (Request.Form.Files.Count > 0)
             {
                 IFormFile formFile = Request.Form.Files.FirstOrDefault();
-                using (var dataStream = new MemoryStream())
+                if (formFile != null && formFile.Length > 0)
                 {
-                    await formFile.CopyToAsync(dataStream);
-                    user.ProfilePicture = dataStream.ToArray();
+                    using (var dataStream = new MemoryStream())
+                    {
+                        await formFile.CopyToAsync(dataStream);
+                        user.ProfilePicture = dataStream.ToArray();
+                    }
+                    updateRequired = true;
                 }
-                await _userManager.UpdateAsync(user);
             }
 
+            if (updateRequired)
+            {
+                var result = await _userManager.UpdateAsync(user);
+                if (!result.Succeeded)
+                {
+                    foreach (var error in result.Errors)
+                    {
+                        ModelState.AddModelError(string.Empty, error.Description);
+                    }
+                    // If there was an error updating, reload the page with the errors
+                    return Page();
+                }
+            }
+
+            // If the user's information was updated successfully, or there were no changes,
+            // refresh the sign-in to update the security stamp and ensure the claims are up-to-date
             await _signInManager.RefreshSignInAsync(user);
             StatusMessage = "Your profile has been updated";
             return RedirectToPage();
