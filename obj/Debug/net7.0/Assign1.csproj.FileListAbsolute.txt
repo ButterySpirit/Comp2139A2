@@ -920,6 +920,6 @@ C:/Users/987264/source/repos/Comp2139A1/COMP2139-A1/COMP2139-A1/COMP2139-A1/COMP
 /Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/obj/Debug/net7.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
 /Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/obj/Debug/net7.0/scopedcss/bundle/Assign1.styles.css
 /Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/obj/Debug/net7.0/scopedcss/projectbundle/Assign1.bundle.scp.css
-/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/obj/Debug/net7.0/Assign1.csproj.CopyComplete
 /Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/obj/Debug/net7.0/Assign1.genruntimeconfig.cache
 /Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/obj/Debug/net7.0/ref/Assign1.dll
+/Users/ianmcdonald/Desktop/T177/YEAR 2/SEM2/WebDev/A1/COMP2139-A1/obj/Debug/net7.0/Assign1.csproj.CopyComplete
