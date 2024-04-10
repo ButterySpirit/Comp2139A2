@@ -90,13 +90,35 @@
         }
     </div>
 </div>
-
 @section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
 
-    <script>
-        // Your existing AJAX search script
-    </script>
+    <script>$(document).ready(function () {
+            $('.search-form').on('submit', function (event) {
+                event.preventDefault(); // Stop the form from causing a page refresh
+
+                var destination = $('#destination').val();
+                var rating = $('#rating').val();
+                var checkIn = $('#checkIn').val();
+                var checkOut = $('#checkOut').val();
+
+                console.log("Submitted", destination + ", " + rating + ", " + checkIn + ", " + checkOut);
+
+                $.ajax({
+                    url: '/Search/HotelSearch', // Make sure this URL is correct
+                    data: { destination: destination, rating: rating, checkIn: checkIn, checkOut: checkOut },
+                    type: 'GET',
+                    success: function (result) {
+                        console.log(result);
+                        $('#searchResults').html(result);
+
+                    },
+                    error: function (xhr, status, error) {
+
+                        console.error(error);
+
+                    }
+                });
+            });
+        });</script>
 }

@@ -4,67 +4,107 @@
     ViewData["Title"] = "Edit Rental";
 }
 
-<h1>Edit Rental</h1>
+<div class="container my-5">
+    <div class="card shadow">
+        <div class="card-header">
+            <h2 class="card-title">Edit Rental</h2>
+        </div>
+        <div class="card-body">
+            <form asp-action="Edit" method="post">
+                @Html.AntiForgeryToken()
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
 
-<h4>Rental</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="RentalId" />
+                <input type="hidden" asp-for="RentalId" />
 
-            <div class="form-group">
-                <label asp-for="VehicleName" class="control-label"></label>
-                <input asp-for="VehicleName" class="form-control" />
-                <span asp-validation-for="VehicleName" class="text-danger"></span>
-            </div>
+                <!-- Repeat for each form group -->
+                <div class="mb-3">
+                    <label asp-for="VehicleName" class="form-label"></label>
+                    <input asp-for="VehicleName" class="form-control" />
+                    <span asp-validation-for="VehicleName" class="text-danger"></span>
+                </div>
 
-            <div class="form-group">
-                <label asp-for="VehicleType" class="control-label"></label>
-                <input asp-for="VehicleType" class="form-control" />
-                <span asp-validation-for="VehicleType" class="text-danger"></span>
-            </div>
+                <div class="mb-3">
+                    <label asp-for="VehicleType" class="form-label"></label>
+                    <input asp-for="VehicleType" class="form-control" />
+                    <span asp-validation-for="VehicleType" class="text-danger"></span>
+                </div>
 
-            <div class="form-group">
-                <label asp-for="State" class="control-label"></label>
-                <input asp-for="State" class="form-control" />
-                <span asp-validation-for="State" class="text-danger"></span>
-            </div>
+                <div class="mb-3">
+                    <label asp-for="MakeModel" class="form-label"></label>
+                    <input asp-for="MakeModel" class="form-control" />
+                    <span asp-validation-for="MakeModel" class="text-danger"></span>
+                </div>
 
-            <div class="form-group">
-                <label asp-for="Country" class="control-label"></label>
-                <input asp-for="Country" class="form-control" />
-                <span asp-validation-for="Country" class="text-danger"></span>
-            </div>
+                <div class="mb-3">
+                    <label asp-for="Description" class="form-label"></label>
+                    <input asp-for="Description" class="form-control" />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
 
-            <div class="form-group">
-                <label asp-for="RentalCost" class="control-label"></label>
-                <input asp-for="RentalCost" class="form-control" />
-                <span asp-validation-for="RentalCost" class="text-danger"></span>
-            </div>
+                <div class="mb-3">
+                    <label asp-for="LicensePlate" class="form-label"></label>
+                    <input asp-for="LicensePlate" class="form-control" />
+                    <span asp-validation-for="LicensePlate" class="text-danger"></span>
+                </div>
 
-            <div class="form-group">
-                <label asp-for="Availability" class="control-label"></label>
-                <select asp-for="Availability" class="form-control">
-                    <option value="true">Available</option>
-                    <option value="false">Unavailable</option>
-                </select>
-                <span asp-validation-for="Availability" class="text-danger"></span>
-            </div>
+                <div class="mb-3">
+                    <label asp-for="PickupLocation" class="form-label"></label>
+                    <input asp-for="PickupLocation" class="form-control" />
+                    <span asp-validation-for="PickupLocation" class="text-danger"></span>
+                </div>
 
-            <!-- Additional fields go here -->
+                <div class="mb-3">
+                    <label asp-for="DropoffLocation" class="form-label"></label>
+                    <input asp-for="DropoffLocation" class="form-control" />
+                    <span asp-validation-for="DropoffLocation" class="text-danger"></span>
+                </div>
 
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-                <a asp-action="Index" class="btn btn-secondary">Cancel</a>
-            </div>
-        </form>
+                <div class="mb-3">
+                    <label asp-for="State" class="form-label"></label>
+                    <input asp-for="State" class="form-control" />
+                    <span asp-validation-for="State" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Country" class="form-label"></label>
+                    <input asp-for="Country" class="form-control" />
+                    <span asp-validation-for="Country" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="RentalCost" class="form-label"></label>
+                    <input asp-for="RentalCost" class="form-control" />
+                    <span asp-validation-for="RentalCost" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Status" class="form-label"></label>
+                    <select asp-for="Status" asp-items="ViewBag.StatusOptions" class="form-select">
+                        <option value="">Select Status</option>
+                    </select>
+                    <span asp-validation-for="Status" class="text-danger"></span>
+                </div>
+
+
+                <div class="mb-3">
+                    <label asp-for="Availability" class="form-label"></label>
+                    <select asp-for="Availability" asp-items="ViewBag.AvailabilityOptions" class="form-select">
+                        <option value="">Select Availability</option>
+                    </select>
+                    <span asp-validation-for="Availability" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<div class="text-center mt-3">
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
 </div>
 
 @section Scripts {
