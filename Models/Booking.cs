@@ -6,7 +6,7 @@ namespace Assign1.Models
         [Required]
         public int BookingId { get; set; }
 
-        public int? UserId { get; set; } // Keep nullable for guest users
+        public string UserId { get; set; } // Keep nullable for guest users
 
         [Required]
         public decimal TotalCost { get; set; }
@@ -20,8 +20,8 @@ namespace Assign1.Models
 
         // New fields for service type and ID
         public string ServiceType { get; set; } // 'Flight', 'Hotel', or 'Rental'
+
         public int? ServiceID { get; set; } // Nullable for flexibility
 
-        // Remove individual service ID properties and their navigation properties
     }
 }

@@ -4,6 +4,9 @@ using Assign1.Models;
 using Assign1.Data;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
+using System.Diagnostics;
 
 namespace Assign1.Controllers
 {
@@ -16,10 +19,19 @@ namespace Assign1.Controllers
             _context = context;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var booking = _context.Bookings.ToList();
-            return View(booking);
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (string.IsNullOrEmpty(userId))
+            {
+                // Handle the case where the user ID isn't found
+                return View(new List<Booking>()); // Return an empty list or redirect
+            }
+
+            var bookings = await _context.Bookings
+                                         .Where(b => b.UserId == userId)
+                                         .ToListAsync();
+            return View(bookings);
         }
 
         private bool BookingExists(int id)
@@ -97,6 +109,8 @@ namespace Assign1.Controllers
         }
 
         // GET: Booking/Create (Hotel)
+        [Authorize]
+        [HttpGet("Booking/Create/{hotelId}")]
         public IActionResult Create(int? id, decimal? costPerNight)
         {
             if (id.HasValue)
@@ -113,26 +127,35 @@ namespace Assign1.Controllers
 
 
         // POST: Booking/Create (Hotel)
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("TotalCost,BookingDate,PaymentStatus,ServiceType")] Booking booking, int id)
         {
+            // Remove any ModelState errors for UserId
+            ModelState.Remove("UserId");
+
             if (ModelState.IsValid)
             {
+                // Assign UserId from the logged-in user
+                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                booking.UserId = userId;
+                Debug.WriteLine("UserId: " + booking.UserId);
+
+                booking.ServiceType = "Hotel"; // Set ServiceType to "Hotel"
+                ModelState.Remove("ServiceType"); // This will clear the error related to ServiceType
+
+                booking.ServiceID = id; // Assign the HotelId
+
+                _context.Add(booking);
+                await _context.SaveChangesAsync();
+
                 var hotel = await _context.Hotels.FirstOrDefaultAsync(h => h.HotelId == id);
                 var viewModel = new BookingViewModel
                 {
                     Booking = booking,
                     Hotel = hotel
                 };
-
-                booking.UserId = null; // Set UserId to null for guest users
-                booking.ServiceType = "Hotel"; // Set ServiceType to "Hotel"
-                ModelState.Remove("ServiceType"); // This will clear the error related to ServiceType
-                booking.ServiceID = id; // Assign the HotelId
-
-                _context.Add(booking);
-                await _context.SaveChangesAsync();
 
                 // Return a JSON response for AJAX request
                 return PartialView("_HotelConfirmed", viewModel);
@@ -143,6 +166,7 @@ namespace Assign1.Controllers
 
         /*          Booking For Flights             */
         // GET: Booking/Create (Flight)
+        [Authorize]
         [HttpGet("Booking/CreateFlight/{flightId}")]
         public IActionResult CreateFlight(int? flightId, decimal? ticketCost, string status)
         {
@@ -162,33 +186,57 @@ namespace Assign1.Controllers
         }
 
 
-        // POST: Booking/Create (Flight)
+        // HTTP POST CreateFlight
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateFlight([Bind("TotalCost,BookingDate,PaymentStatus,ServiceType")] Booking booking, int flightId)
         {
+            // Remove any ModelState errors for UserId
+            ModelState.Remove("UserId");
+
             if (ModelState.IsValid)
             {
-                var flight = await _context.Flights.FirstOrDefaultAsync(f => f.FlightId == flightId);
+                // Assign UserId from the logged-in user
+                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                booking.UserId = userId;
+                Debug.WriteLine("UserId: " + booking.UserId);
+
+                // Other booking properties
+                booking.ServiceType = "Flight";
+                booking.ServiceID = flightId;
+
+                // Add to the context and save changes
+                _context.Add(booking);
+                await _context.SaveChangesAsync();
+
+                // Generate a view model for the confirmation view
                 var viewModel = new BookingViewModel
                 {
                     Booking = booking,
-                    Flight = flight
+                    Flight = await _context.Flights.FirstOrDefaultAsync(f => f.FlightId == flightId)
                 };
 
-                booking.UserId = null; // Set UserId to null for guest users
-                booking.ServiceType = "Flight"; // Set ServiceType to "Flight"
-                ModelState.Remove("ServiceType"); // This will clear the error related to ServiceType
-                booking.ServiceID = flightId; // Assign the Flight
-
-                _context.Add(booking);
-                await _context.SaveChangesAsync();
                 return PartialView("_FlightConfirmed", viewModel);
             }
+            else
+            {
+                // Debugging: Log ModelState errors
+                foreach (var modelState in ViewData.ModelState.Values)
+                {
+                    foreach (var error in modelState.Errors)
+                    {
+                        Debug.WriteLine("Error: " + error.ErrorMessage);
+                    }
+                }
+            }
+
             return View(booking);
         }
 
+
         //GET: Create Booking (Rental)
+        [Authorize]
         [HttpGet("Booking/CreateRental/{rentalId}")]
         public IActionResult CreateRental(int? rentalId, decimal? rentalCost, string status)
         {
@@ -208,12 +256,25 @@ namespace Assign1.Controllers
         }
 
         //POST: Create Booking (Rental)
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateRental([Bind("TotalCost,BookingDate,PaymentStatus,ServiceType")] Booking booking, int rentalId)
         {
+            // Remove any ModelState errors for UserId
+            ModelState.Remove("UserId");
+
             if (ModelState.IsValid)
             {
+                // Assign UserId from the logged-in user
+                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                booking.UserId = userId;
+                Debug.WriteLine("UserId: " + booking.UserId);
+
+                booking.ServiceType = "Rental"; // Set ServiceType to "Rental"
+                ModelState.Remove("ServiceType"); // This will clear the error related to ServiceType
+
+                booking.ServiceID = rentalId; // Assign the Rental
 
                 var rental = await _context.Rentals.FirstOrDefaultAsync(r => r.RentalId == rentalId);
                 var viewModel = new BookingViewModel
@@ -221,11 +282,6 @@ namespace Assign1.Controllers
                     Booking = booking,
                     Rental = rental
                 };
-
-                booking.UserId = null; // Set UserId to null for guest users
-                booking.ServiceType = "Rental"; // Set ServiceType to "Rental"
-                ModelState.Remove("ServiceType"); // This will clear the error related to ServiceType
-                booking.ServiceID = rentalId; // Assign the Rental
 
                 _context.Add(booking);
                 await _context.SaveChangesAsync();

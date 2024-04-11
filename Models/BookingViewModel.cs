@@ -6,6 +6,7 @@
         public Flight Flight { get; set; }
         public Hotel Hotel { get; set; }
         public Rental Rental { get; set; }
+        public string UserId { get; set; }
     }
 
 }

@@ -94,7 +94,17 @@
                     <td>@flight.Status</td>
                     <td class="text-success">$@flight.TicketCost CAD</td>
                     <td>
-                        <a asp-controller="Booking" asp-action="CreateFlight" asp-route-id="@flight.FlightId" asp-route-ticketCost="@flight.TicketCost" asp-route-status="@flight.Status" class="btn btn-primary">Book Now!</a>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <a asp-controller="Booking" asp-action="CreateFlight" asp-route-id="@flight.FlightId" asp-route-ticketCost="@flight.TicketCost" asp-route-status="@flight.Status"
+                               class="btn btn-primary">Book Now!</a>
+                        }
+                        else
+                        {
+                            <span data-bs-toggle="tooltip" data-bs-title="Sign in to Book!">
+                                <button class="btn btn-primary" disabled>Book Now!</button>
+                            </span>
+                        }
                     </td>
 
                 </tr>

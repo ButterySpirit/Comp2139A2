@@ -21,6 +21,7 @@ namespace Assign1.Controllers
         }
 
         // GET: Flight
+        [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
             var flights = await _context.Flights.ToListAsync();

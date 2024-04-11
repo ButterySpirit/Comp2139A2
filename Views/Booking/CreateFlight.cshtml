@@ -36,6 +36,9 @@ else
 
         <input type="hidden" name="flightId" value="@ViewBag.FlightId" />
 
+        <input type="hidden" asp-for="ServiceID" value="@ViewBag.FlightId" />
+
+
         <input asp-for="TotalCost" type="hidden" value="@totalCost" />
 
         <div class="form-group mb-3">
