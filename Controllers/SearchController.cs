@@ -1,109 +1,124 @@
-﻿using Assign1.Data;
+﻿using System;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Assign1.Data;
+using Microsoft.Extensions.Logging;
 
 namespace Assign1.Controllers
 {
     public class SearchController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly ILogger<SearchController> _logger;
 
-        public SearchController(ApplicationDbContext context)
+        public SearchController(ApplicationDbContext context, ILogger<SearchController> logger)
         {
             _context = context;
+            _logger = logger;
         }
 
         public async Task<IActionResult> HotelSearch(string destination, int rating, DateTime? checkIn, DateTime? checkOut)
         {
-            if (!String.IsNullOrEmpty(destination))
+            try
             {
-                var hotelQuery = _context.Hotels.AsQueryable();
-
-                if (!String.IsNullOrEmpty(destination))
+                if (!string.IsNullOrEmpty(destination))
                 {
-                    hotelQuery = hotelQuery.Where(h => h.State.Contains(destination));
-                }
+                    var hotelQuery = _context.Hotels.AsQueryable();
 
-                if (rating > 0)
-                {
-                    hotelQuery = hotelQuery.Where(h => h.StarRating >= rating);
-                }
+                    if (!string.IsNullOrEmpty(destination))
+                    {
+                        hotelQuery = hotelQuery.Where(h => h.State.Contains(destination));
+                    }
 
-                if (checkIn.HasValue)
-                {
-                    hotelQuery = hotelQuery.Where(h => h.StartDate <= checkIn.Value);
-                }
+                    if (rating > 0)
+                    {
+                        hotelQuery = hotelQuery.Where(h => h.StarRating >= rating);
+                    }
 
-                if (checkOut.HasValue)
-                {
-                    hotelQuery = hotelQuery.Where(h => h.EndDate >= checkOut.Value);
-                }
+                    if (checkIn.HasValue)
+                    {
+                        hotelQuery = hotelQuery.Where(h => h.StartDate <= checkIn.Value);
+                    }
 
-                var hotels = await hotelQuery.ToListAsync();
-                return PartialView("_HotelResults", hotels);
+                    if (checkOut.HasValue)
+                    {
+                        hotelQuery = hotelQuery.Where(h => h.EndDate >= checkOut.Value);
+                    }
+
+                    var hotels = await hotelQuery.ToListAsync();
+                    return PartialView("_HotelResults", hotels);
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error searching for hotels.");
+                // Optionally pass an error message or model to the view
             }
             return PartialView("_NoResults");
         }
 
-
         public async Task<IActionResult> Flight(string departure, string arrival, string status)
         {
-            if (!String.IsNullOrEmpty(departure) && !String.IsNullOrEmpty(arrival))
+            try
             {
-                // Ensure the query itself is not executed until the ToListAsync call
-                var flightQuery = _context.Flights.AsQueryable();
-
-                if (!String.IsNullOrEmpty(departure))
+                if (!string.IsNullOrEmpty(departure) && !string.IsNullOrEmpty(arrival))
                 {
-                    flightQuery = flightQuery.Where(f => f.DeparturePort == departure);
-                }
+                    var flightQuery = _context.Flights.AsQueryable();
 
-                if (!String.IsNullOrEmpty(arrival))
-                {
-                    flightQuery = flightQuery.Where(f => f.ArrivalPort == arrival);
-                }
+                    flightQuery = flightQuery.Where(f => f.DeparturePort == departure && f.ArrivalPort == arrival);
 
-                if (!String.IsNullOrEmpty(status))
-                {
-                    flightQuery = flightQuery.Where(f => f.Status == status);
-                }
+                    if (!string.IsNullOrEmpty(status))
+                    {
+                        flightQuery = flightQuery.Where(f => f.Status == status);
+                    }
 
-                // Execute the query asynchronously
-                var flights = await flightQuery.ToListAsync();
-                return PartialView("_FlightResults", flights);
+                    var flights = await flightQuery.ToListAsync();
+                    return PartialView("_FlightResults", flights);
+                }
             }
-
-            // You could also consider making a "NoResults" view async if there's database interaction
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error searching for flights.");
+                // Optionally pass an error message or model to the view
+            }
             return PartialView("_NoResults");
         }
 
         public async Task<IActionResult> Rental(string? vehicleName, string? vehicleType, string? state)
         {
-            if (!String.IsNullOrEmpty(vehicleType) || !String.IsNullOrEmpty(vehicleName) || !String.IsNullOrEmpty(state))
+            try
             {
-                var rentalQuery = _context.Rentals.AsQueryable();
-
-                if (!String.IsNullOrEmpty(vehicleName))
+                if (!String.IsNullOrEmpty(vehicleType) || !String.IsNullOrEmpty(vehicleName) || !String.IsNullOrEmpty(state))
                 {
-                    rentalQuery = rentalQuery.Where(r => r.VehicleName == vehicleName);
-                }
+                    var rentalQuery = _context.Rentals.AsQueryable();
 
-                if (!String.IsNullOrEmpty(vehicleType))
-                {
-                    rentalQuery = rentalQuery.Where(r => r.VehicleType == vehicleType);
-                }
+                    if (!String.IsNullOrEmpty(vehicleName))
+                    {
+                        rentalQuery = rentalQuery.Where(r => r.VehicleName == vehicleName);
+                    }
 
-                if (!String.IsNullOrEmpty(state))
-                {
-                    rentalQuery = rentalQuery.Where(r => r.State == state);
-                }
+                    if (!String.IsNullOrEmpty(vehicleType))
+                    {
+                        rentalQuery = rentalQuery.Where(r => r.VehicleType == vehicleType);
+                    }
 
-                var rentals = await rentalQuery.ToListAsync();
-                return PartialView("_RentalResults", rentals);
+                    if (!String.IsNullOrEmpty(state))
+                    {
+                        rentalQuery = rentalQuery.Where(r => r.State == state);
+                    }
+
+                    var rentals = await rentalQuery.ToListAsync();
+                    return PartialView("_RentalResults", rentals);
+                }
             }
-
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error searching for rentals.");
+                // Optionally pass an error message or model to the view
+            }
             return PartialView("_NoResults");
         }
     }
 }
-

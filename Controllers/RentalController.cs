@@ -1,172 +1,197 @@
-﻿using Assign1.Data;
-using Assign1.Models;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.EntityFrameworkCore;
+using Assign1.Data;
+using Assign1.Models;
+using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 [Route("Rental")]
 public class RentalController : Controller
 {
     private readonly ApplicationDbContext _context;
+    private readonly ILogger<RentalController> _logger;
 
-    public RentalController(ApplicationDbContext context)
+    public RentalController(ApplicationDbContext context, ILogger<RentalController> logger)
     {
         _context = context;
+        _logger = logger;
     }
 
     [HttpGet("")]
     public async Task<IActionResult> Index()
     {
-        var rentals = await _context.Rentals.ToListAsync();
-        return View(rentals);
+        try
+        {
+            var rentals = await _context.Rentals.ToListAsync();
+            return View(rentals);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Failed to load rentals.");
+            return RedirectToAction("Error500", "Home");
+        }
     }
 
     [HttpGet("{id}")]
-    public IActionResult Details(int id)
+    public async Task<IActionResult> Details(int id)
     {
-        var rental = _context.Rentals.FirstOrDefault(r => r.RentalId == id);
-        if (rental == null)
+        try
         {
-            return NotFound();
+            var rental = await _context.Rentals.FirstOrDefaultAsync(r => r.RentalId == id);
+            if (rental == null)
+            {
+                return RedirectToAction("Error404", "Home");
+            }
+            return View(rental);
         }
-        return View(rental);
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Failed to find rental details.");
+            return RedirectToAction("Error500", "Home");
+        }
     }
 
-    // GET: Rental/Create
     public IActionResult Create()
     {
         return View();
     }
 
-    // POST: Rental/Create
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create(Rental rental)
     {
         if (ModelState.IsValid)
         {
-            _context.Add(rental);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            try
+            {
+                _context.Add(rental);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Failed to create rental.");
+                return RedirectToAction("Error500", "Home");
+            }
         }
         return View(rental);
     }
 
-    // GET: Rental/Edit/5
-    [HttpGet("Rental/Edit/{id:int}"), Authorize(Roles = "Admin, SuperAdmin")]
+    [HttpGet("Edit/{id:int}"), Authorize(Roles = "Admin, SuperAdmin")]
     public async Task<IActionResult> Edit(int? id)
     {
         if (id == null)
         {
-            return NotFound();
+            return RedirectToAction("Error404", "Home");
         }
 
-        var rental = await _context.Rentals.FindAsync(id);
-        if (rental == null)
+        try
         {
-            return NotFound();
+            var rental = await _context.Rentals.FindAsync(id);
+            if (rental == null)
+            {
+                return RedirectToAction("Error404", "Home");
+            }
+
+            ViewBag.AvailabilityOptions = new SelectList(new List<string> { "true", "false" });
+            ViewBag.StatusOptions = new SelectList(new List<string> { "Available", "Rented", "Maintenance" });
+            return View(rental);
         }
-        ViewBag.AvailabilityOptions = new SelectList(new List<string> { "true", "false" });
-        ViewBag.StatusOptions = new SelectList(new List<string> { "Available", "Rented", "Maintenance" });
-        return View(rental);
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Failed to load rental for editing.");
+            return RedirectToAction("Error500", "Home");
+        }
     }
 
-    // POST: Rental/Edit/
-    [HttpPost("Rental/Edit/{id:int}"), ValidateAntiForgeryToken, Authorize(Roles = "Admin, SuperAdmin")]
-    public async Task<IActionResult> Edit(int RentalId, [Bind("RentalId, VehicleName, VehicleType, State, Country, RentalCost, Availability, Status, LicensePlate, MakeModel, Description, PickupLocation, DropoffLocation")]
-    Rental rental)
+    [HttpPost("Edit/{id:int}")]
+    [ValidateAntiForgeryToken]
+    [Authorize(Roles = "Admin, SuperAdmin")]
+    public async Task<IActionResult> Edit(int RentalId, [Bind("RentalId, VehicleName, VehicleType, State, Country, RentalCost, Availability, Status, LicensePlate, MakeModel, Description, PickupLocation, DropoffLocation")] Rental rental)
     {
         if (RentalId != rental.RentalId)
         {
-            return NotFound();
+            return RedirectToAction("Error404", "Home");
         }
 
         if (!ModelState.IsValid)
         {
-            var errors = ModelState.Values.SelectMany(v => v.Errors);
-            foreach (var error in errors)
-            {
-                // Log or inspect the error message
-                Console.WriteLine(error.ErrorMessage);
-            }
+            return View(rental);
         }
 
-        if (ModelState.IsValid)
+        try
         {
-            try
-            {
-                var rentalToUpdate = await _context.Rentals.FindAsync(RentalId);
-                if (rentalToUpdate == null)
-                {
-                    return NotFound();
-                }
-
-                rentalToUpdate.VehicleName = rental.VehicleName;
-                rentalToUpdate.VehicleType = rental.VehicleType;
-                rentalToUpdate.State = rental.State;
-                rentalToUpdate.Country = rental.Country;
-                rentalToUpdate.RentalCost = rental.RentalCost;
-                rentalToUpdate.Availability = rental.Availability;
-                rentalToUpdate.Status = rental.Status;
-                rentalToUpdate.LicensePlate = rental.LicensePlate;
-                rentalToUpdate.MakeModel = rental.MakeModel;
-                rentalToUpdate.Description = rental.Description;
-                rentalToUpdate.PickupLocation = rental.PickupLocation;
-                rentalToUpdate.DropoffLocation = rental.DropoffLocation;
-
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!RentalExists(rental.RentalId))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            _context.Update(rental);
+            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-        return View(rental);
+        catch (DbUpdateConcurrencyException ex)
+        {
+            if (!RentalExists(rental.RentalId))
+            {
+                return RedirectToAction("Error404", "Home");
+            }
+            else
+            {
+                _logger.LogError(ex, "Concurrency issue on updating rental.");
+                return RedirectToAction("Error500", "Home");
+            }
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Failed to update rental.");
+            return RedirectToAction("Error500", "Home");
+        }
     }
 
-    // GET: Rental/Delete/
-    [HttpGet("Rental/Delete/{id:int}"), Authorize(Roles = "Admin, SuperAdmin")]
+    [HttpGet("Delete/{id:int}"), Authorize(Roles = "Admin, SuperAdmin")]
     public async Task<IActionResult> Delete(int? id)
     {
         if (id == null)
         {
-            return NotFound();
+            return RedirectToAction("Error404", "Home");
         }
 
-        var rental = await _context.Rentals
-            .FirstOrDefaultAsync(r => r.RentalId == id);
-        if (rental == null)
+        try
         {
-            return NotFound();
+            var rental = await _context.Rentals.FirstOrDefaultAsync(r => r.RentalId == id);
+            if (rental == null)
+            {
+                return RedirectToAction("Error404", "Home");
+            }
+            return View(rental);
         }
-
-        return View(rental);
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Failed to find rental for deletion.");
+            return RedirectToAction("Error500", "Home");
+        }
     }
 
-    // POST: Rental/Delete/5
-    [HttpPost("Rental/Delete/{id:int}"), ActionName("DeleteConfirmed"), ValidateAntiForgeryToken, Authorize(Roles = "Admin, SuperAdmin")]
+    [HttpPost("Delete/{id:int}"), ActionName("DeleteConfirmed"), ValidateAntiForgeryToken, Authorize(Roles = "Admin, SuperAdmin")]
     public async Task<IActionResult> DeleteConfirmed(int RentalId)
     {
-        var rental = await _context.Rentals.FindAsync(RentalId);
-        if (rental != null)
+        try
         {
+            var rental = await _context.Rentals.FindAsync(RentalId);
+            if (rental == null)
+            {
+                return RedirectToAction("Error404", "Home");
+            }
+
             _context.Rentals.Remove(rental);
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");
         }
-
-        return NotFound();
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Failed to delete rental.");
+            return RedirectToAction("Error500", "Home");
+        }
     }
 
     private bool RentalExists(int id)

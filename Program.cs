@@ -7,6 +7,10 @@ using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 using Assign1.Models;
 using Assign1.Services.Filters;
 using Assign1.Services.Middleware;
+using System;
+using Microsoft.AspNetCore.Diagnostics;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Logging;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -39,37 +43,51 @@ builder.Logging.AddConsole();
 
 var app = builder.Build();
 
-// Error handling middleware
-app.UseMiddleware<ErrorHandlingMiddleware>();
-
-if (app.Environment.IsDevelopment())
-{
-    app.UseDeveloperExceptionPage();
-}
-else
+// Middleware for handling exceptions, this is only added in non-development environments
+if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
     app.UseHsts();
 }
+else
+{
+    app.UseDeveloperExceptionPage();
+}
 
-// Static files and routing
+app.UseHttpsRedirection();
 app.UseStaticFiles();
+
 app.UseRouting();
 
-// Request logging middleware
-app.UseMiddleware<RequestResponseLoggingMiddleware>();
-
-// Authentication and authorization
 app.UseAuthentication();
 app.UseAuthorization();
 
-// Endpoints
-app.MapRazorPages();
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
-app.MapControllerRoute(
-    name: "areas",
-    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+// Endpoint configuration
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapRazorPages();
+    endpoints.MapControllerRoute(
+        name: "default",
+        pattern: "{controller=Home}/{action=Index}/{id?}");
+});
+
+// Handle 404 - NotFound
+app.Use(async (context, next) =>
+{
+    await next();
+
+    if (context.Response.StatusCode == 404 && !context.Response.HasStarted)
+    {
+        // Set the original path in the request features so it can be used in the error handler
+        context.Features.Set<IStatusCodeReExecuteFeature>(new StatusCodeReExecuteFeature()
+        {
+            OriginalPath = context.Request.Path
+        });
+
+        // Re-execute the request so the error handler can generate the response
+        context.Request.Path = "/Home/ErrorWithCode";
+        await next();
+    }
+});
 
 app.Run();

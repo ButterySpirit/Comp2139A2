@@ -1,39 +1,59 @@
-﻿using System.Linq;
-using Assign1.Data;
-using Assign1.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
+using Assign1.Data;
+using Assign1.Models;
+using Microsoft.Extensions.Logging;
 
 [Route("Hotel")]
 public class HotelController : Controller
 {
     private readonly ApplicationDbContext _context;
+    private readonly ILogger<HotelController> _logger;
 
-    public HotelController(ApplicationDbContext context)
+    public HotelController(ApplicationDbContext context, ILogger<HotelController> logger)
     {
         _context = context;
+        _logger = logger;
     }
 
     // GET: Hotel/Index
     [HttpGet("")]
-    public IActionResult Index()
+    public async Task<IActionResult> Index()
     {
-        var hotels = _context.Hotels.ToList();
-        return View(hotels);
+        try
+        {
+            var hotels = await _context.Hotels.ToListAsync();
+            return View(hotels);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Failed to load hotels.");
+            return RedirectToAction("Error500", "Home");
+        }
     }
 
     // GET: Hotel/Details/5
     [HttpGet("{id}")]
-    public IActionResult Details(int id)
+    public async Task<IActionResult> Details(int id)
     {
-        var hotel = _context.Hotels.FirstOrDefault(h => h.HotelId == id);
-        if (hotel == null)
+        try
         {
-            return NotFound();
+            var hotel = await _context.Hotels.FirstOrDefaultAsync(h => h.HotelId == id);
+            if (hotel == null)
+            {
+                return RedirectToAction("Error404", "Home");
+            }
+            return View(hotel);
         }
-        return View(hotel);
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Failed to find hotel details.");
+            return RedirectToAction("Error500", "Home");
+        }
     }
 
     // GET: Hotel/Create
@@ -43,54 +63,62 @@ public class HotelController : Controller
     }
 
     // POST: Hotel/Create
-
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create([Bind("HotelName,Address,City,State,Country,StarRating,Description,CostPerNight,image")] Hotel hotel)
     {
         if (ModelState.IsValid)
         {
-            _context.Add(hotel);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            try
+            {
+                _context.Add(hotel);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Failed to create hotel.");
+                return RedirectToAction("Error500", "Home");
+            }
         }
         return View(hotel);
     }
 
     // GET: Hotel/Edit/5
-    [HttpGet("Hotel/Edit/{id:int}"), Authorize(Roles = "Admin, SuperAdmin")]
+    [HttpGet("Edit/{id:int}")]
+    [Authorize(Roles = "Admin, SuperAdmin")]
     public async Task<IActionResult> Edit(int? id)
     {
         if (id == null)
         {
-            return NotFound();
+            return RedirectToAction("Error404", "Home");
         }
 
-        var hotel = await _context.Hotels.FindAsync(id);
-        if (hotel == null)
+        try
         {
-            return NotFound();
+            var hotel = await _context.Hotels.FindAsync(id);
+            if (hotel == null)
+            {
+                return RedirectToAction("Error404", "Home");
+            }
+            return View(hotel);
         }
-        return View(hotel);
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Failed to retrieve hotel for edit.");
+            return RedirectToAction("Error500", "Home");
+        }
     }
 
     // POST: Hotel/Edit/
-    [HttpPost("Hotel/Edit/{id:int}"), ValidateAntiForgeryToken, Authorize(Roles = "Admin, SuperAdmin")]
+    [HttpPost("Edit/{id:int}")]
+    [ValidateAntiForgeryToken]
+    [Authorize(Roles = "Admin, SuperAdmin")]
     public async Task<IActionResult> Edit(int id, [Bind("HotelId, HotelName, Description, Address, City, PostalCode, State, Country, CostPerNight, StartDate, EndDate, Status, StarRating, RoomType, NumberOfRooms, MaxOccupancy, PhoneNumber, CancellationPolicy, CheckInTime, CheckOutTime, image")] Hotel hotel)
     {
         if (id != hotel.HotelId)
         {
-            return NotFound();
-        }
-
-        if (!ModelState.IsValid)
-        {
-            var errors = ModelState.Values.SelectMany(v => v.Errors);
-            foreach (var error in errors)
-            {
-                // Log or inspect the error message
-                Console.WriteLine(error.ErrorMessage);
-            }
+            return RedirectToAction("Error404", "Home");
         }
 
         if (ModelState.IsValid)
@@ -99,49 +127,72 @@ public class HotelController : Controller
             {
                 _context.Update(hotel);
                 await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
             }
-            catch (DbUpdateConcurrencyException)
+            catch (DbUpdateConcurrencyException ex)
             {
                 if (!HotelExists(hotel.HotelId))
                 {
-                    return NotFound();
+                    return RedirectToAction("Error404", "Home");
                 }
                 else
                 {
-                    throw;
+                    _logger.LogError(ex, "Concurrency issue on updating hotel.");
+                    return RedirectToAction("Error500", "Home");
                 }
             }
-            return RedirectToAction(nameof(Index));
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Failed to update hotel.");
+                return RedirectToAction("Error500", "Home");
+            }
         }
         return View(hotel);
     }
 
-
     // GET: Hotel/Delete/
-    [HttpGet("Hotel/Delete/{id:int}"), Authorize(Roles = "Admin, SuperAdmin")]
+    [HttpGet("Delete/{id:int}")]
+    [Authorize(Roles = "Admin, SuperAdmin")]
     public async Task<IActionResult> Delete(int id)
     {
-        var hotel = await _context.Hotels.FirstOrDefaultAsync(h => h.HotelId == id);
-        if (hotel == null)
+        try
         {
-            return NotFound();
+            var hotel = await _context.Hotels.FirstOrDefaultAsync(h => h.HotelId == id);
+            if (hotel == null)
+            {
+                return RedirectToAction("Error404", "Home");
+            }
+            return View(hotel);
         }
-        return View(hotel);
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Failed to find hotel for deletion.");
+            return RedirectToAction("Error500", "Home");
+        }
     }
 
     // POST: Hotel/Delete/
-    [HttpPost("Hotel/Delete/{id:int}"), ActionName("DeleteConfirmed"), ValidateAntiForgeryToken, Authorize(Roles = "Admin, SuperAdmin")]
+    [HttpPost("Delete/{id:int}"), ActionName("DeleteConfirmed")]
+    [ValidateAntiForgeryToken]
+    [Authorize(Roles = "Admin, SuperAdmin")]
     public async Task<IActionResult> DeleteConfirmed(int HotelId)
     {
-        var hotel = await _context.Hotels.FindAsync(HotelId);
-        if (hotel != null)
+        try
         {
+            var hotel = await _context.Hotels.FindAsync(HotelId);
+            if (hotel == null)
+            {
+                return RedirectToAction("Error404", "Home");
+            }
             _context.Hotels.Remove(hotel);
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");
         }
-
-        return NotFound();
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Failed to delete hotel.");
+            return RedirectToAction("Error500", "Home");
+        }
     }
 
     private bool HotelExists(int id)
