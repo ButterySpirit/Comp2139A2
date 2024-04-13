@@ -54,6 +54,14 @@
                     </select>
                 </div>
 
+                <div class="col-sm">
+                    <select id="status" name="status" class="form-select">
+                        <option>Available</option>
+                        <option>Cancelled</option>
+                        <option>Full</option>
+                    </select>
+                </div>
+
                 <div class="row">
                     <div class="col text-center">
                         <button type="submit" id="searchButton" class="btn btn-success mt-3">Search</button>
@@ -78,6 +86,7 @@
                 <th scope="col">Duration</th>
                 <th scope="col">Status</th>
                 <th scope="col">Ticket Price</th>
+                <th scope="col">Details</th>
                 <th scope="col">Book Now!</th>
             </tr>
         </thead>
@@ -94,15 +103,24 @@
                     <td>@flight.Status</td>
                     <td class="text-success">$@flight.TicketCost CAD</td>
                     <td>
+                        <a asp-controller="Flight" asp-action="Details" asp-route-id="@flight.FlightId" class="btn btn-primary">
+                            <i class="bi bi-info-circle-fill"> Details</i>
+                        </a>
+                    </td>
+                    <td>
                         @if (User.Identity.IsAuthenticated)
                         {
                             <a asp-controller="Booking" asp-action="CreateFlight" asp-route-id="@flight.FlightId" asp-route-ticketCost="@flight.TicketCost" asp-route-status="@flight.Status"
-                               class="btn btn-primary">Book Now!</a>
+                               class="btn btn-primary">
+                                <i class="bi bi-calendar-check-fill me-1"> Book Now!</i>
+                            </a>
                         }
                         else
                         {
                             <span data-bs-toggle="tooltip" data-bs-title="Sign in to Book!">
-                                <button class="btn btn-primary" disabled>Book Now!</button>
+                                <button class="btn btn-primary" disabled>
+                                    <i class="bi bi-calendar-check-fill me-1"> Book Now!</i>
+                                </button>
                             </span>
                         }
                     </td>
@@ -122,12 +140,13 @@
 
                 var departure = $('#departure').val();
                 var arrival = $('#destination').val();
+                var status = $('#status').val();
 
-                console.log("Submitted", departure + " -> " + arrival);
+                console.log("Submitted", departure + " -> " + arrival + " " + status);
 
                 $.ajax({
                     url: '/Search/Flight', // Make sure this URL is correct
-                    data: { departure: departure, arrival: arrival },
+                    data: { departure: departure, arrival: arrival, status: status },
                     type: 'GET',
                     success: function (result) {
                         console.log(result);
@@ -137,7 +156,6 @@
                     error: function (xhr, status, error) {
                         $('#loader').hide();
                         console.error(error);
-                        // Optionally alert the user or display the error on the page
                     }
                 });
             });

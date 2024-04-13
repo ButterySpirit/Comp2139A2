@@ -11,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 namespace Assign1.Controllers
 {
     [Authorize(Roles = "Admin")]
+    [Route("Flight")]
     public class FlightController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -21,7 +22,9 @@ namespace Assign1.Controllers
         }
 
         // GET: Flight
+
         [AllowAnonymous]
+        [HttpGet("")]
         public async Task<IActionResult> Index()
         {
             var flights = await _context.Flights.ToListAsync();
@@ -29,6 +32,8 @@ namespace Assign1.Controllers
         }
 
         // GET: Flight/Details/5
+        [AllowAnonymous]
+        [HttpGet("{id}")]
         public async Task<IActionResult> Details(int id)
         {
             var flight = await _context.Flights.FirstOrDefaultAsync(f => f.FlightId == id);
@@ -60,6 +65,7 @@ namespace Assign1.Controllers
         }
 
         // GET: Flight/Edit/
+        [HttpGet("Flight/Edit/{id:int}"), Authorize(Roles = "Admin, SuperAdmin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -76,8 +82,7 @@ namespace Assign1.Controllers
         }
 
         // POST: Flight/Edit/
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        [HttpPost("Flight/Edit/{id:int}"), ValidateAntiForgeryToken, Authorize(Roles = "Admin, SuperAdmin")]
         public async Task<IActionResult> Edit(int id, [Bind("FlightId,AirlineName,DeparturePort,ArrivalPort,AvailSeats,TicketCost,StartDate,EndDate,Status,FlightDuration")] Flight flight)
         {
             if (id != flight.FlightId)
@@ -109,6 +114,7 @@ namespace Assign1.Controllers
         }
 
         // GET: Flight/Delete/
+        [HttpGet("Flight/Delete/{id:int}"), Authorize(Roles = "Admin, SuperAdmin")]
         public async Task<IActionResult> Delete(int id)
         {
             var flight = await _context.Flights.FirstOrDefaultAsync(f => f.FlightId == id);
@@ -120,8 +126,7 @@ namespace Assign1.Controllers
         }
 
         // POST: Flight/Delete/
-        [HttpPost, ActionName("DeleteConfirmed")]
-        [ValidateAntiForgeryToken]
+        [HttpPost("Flight/Delete/{id:int}"), ActionName("DeleteConfirmed"), ValidateAntiForgeryToken, Authorize(Roles = "Admin, SuperAdmin")]
         public async Task<IActionResult> DeleteConfirmed(int FlightId)
         {
             var flight = await _context.Flights.FindAsync(FlightId);

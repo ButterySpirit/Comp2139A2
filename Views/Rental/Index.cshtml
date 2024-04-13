@@ -86,18 +86,26 @@
                         </p>
                         <div class="d-flex justify-content-between align-items-center">
 
+                            <a asp-controller="Rental" asp-action="Details" asp-route-id="@vehicle.RentalId" class="btn btn-primary">
+                                <i class="bi bi-info-circle-fill"> Details</i>
+                            </a>
+
                             @if (User.Identity.IsAuthenticated)
                             {
                                 <div class="btn-group">
                                     <a asp-controller="Booking" asp-action="CreateRental"
                                        asp-route-id="@vehicle.RentalId" asp-route-RentalCost="@vehicle.RentalCost"
-                                       asp-route-status="@vehicle.Status" class="btn btn-primary">Book Now!</a>
+                                       asp-route-status="@vehicle.Status" class="btn btn-primary">
+                                        <i class="bi bi-calendar-check-fill me-1"> Book Now!</i>
+                                    </a>
                                 </div>
                             }
                             else
                             {
                                 <span data-bs-toggle="tooltip" data-bs-title="Sign in to Book!">
-                                    <button class="btn btn-primary" disabled>Book Now!</button>
+                                    <button class="btn btn-primary" disabled>
+                                        <i class="bi bi-calendar-check-fill me-1"> Book Now!</i>
+                                    </button>
                                 </span>
                             }
                             <span class="text-muted">$@vehicle.RentalCost / day</span>

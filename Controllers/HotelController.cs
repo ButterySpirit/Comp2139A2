@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 
-
+[Route("Hotel")]
 public class HotelController : Controller
 {
     private readonly ApplicationDbContext _context;
@@ -17,6 +17,7 @@ public class HotelController : Controller
     }
 
     // GET: Hotel/Index
+    [HttpGet("")]
     public IActionResult Index()
     {
         var hotels = _context.Hotels.ToList();
@@ -24,6 +25,7 @@ public class HotelController : Controller
     }
 
     // GET: Hotel/Details/5
+    [HttpGet("{id}")]
     public IActionResult Details(int id)
     {
         var hotel = _context.Hotels.FirstOrDefault(h => h.HotelId == id);
@@ -56,6 +58,7 @@ public class HotelController : Controller
     }
 
     // GET: Hotel/Edit/5
+    [HttpGet("Hotel/Edit/{id:int}"), Authorize(Roles = "Admin, SuperAdmin")]
     public async Task<IActionResult> Edit(int? id)
     {
         if (id == null)
@@ -72,8 +75,7 @@ public class HotelController : Controller
     }
 
     // POST: Hotel/Edit/
-    [HttpPost]
-    [ValidateAntiForgeryToken]
+    [HttpPost("Hotel/Edit/{id:int}"), ValidateAntiForgeryToken, Authorize(Roles = "Admin, SuperAdmin")]
     public async Task<IActionResult> Edit(int id, [Bind("HotelId, HotelName, Description, Address, City, PostalCode, State, Country, CostPerNight, StartDate, EndDate, Status, StarRating, RoomType, NumberOfRooms, MaxOccupancy, PhoneNumber, CancellationPolicy, CheckInTime, CheckOutTime, image")] Hotel hotel)
     {
         if (id != hotel.HotelId)
@@ -115,7 +117,8 @@ public class HotelController : Controller
     }
 
 
-    // GET: Hotel/Delete/5
+    // GET: Hotel/Delete/
+    [HttpGet("Hotel/Delete/{id:int}"), Authorize(Roles = "Admin, SuperAdmin")]
     public async Task<IActionResult> Delete(int id)
     {
         var hotel = await _context.Hotels.FirstOrDefaultAsync(h => h.HotelId == id);
@@ -127,8 +130,7 @@ public class HotelController : Controller
     }
 
     // POST: Hotel/Delete/
-    [HttpPost, ActionName("DeleteConfirmed")]
-    [ValidateAntiForgeryToken]
+    [HttpPost("Hotel/Delete/{id:int}"), ActionName("DeleteConfirmed"), ValidateAntiForgeryToken, Authorize(Roles = "Admin, SuperAdmin")]
     public async Task<IActionResult> DeleteConfirmed(int HotelId)
     {
         var hotel = await _context.Hotels.FindAsync(HotelId);

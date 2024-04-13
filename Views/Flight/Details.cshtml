@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Flights";
+}
+
+<div class="container p-4 my-4">
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            Flight Details
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Flight # @Model.FlightId - @Model.AirlineName</h5>
+            <p class="card-text">
+                <strong>Departure:</strong> @Model.DeparturePort <br>
+                <strong>Arrival:</strong> @Model.ArrivalPort <br>
+                <strong>Seats Available:</strong> @Model.AvailSeats <br>
+                <strong>Duration:</strong> @Model.FlightDuration Hour(s) <br>
+                <strong>Status:</strong> @Model.Status <br>
+                <strong>Price:</strong> $@Model.TicketCost CAD
+            </p>
+        </div>
+        <div class="card-footer text-muted">
+            <div class="d-flex justify-content-between align-items-center">
+                <a asp-controller="Flight" asp-action="Index" class="btn btn-secondary">
+                    <i class="bi bi-arrow-left"></i> Back to Flights
+                </a>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <a asp-controller="Booking" asp-action="CreateFlight" asp-route-id="@Model.FlightId" asp-route-ticketCost="@Model.TicketCost" asp-route-status="@Model.Status" class="btn btn-success">
+                        <i class="bi bi-calendar-check-fill me-1"></i> Book Now!
+                    </a>
+                }
+                else
+                {
+                    <button class="btn btn-success" disabled data-bs-toggle="tooltip" data-bs-title="Sign in to Book!">
+                        <i class="bi bi-calendar-check-fill me-1"></i> Book Now!
+                    </button>
+                }
+            </div>
+        </div>
+    </div>
+</div>

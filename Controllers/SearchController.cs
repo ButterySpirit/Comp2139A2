@@ -46,7 +46,7 @@ namespace Assign1.Controllers
         }
 
 
-        public async Task<IActionResult> Flight(string departure, string arrival)
+        public async Task<IActionResult> Flight(string departure, string arrival, string status)
         {
             if (!String.IsNullOrEmpty(departure) && !String.IsNullOrEmpty(arrival))
             {
@@ -61,6 +61,11 @@ namespace Assign1.Controllers
                 if (!String.IsNullOrEmpty(arrival))
                 {
                     flightQuery = flightQuery.Where(f => f.ArrivalPort == arrival);
+                }
+
+                if (!String.IsNullOrEmpty(status))
+                {
+                    flightQuery = flightQuery.Where(f => f.Status == status);
                 }
 
                 // Execute the query asynchronously

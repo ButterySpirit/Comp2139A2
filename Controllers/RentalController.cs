@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
+[Route("Rental")]
 public class RentalController : Controller
 {
     private readonly ApplicationDbContext _context;
@@ -16,11 +17,22 @@ public class RentalController : Controller
         _context = context;
     }
 
-    // GET: Rental/Index
+    [HttpGet("")]
     public async Task<IActionResult> Index()
     {
         var rentals = await _context.Rentals.ToListAsync();
         return View(rentals);
+    }
+
+    [HttpGet("{id}")]
+    public IActionResult Details(int id)
+    {
+        var rental = _context.Rentals.FirstOrDefault(r => r.RentalId == id);
+        if (rental == null)
+        {
+            return NotFound();
+        }
+        return View(rental);
     }
 
     // GET: Rental/Create
@@ -44,6 +56,7 @@ public class RentalController : Controller
     }
 
     // GET: Rental/Edit/5
+    [HttpGet("Rental/Edit/{id:int}"), Authorize(Roles = "Admin, SuperAdmin")]
     public async Task<IActionResult> Edit(int? id)
     {
         if (id == null)
@@ -62,8 +75,7 @@ public class RentalController : Controller
     }
 
     // POST: Rental/Edit/
-    [HttpPost]
-    [ValidateAntiForgeryToken]
+    [HttpPost("Rental/Edit/{id:int}"), ValidateAntiForgeryToken, Authorize(Roles = "Admin, SuperAdmin")]
     public async Task<IActionResult> Edit(int RentalId, [Bind("RentalId, VehicleName, VehicleType, State, Country, RentalCost, Availability, Status, LicensePlate, MakeModel, Description, PickupLocation, DropoffLocation")]
     Rental rental)
     {
@@ -123,7 +135,8 @@ public class RentalController : Controller
         return View(rental);
     }
 
-    // GET: Rental/Delete/5
+    // GET: Rental/Delete/
+    [HttpGet("Rental/Delete/{id:int}"), Authorize(Roles = "Admin, SuperAdmin")]
     public async Task<IActionResult> Delete(int? id)
     {
         if (id == null)
@@ -142,8 +155,7 @@ public class RentalController : Controller
     }
 
     // POST: Rental/Delete/5
-    [HttpPost, ActionName("DeleteConfirmed")]
-    [ValidateAntiForgeryToken]
+    [HttpPost("Rental/Delete/{id:int}"), ActionName("DeleteConfirmed"), ValidateAntiForgeryToken, Authorize(Roles = "Admin, SuperAdmin")]
     public async Task<IActionResult> DeleteConfirmed(int RentalId)
     {
         var rental = await _context.Rentals.FindAsync(RentalId);
