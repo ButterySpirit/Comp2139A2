@@ -55,32 +55,6 @@ public class RentalController : Controller
         }
     }
 
-    public IActionResult Create()
-    {
-        return View();
-    }
-
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create(Rental rental)
-    {
-        if (ModelState.IsValid)
-        {
-            try
-            {
-                _context.Add(rental);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Failed to create rental.");
-                return RedirectToAction("Error500", "Home");
-            }
-        }
-        return View(rental);
-    }
-
     [HttpGet("Edit/{id:int}"), Authorize(Roles = "Admin, SuperAdmin")]
     public async Task<IActionResult> Edit(int? id)
     {
@@ -172,7 +146,7 @@ public class RentalController : Controller
         }
     }
 
-    [HttpPost("Delete/{id:int}"), ActionName("DeleteConfirmed"), ValidateAntiForgeryToken, Authorize(Roles = "Admin, SuperAdmin")]
+    [HttpPost, ActionName("DeleteConfirmed"), ValidateAntiForgeryToken, Authorize(Roles = "Admin, SuperAdmin")]
     public async Task<IActionResult> DeleteConfirmed(int RentalId)
     {
         try
@@ -180,7 +154,9 @@ public class RentalController : Controller
             var rental = await _context.Rentals.FindAsync(RentalId);
             if (rental == null)
             {
+                Console.WriteLine("Error Occured");
                 return RedirectToAction("Error404", "Home");
+
             }
 
             _context.Rentals.Remove(rental);

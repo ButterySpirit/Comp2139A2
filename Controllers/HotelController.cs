@@ -63,7 +63,7 @@ public class HotelController : Controller
     }
 
     // POST: Hotel/Create
-    [HttpPost]
+    [HttpPost("Create")]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create([Bind("HotelName,Address,City,State,Country,StarRating,Description,CostPerNight,image")] Hotel hotel)
     {
@@ -172,7 +172,7 @@ public class HotelController : Controller
     }
 
     // POST: Hotel/Delete/
-    [HttpPost("Delete/{id:int}"), ActionName("DeleteConfirmed")]
+    [HttpPost, ActionName("DeleteConfirmed")]
     [ValidateAntiForgeryToken]
     [Authorize(Roles = "Admin, SuperAdmin")]
     public async Task<IActionResult> DeleteConfirmed(int HotelId)

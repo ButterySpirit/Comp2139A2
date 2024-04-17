@@ -68,7 +68,7 @@ namespace Assign1.Controllers
         }
 
         // POST: Flight/Create
-        [HttpPost]
+        [HttpPost("Create")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("FlightId,AirlineName,DeparturePort,ArrivalPort,AvailSeats,TicketCost,StartDate,EndDate,Status,FlightDuration")] Flight flight)
         {
@@ -174,7 +174,7 @@ namespace Assign1.Controllers
         }
 
         // POST: Flight/Delete/
-        [HttpPost("Delete/{id:int}")]
+        [HttpPost, ActionName("DeleteConfirmed")]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin, SuperAdmin")]
         public async Task<IActionResult> DeleteConfirmed(int FlightId)
