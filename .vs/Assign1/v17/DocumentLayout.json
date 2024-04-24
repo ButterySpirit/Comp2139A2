@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\",
+  "WorkspaceRootPath": "C:\\Users\\987264\\source\\repos\\COMP2139A1\\",
   "Documents": [
     {
       "AbsoluteMoniker": "D:0:0:{9A4A51FB-04FC-4B87-863C-4396192699BB}|Assign1.csproj|c:\\users\\987264\\source\\repos\\comp2139a1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -84,9 +84,9 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\COMP2139A1\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\Program.cs",
+              "ToolTip": "C:\\Users\\987264\\source\\repos\\COMP2139A1\\Program.cs",
               "RelativeToolTip": "Program.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAABPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -97,144 +97,133 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "RoleManagerController.cs",
-              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\Controllers\\RoleManagerController.cs",
+              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\COMP2139A1\\Controllers\\RoleManagerController.cs",
               "RelativeDocumentMoniker": "Controllers\\RoleManagerController.cs",
-              "ToolTip": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\Controllers\\RoleManagerController.cs",
+              "ToolTip": "C:\\Users\\987264\\source\\repos\\COMP2139A1\\Controllers\\RoleManagerController.cs",
               "RelativeToolTip": "Controllers\\RoleManagerController.cs",
               "ViewState": "AQIAABAAAAAAAAAAAAAqwD8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-13T19:19:25.673Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-13T19:19:25.673Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "RentalController.cs",
-              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\Controllers\\RentalController.cs",
+              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\COMP2139A1\\Controllers\\RentalController.cs",
               "RelativeDocumentMoniker": "Controllers\\RentalController.cs",
-              "ToolTip": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\Controllers\\RentalController.cs",
+              "ToolTip": "C:\\Users\\987264\\source\\repos\\COMP2139A1\\Controllers\\RentalController.cs",
               "RelativeToolTip": "Controllers\\RentalController.cs",
               "ViewState": "AQIAAK0AAAAAAAAAAAAmwMkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-13T18:59:56.813Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-13T18:59:56.813Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "HotelController.cs",
-              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\Controllers\\HotelController.cs",
+              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\COMP2139A1\\Controllers\\HotelController.cs",
               "RelativeDocumentMoniker": "Controllers\\HotelController.cs",
-              "ToolTip": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\Controllers\\HotelController.cs",
+              "ToolTip": "C:\\Users\\987264\\source\\repos\\COMP2139A1\\Controllers\\HotelController.cs",
               "RelativeToolTip": "Controllers\\HotelController.cs",
               "ViewState": "AQIAAEUAAAAAAAAAAAAUwMoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-13T18:56:16.889Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-13T18:56:16.889Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\Controllers\\HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\COMP2139A1\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\987264\\source\\repos\\COMP2139A1\\Controllers\\HomeController.cs",
               "RelativeToolTip": "Controllers\\HomeController.cs",
               "ViewState": "AQIAABIAAAAAAAAAAAAYwDQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-13T18:54:53.862Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-13T18:54:53.862Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "FlightController.cs",
-              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\Controllers\\FlightController.cs",
+              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\COMP2139A1\\Controllers\\FlightController.cs",
               "RelativeDocumentMoniker": "Controllers\\FlightController.cs",
-              "ToolTip": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\Controllers\\FlightController.cs",
+              "ToolTip": "C:\\Users\\987264\\source\\repos\\COMP2139A1\\Controllers\\FlightController.cs",
               "RelativeToolTip": "Controllers\\FlightController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAM0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-13T18:51:58.921Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-13T18:51:58.921Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "BookingController.cs",
-              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\Controllers\\BookingController.cs",
+              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\COMP2139A1\\Controllers\\BookingController.cs",
               "RelativeDocumentMoniker": "Controllers\\BookingController.cs",
-              "ToolTip": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\Controllers\\BookingController.cs",
+              "ToolTip": "C:\\Users\\987264\\source\\repos\\COMP2139A1\\Controllers\\BookingController.cs",
               "RelativeToolTip": "Controllers\\BookingController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0BAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-13T17:24:56.701Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-13T17:24:56.701Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
               "Title": "SearchController.cs",
-              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\Controllers\\SearchController.cs",
+              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\COMP2139A1\\Controllers\\SearchController.cs",
               "RelativeDocumentMoniker": "Controllers\\SearchController.cs",
-              "ToolTip": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\Controllers\\SearchController.cs",
+              "ToolTip": "C:\\Users\\987264\\source\\repos\\COMP2139A1\\Controllers\\SearchController.cs",
               "RelativeToolTip": "Controllers\\SearchController.cs",
               "ViewState": "AQIAACQAAAAAAAAAAAAYwHwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-13T19:20:40.439Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-13T19:20:40.439Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
               "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\Controllers\\UserController.cs",
+              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\COMP2139A1\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\987264\\source\\repos\\COMP2139A1\\Controllers\\UserController.cs",
               "RelativeToolTip": "Controllers\\UserController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAIMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-13T19:24:30.03Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-13T19:24:30.03Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
               "Title": "ErrorViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\Models\\ErrorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\COMP2139A1\\Models\\ErrorViewModel.cs",
               "RelativeDocumentMoniker": "Models\\ErrorViewModel.cs",
-              "ToolTip": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\Models\\ErrorViewModel.cs",
+              "ToolTip": "C:\\Users\\987264\\source\\repos\\COMP2139A1\\Models\\ErrorViewModel.cs",
               "RelativeToolTip": "Models\\ErrorViewModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-13T19:38:47.01Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-13T19:38:47.01Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
               "Title": "UserRolesController.cs",
-              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\Controllers\\UserRolesController.cs",
+              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\COMP2139A1\\Controllers\\UserRolesController.cs",
               "RelativeDocumentMoniker": "Controllers\\UserRolesController.cs",
-              "ToolTip": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\Controllers\\UserRolesController.cs",
+              "ToolTip": "C:\\Users\\987264\\source\\repos\\COMP2139A1\\Controllers\\UserRolesController.cs",
               "RelativeToolTip": "Controllers\\UserRolesController.cs",
               "ViewState": "AQIAADYAAAAAAAAAAAAYwEUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-13T19:26:40.03Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-13T19:26:40.03Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
               "Title": "Admin.cs",
-              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\Controllers\\Admin.cs",
+              "DocumentMoniker": "C:\\Users\\987264\\source\\repos\\COMP2139A1\\Controllers\\Admin.cs",
               "RelativeDocumentMoniker": "Controllers\\Admin.cs",
-              "ToolTip": "C:\\Users\\987264\\source\\repos\\Comp2139A1\\Controllers\\Admin.cs",
+              "ToolTip": "C:\\Users\\987264\\source\\repos\\COMP2139A1\\Controllers\\Admin.cs",
               "RelativeToolTip": "Controllers\\Admin.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAFgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-09T19:43:32.705Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-09T19:43:32.705Z"
             }
           ]
         }
